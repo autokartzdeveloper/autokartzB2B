@@ -83,7 +83,7 @@ public class DisputeFragment extends Fragment implements DisputeApiListener {
     private void getData() {
         mOrderDetail = (OrderDetail) getArguments().getSerializable(IntentKeyConstants.KEY_);
         msuggestionID = getArguments().getString("suggestion_id");
-        mDeliveryTime = getArguments().getString("delivery_time");
+
 
     }
 
