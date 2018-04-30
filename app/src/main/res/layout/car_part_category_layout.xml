@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/LightGray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/cat_item_rel_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White">
+
+            <ImageView
+                android:id="@+id/cat_item_image_view"
+                android:layout_width="@dimen/mar_40"
+                android:layout_height="@dimen/mar_40"
+                android:layout_marginLeft="@dimen/mar_10"
+                android:padding="@dimen/mar_5"
+                android:src="@drawable/ic_email" />
+
+            <TextView
+                android:id="@+id/cat_item_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mar_10"
+                android:layout_toRightOf="@+id/cat_item_image_view"
+                android:text="Car Parts"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize18sp" />
+
+            <ImageView
+                android:id="@+id/car_cat_drop_down_iv"
+                android:layout_width="@dimen/mar_25"
+                android:layout_height="@dimen/mar_25"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/mar_10"
+                android:src="@drawable/ic_drop_up" />
+
+            <ImageView
+                android:id="@+id/car_cat_detail_iv"
+                android:layout_width="@dimen/mar_25"
+                android:layout_height="@dimen/mar_25"
+                android:layout_margin="@dimen/mar_10"
+                android:layout_toLeftOf="@+id/drop_down_iv"
+                android:src="@drawable/ic_launcher_camera"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/sub_cat_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_0_5"
+            android:background="@color/LightBlue" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

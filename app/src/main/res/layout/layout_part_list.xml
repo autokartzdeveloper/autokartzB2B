@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/mar_2">
+
+    <TextView
+        android:id="@+id/part_name_list_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/LightGray"
+        android:padding="@dimen/mar_10"
+        android:text="Part Name"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/textSize20sp"
+        android:textStyle="bold" />
+
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/part_name_list_tv">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/part_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/agent_remark_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/suggestion_item_no_text_tv"
+        android:text="AGENT REMARK"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/textSize16sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/agent_remarkval_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agent_remark_tv"
+        android:layout_margin="@dimen/mar_10"
+        android:padding="@dimen/mar_10"
+        android:text="AGENT REMARK"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/textSize16sp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/agent_remarkval_tv"
+        android:background="@color/blue" />
+
+    <TextView
+        android:id="@+id/suggestion_item_no_text_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relative1"
+        android:layout_marginTop="@dimen/mar_10"
+        android:gravity="center"
+        android:text="No Part Suggestion Loaded Yet"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/textSize16sp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

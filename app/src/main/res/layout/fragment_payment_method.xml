@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mar_60"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/mar_20">
+
+        <TextView
+            android:id="@+id/payment_method_payu_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_30"
+            android:background="@color/appcolorblue"
+            android:padding="@dimen/mar_10"
+            android:text="PayUMoney"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize20sp" />
+
+        <TextView
+            android:id="@+id/payment_method_cash_on_delivery_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_30"
+            android:background="@color/appcolorornage"
+            android:padding="@dimen/mar_10"
+            android:text="Cash On Delivery"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize20sp" />
+
+        <TextView
+            android:id="@+id/payment_method_paytm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_30"
+            android:background="@color/appcolorornage"
+            android:padding="@dimen/mar_10"
+            android:text="PayTM"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize20sp"
+            android:visibility="visible" />
+    </LinearLayout>
+</LinearLayout>

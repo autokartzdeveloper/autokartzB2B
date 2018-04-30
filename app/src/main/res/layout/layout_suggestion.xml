@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_5dp"
+    android:background="@color/White">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/suggestion_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/mar_10" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mar_10"
+            android:layout_toRightOf="@+id/suggestion_checkbox">
+
+
+            <TextView
+                android:id="@+id/suggestion_product_name_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name:"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_product_name_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:layout_toRightOf="@+id/suggestion_product_name_text_tv"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_brand_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_product_name_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Brand: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_brand_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_product_name_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toRightOf="@+id/suggestion_brand_text_tv"
+                android:text="Maruti"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_price_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_product_name_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toLeftOf="@+id/suggestion_price_val_tv"
+                android:text="Price: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_price_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/suggestion_product_name_text_tv"
+                android:layout_marginRight="@dimen/mar_20"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="2450"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_tax_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_brand_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Tax: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_tax_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/suggestion_brand_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toRightOf="@+id/suggestion_tax_text_tv"
+                android:text="18 %"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_ship_charge_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_brand_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toLeftOf="@+id/suggestion_ship_charge_val_tv"
+                android:text="Shipping Charges:  "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_ship_charge_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/suggestion_brand_text_tv"
+                android:layout_marginRight="@dimen/mar_20"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="300"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_ship_time_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_tax_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Shipping Time: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_ship_time_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/suggestion_tax_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toRightOf="@+id/suggestion_ship_time_text_tv"
+                android:text="10 Days"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_avail_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_tax_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toLeftOf="@+id/suggestion_avail_val_tv"
+                android:text="Availability: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_avail_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/suggestion_tax_text_tv"
+                android:layout_marginRight="@dimen/mar_20"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Yes"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_quality_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_ship_time_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Quality: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_quality_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/suggestion_ship_time_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toRightOf="@+id/suggestion_quality_text_tv"
+                android:text="10 Days"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/suggestion_warranty_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_ship_time_text_tv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toLeftOf="@+id/suggestion_warranty_val_tv"
+                android:text="Warranty: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/suggestion_warranty_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/suggestion_ship_time_text_tv"
+                android:layout_marginRight="@dimen/mar_20"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="6 months"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:id="@+id/parturl_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestion_quality_text_tv"
+                android:layout_marginBottom="@dimen/mar_10"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Part URL: "
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/parturl_valu_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/suggestion_quality_val_tv"
+                android:layout_marginBottom="@dimen/mar_10"
+                android:layout_marginLeft="@dimen/mar_10"
+                android:layout_marginTop="@dimen/mar_10"
+                android:layout_toRightOf="@+id/suggestion_quality_text_tv"
+                android:clickable="true"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/mar_5"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="@dimen/mar_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/DarkGray"
+            android:id="@+id/item_rel_layout"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/cat_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mar_10"
+                android:text="Car Parts"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize18sp" />
+
+            <ImageView
+                android:layout_width="@dimen/mar_25"
+                android:layout_height="@dimen/mar_25"
+                android:id="@+id/drop_down_iv"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_drop_up"
+                android:layout_margin="@dimen/mar_10"/>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sub_cat_rv"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

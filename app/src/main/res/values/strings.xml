@@ -1,0 +1,84 @@
+<resources>
+
+    <string name="app_name">AutokartzB2B</string>
+    <string name="autokartz">AutoKartz</string>
+    <string name="google_map_api_key">AIzaSyBrdS159ufdXuVenlql7DZfNmdA2oIJ84w</string>
+    <string name="facebook_app_id">813944215460603</string>
+    <string name="brand">Brand</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="or">OR</string>
+    <string name="not_a_member_yet_create_an_account">New to AutokartzB2B ? </string>
+    <string name="model">Model</string>
+    <string name="year">Year</string>
+    <string name="variant">Variant</string>
+    <string name="engine">Engine</string>
+    <string name="car_chassis_number">Car Chassis Number</string>
+    <string name="category">Category</string>
+    <string name="submit">Submit</string>
+    <string name="enter_car_chassis_number">Enter Car Chassis Number</string>
+    <string name="Rs">\u20B9</string>
+    <string-array name="DRAWER_ITEMS">
+        <item>Home</item>
+        <item>Enquire Form</item>
+        <item>Transaction History</item>
+        <item>Orders</item>
+        <item>My Account</item>
+        <item>Company URL</item>
+    </string-array>
+
+    <string-array name="DISPUTE_REASONS">
+        <item>Select Reason</item>
+        <item>Product not as Described</item>
+        <item>Quality Problems</item>
+        <item>Damaged Goods</item>
+        <item>Quantity Shortage</item>
+        <item>Received CounterFeit Goods</item>
+        <item>Problems With the Accessories</item>
+        <item>Other</item>
+    </string-array>
+
+    <array name="catImages">
+        <item>@drawable/ic_maintainence</item>
+        <item>@drawable/ic_lubricants</item>
+        <item>@drawable/ic_brakes</item>
+        <item>@drawable/ic_suspension</item>
+        <item>@drawable/ic_body</item>
+        <item>@drawable/ic_light</item>
+        <item>@drawable/ic_engine</item>
+        <item>@drawable/ic_trims</item>
+        <item>@drawable/ic_interior</item>
+        <item>@drawable/ic_steering</item>
+        <item>@drawable/ic_transmission</item>
+        <item>@drawable/ic_fuel_system</item>
+        <item>@drawable/ic_air_conditioning</item>
+        <item>@drawable/ic_wheel_drive</item>
+        <item>@drawable/ic_exshust_system</item>
+        <item>@drawable/ic_exshust_system</item>
+    </array>
+
+    <string name="title_activity_main_dashboard">MainDashboardActivity</string>
+    <string name="home">Home</string>
+    <string name="enquiry_form">Enquiry Form</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="orders">Orders</string>
+    <string name="my_account">My Account</string>
+    <string name="company_url">Company URL</string>
+    <string name="signout">Signout</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="closeDrawer">CloseDrawer</string>
+    <string name="add_product_detail">Add Product Detail</string>
+    <string name="add_product_images">Add Product Images</string>
+    <string name="contact_us">Contact Us</string>
+
+
+    <string name="err_host_unrechable">Jeenees server unreachable. Please try again after some time</string>
+    <string name="err_unexpected_error">Oops! Something went wrong. Please try again</string>
+    <string name="err_no_internet">Please check your internet connection.</string>
+
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_app_id">ca-app-pub-1805780237947508~2259395395</string>
+    <string name="interstitial_full_screen">ca-app-pub-1805780237947508/1819168425</string>
+
+</resources>

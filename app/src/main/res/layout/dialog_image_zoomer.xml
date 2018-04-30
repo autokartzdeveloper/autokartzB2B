@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/mar_5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White"
+            android:padding="@dimen/mar_10"
+            android:textColor="@color/Blue"
+            android:id="@+id/title_dialog_image_tv"
+            android:gravity="center"
+            android:textSize="@dimen/textSize20sp"
+            android:text="Product Image" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_200"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/title_dialog_image_tv"
+            android:id="@+id/image_zoom_iv"
+            android:src="@drawable/autokartzlogo" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_1"
+            android:background="@color/Gray"
+            android:layout_below="@+id/image_zoom_iv"
+            android:id="@+id/image_zoom_view"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/image_zoom_iv">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/save_image_tv"
+                android:gravity="center"
+                android:textColor="@color/Blue"
+                android:textSize="@dimen/textSize20sp"
+                android:padding="@dimen/mar_10"
+                android:text="Save" />
+
+            <View
+                android:layout_width="@dimen/mar_1"
+                android:layout_height="match_parent"
+                android:background="@color/Gray"
+                android:id="@+id/image_btn_view"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/delete_image_tv"
+                android:textColor="@color/Blue"
+                android:gravity="center"
+                android:text="Delete"
+                android:padding="@dimen/mar_10"
+                android:textSize="@dimen/textSize20sp"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/LightGray">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_category_car_parts"
+            style="@style/MyToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0.2dp"
+            app:subtitleTextColor="@color/Blue" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cat_list_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_category_car_parts"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/category_car_part_add_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cat_list_recycler_view"
+            android:layout_margin="@dimen/mar_5"
+            android:layout_marginTop="@dimen/mar_10"
+            android:text="Request to Add Part"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/category_car_add_part_iv"
+            android:layout_width="@dimen/mar_25"
+            android:layout_height="@dimen/mar_25"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/cat_list_recycler_view"
+            android:layout_marginRight="@dimen/mar_10"
+            android:layout_marginTop="@dimen/mar_2"
+            android:src="@drawable/ic_add_black_24dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/category_add_parts_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_car_part_add_tv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:nestedScrollingEnabled="false" />
+
+        <Button
+            android:id="@+id/cat_list_next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_add_parts_rv"
+            android:layout_marginBottom="@dimen/mar_20"
+            android:layout_marginLeft="@dimen/mar_10"
+            android:layout_marginRight="@dimen/mar_10"
+            android:layout_marginTop="@dimen/mar_20"
+            android:background="@color/appcolorornage"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

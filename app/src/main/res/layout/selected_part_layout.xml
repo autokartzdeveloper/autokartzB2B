@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/LightSkyBlue_b"
+    android:layout_marginTop="@dimen/mar_2"
+    android:padding="@dimen/mar_10">
+
+    <ImageView
+        android:id="@+id/selected_car_part_iv"
+        android:layout_width="@dimen/mar_30"
+        android:layout_height="@dimen/mar_30"
+        android:src="@drawable/ic_email" />
+
+    <TextView
+        android:id="@+id/item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mar_5"
+        android:ellipsize="end"
+        android:maxLength="15"
+        android:layout_toRightOf="@+id/selected_car_part_iv"
+        android:text="Selected Item"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/textSize20sp" />
+
+    <ImageView
+        android:id="@+id/item_cancel_iv"
+        android:layout_width="@dimen/mar_30"
+        android:layout_height="@dimen/mar_30"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_close_black" />
+
+    <ImageView
+        android:id="@+id/item_detail_iv"
+        android:layout_width="@dimen/mar_30"
+        android:layout_height="@dimen/mar_30"
+        android:layout_marginRight="@dimen/mar_20"
+        android:layout_toLeftOf="@+id/item_cancel_iv"
+        android:src="@drawable/ic_launcher_camera" />
+
+</RelativeLayout>

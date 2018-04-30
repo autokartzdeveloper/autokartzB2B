@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.autokartz.autokartz.activities.ForgotPasswordActivity">
+
+
+        <TextView
+            android:id="@+id/sent_code_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_30"
+            android:text="We just sent a code to your email and phone"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/mar_20"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/enter_code_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sent_code_tv"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_20"
+            android:text="Please enter the code"
+            android:textColor="@color/appcolorblue"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/enter_code_otp_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enter_code_tv"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_20"
+            android:background="@drawable/rectangle_border"
+            android:hint="Enter OTP"
+            android:padding="@dimen/mar_8"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/resend_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/enter_code_otp_et"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:text="Resend OTP"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/dimen_18dp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/submit_otp_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resend_otp"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_20"
+            android:background="@color/orange"
+            android:padding="@dimen/mar_8"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_enquiry_detail"
+        style="@style/MyToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0.2dp" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/mar_5"
+            android:padding="@dimen/mar_10">
+
+            <TextView
+                android:id="@+id/car_chassis_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/car_chassis_number"
+                android:textColor="@color/appcolorblue"
+                android:textSize="@dimen/textSize20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_chassis_number_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/mar_5"
+                android:text="jdhfndfxmdhskncfs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_brand_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_chassis_num_tv"
+                android:text="@string/brand"
+                android:textColor="@color/appcolorblue"
+                android:textSize="@dimen/textSize20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_brand_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/car_chassis_num_tv"
+                android:layout_marginTop="@dimen/mar_5"
+                android:text="jdhfndfxmdhskncfs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_model_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_brand_tv"
+                android:text="@string/model"
+                android:textColor="@color/appcolorblue"
+                android:textSize="@dimen/textSize20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_model_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/car_brand_tv"
+                android:layout_marginTop="@dimen/mar_5"
+                android:text="jdhfndfxmdhskncfs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_varient_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_model_tv"
+                android:text="@string/variant"
+                android:textColor="@color/appcolorblue"
+                android:textSize="@dimen/textSize20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_varient_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/car_model_val_tv"
+                android:layout_marginTop="@dimen/mar_5"
+                android:text="jdhfndfxmdhskncfs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_engine_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_varient_tv"
+                android:text="@string/engine"
+                android:textColor="@color/appcolorblue"
+                android:textSize="@dimen/textSize20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_engine_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/car_varient_val_tv"
+                android:layout_marginTop="@dimen/mar_5"
+                android:text="jdhfndfxmdhskncfs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_year_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_engine_tv"
+                android:text="@string/year"
+                android:textColor="@color/appcolorblue"
+                android:textSize="@dimen/textSize20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/car_year_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/car_engine_val_tv"
+                android:layout_marginTop="@dimen/mar_5"
+                android:text="jdhfndfxmdhskncfs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/selected_car_parts_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_year_tv"
+                android:layout_marginTop="@dimen/mar_15"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/enquiry_form_add_part_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selected_car_parts_rv"
+                android:layout_marginTop="@dimen/mar_10"
+                android:text="Request Part to be added"
+                android:textAlignment="center"
+                android:textColor="@color/appcolorornage"
+                android:textSize="@dimen/textSize16sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/enquiry_form_added_part_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enquiry_form_add_part_title_tv"
+                android:layout_marginTop="@dimen/mar_15"
+                android:nestedScrollingEnabled="false" />
+
+            <Button
+                android:id="@+id/add_car_parts_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enquiry_form_added_part_rv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/mar_5"
+                android:layout_marginRight="@dimen/mar_5"
+                android:layout_marginTop="@dimen/mar_30"
+                android:background="@color/light_grey"
+                android:paddingLeft="@dimen/mar_20"
+                android:paddingRight="@dimen/mar_20"
+                android:text="ADD CAR PARTS"
+                android:textColor="@color/appcolorornage"
+                android:textSize="@dimen/textSize22sp" />
+
+            <Button
+                android:id="@+id/submit_enquire_parts_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_car_parts_btn"
+                android:layout_marginLeft="@dimen/mar_5"
+                android:layout_marginRight="@dimen/mar_5"
+                android:layout_marginTop="@dimen/mar_15"
+                android:background="@color/appcolorornage"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize22sp" />
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

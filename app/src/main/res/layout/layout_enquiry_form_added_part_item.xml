@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/mar_2"
+    android:background="@color/LightSkyBlue_b">
+
+    <LinearLayout
+        android:id="@+id/addpartlinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/enquiry_form_added_part_part_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/mar_50"
+            android:layout_weight="5"
+            android:padding="@dimen/mar_10"
+            android:text="Add Part Name"
+            android:textSize="@dimen/textSize18sp" />
+
+        <ImageView
+            android:id="@+id/enquiry_form_add_part_detail_iv"
+            android:layout_width="@dimen/mar_25"
+            android:layout_height="@dimen/mar_25"
+            android:layout_margin="@dimen/mar_10"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_detail"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/enquiry_form_add_part_delete_iv"
+            android:layout_width="@dimen/mar_25"
+            android:layout_height="@dimen/mar_25"
+            android:layout_margin="@dimen/mar_10"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_close_black" />
+
+    </LinearLayout>
+
+</LinearLayout>

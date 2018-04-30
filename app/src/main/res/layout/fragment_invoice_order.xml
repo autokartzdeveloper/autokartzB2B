@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/mar_20"
+
+        android:paddingLeft="@dimen/mar_10"
+        android:paddingRight="@dimen/mar_10"
+        android:paddingTop="@dimen/mar_10">
+
+        <ImageView
+            android:id="@+id/invoice_order_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_150"
+            android:src="@drawable/autokartztext" />
+
+        <TextView
+            android:id="@+id/invoice_order_invoice_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_order_iv"
+            android:text="Invoice No."
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invoice_order_invoice_val_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_order_iv"
+            android:layout_toRightOf="@+id/invoice_order_invoice_text_tv"
+            android:text="101"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invoice_order_date_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_order_iv"
+            android:layout_toLeftOf="@+id/invoice_order_date_val_tv"
+            android:text="Date: "
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invoice_order_date_val_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/invoice_order_iv"
+            android:text="06/Mar/2018"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invoice_order_trans_id_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_order_invoice_text_tv"
+            android:text="Transaction Id: "
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invoice_order_trans_id_val_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_order_invoice_text_tv"
+            android:layout_toRightOf="@+id/invoice_order_trans_id_text_tv"
+            android:text="345er236"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/invoice_order_view1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_2"
+            android:layout_below="@+id/invoice_order_trans_id_text_tv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:background="@color/blue" />
+
+        <TextView
+            android:id="@+id/invoice_order_item_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoice_order_iv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:padding="@dimen/mar_10"
+            android:text="Part Name"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/invoice_order_item_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/invoice_order_iv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:padding="@dimen/mar_10"
+            android:text="Amount"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+
+            android:id="@+id/invoice_order_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoice_order_item_name_tv"
+            android:layout_marginTop="@dimen/mar_5" />
+
+
+        <View
+            android:id="@+id/invoice_order_v12"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_2"
+            android:layout_below="@+id/invoice_order_rv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:background="@color/blue" />
+
+        <TextView
+            android:id="@+id/invoice_order_ship_charge_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoice_order_rv"
+            android:layout_marginTop="@dimen/mar_20"
+            android:text="You have to pay shipping charges on delivery time."
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invoice_order_total_amount_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoice_order_ship_charge_text_tv"
+            android:layout_marginTop="@dimen/mar_20"
+            android:text="Total Payable Amount:"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/invoice_order_total_amount_text_includetax_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoice_order_total_amount_text_tv"
+            android:layout_marginTop="@dimen/mar_5"
+            android:text="(including tax + shipping cost)"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/invoice_order_total_amount_val_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/invoice_order_ship_charge_text_tv"
+            android:layout_marginTop="@dimen/mar_20"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/invoice_order_view2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_2"
+            android:layout_below="@+id/invoice_order_total_amount_text_includetax_tv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:background="@color/blue" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_order_view2"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_20"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/invoice_order_cancel_btn"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/mar_10"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="Cancel Order"
+                android:textColor="@color/appcolorornage"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/invoice_order_pay_btn"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mar_10"
+                android:layout_weight="1"
+                android:background="@color/appcolorornage"
+                android:text="Pay"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

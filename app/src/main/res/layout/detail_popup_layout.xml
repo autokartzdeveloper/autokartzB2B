@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White"
+            android:gravity="center"
+            android:padding="@dimen/mar_10"
+            android:text="Product Details"
+            android:textColor="@color/Blue"
+            android:textSize="@dimen/textSize24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/LightGray"
+            android:orientation="vertical"
+            android:padding="@dimen/mar_10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_product_detail"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize20sp" />
+
+            <EditText
+                android:id="@+id/product_detail_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mar_15"
+                android:background="@drawable/edittext_background"
+                android:enabled="true"
+                android:focusable="true"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mar_15"
+                android:text="@string/add_product_images"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/textSize20sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/product_images_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mar_10"
+                android:background="@drawable/edittext_background"
+                android:scrollbars="horizontal" />
+
+            <Button
+                android:id="@+id/submit_product_detail_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mar_10"
+                android:background="@color/White"
+                android:text="@string/submit"
+                android:textColor="@color/Blue"
+                android:textSize="@dimen/textSize20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

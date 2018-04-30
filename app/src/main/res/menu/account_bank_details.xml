@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_add_bank"
+        android:icon="@drawable/ic_launcher_pencil"
+        android:title="Add Bank Info"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_update_bank"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Update Bank Info"
+        app:showAsAction="never" />
+
+</menu>

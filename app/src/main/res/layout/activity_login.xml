@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    tools:context="com.autokartz.autokartz.activities.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/mar_50"
+                android:src="@drawable/autokartzlogo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mar_20"
+                android:orientation="vertical"
+                android:padding="@dimen/mar_10">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_10"
+                    android:layout_marginRight="@dimen/mar_10">
+
+                    <EditText
+                        android:id="@+id/et_emaillogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_10"
+                    android:layout_marginRight="@dimen/mar_10">
+
+                    <EditText
+                        android:id="@+id/et_passwordlogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:inputType="textPassword" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/forgot_password_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:text="Forgot Password?"
+                    android:textColor="@color/appcolorblue"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_10"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_30"
+                    android:background="@color/appcolorornage"
+                    android:text="@string/login"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/textSize18sp" />
+
+                <TextView
+                    android:id="@+id/or_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="OR"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/dimen_20dp" />
+
+                <TextView
+                    android:id="@+id/register_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/not_a_member_yet_create_an_account"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/dimen_16dp" />
+
+                <Button
+                    android:id="@+id/register_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_10"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_10"
+                    android:background="@color/appcolorblue"
+                    android:text="REGISTER NOW"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/textSize18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

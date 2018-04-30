@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/order_no_order_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No Orders Yet"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/textSize30sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/order_id_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/LightGray"
+        android:paddingBottom="@dimen/mar_10"
+        android:paddingTop="@dimen/mar_10">
+
+        <TextView
+            android:id="@+id/order_item_orderid_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_5"
+            android:text="SR.No"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_item_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_30"
+            android:layout_toRightOf="@+id/order_item_orderid_tv"
+            android:text="Order Date"
+
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_item_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_40"
+            android:layout_toRightOf="@+id/order_item_date_tv"
+            android:text="Order Status"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_item_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/mar_5"
+            android:text="Amount"
+            android:textColor="@color/appcolorblue"
+            android:textSize="@dimen/textSize16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/orders_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

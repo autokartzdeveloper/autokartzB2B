@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_id_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/mar_2"
+    android:background="@color/LightGray"
+    android:padding="@dimen/mar_10">
+
+    <TextView
+        android:id="@+id/order_item_orderid_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OrderId"
+        android:textColor="@color/appcolorornage"
+        android:textSize="@dimen/textSize16sp" />
+
+    <TextView
+        android:id="@+id/order_item_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="@dimen/mar_40"
+        android:layout_toRightOf="@+id/order_item_orderid_tv"
+        android:text="Date"
+        android:textColor="@color/appcolorornage"
+        android:textSize="@dimen/textSize16sp" />
+
+    <TextView
+        android:id="@+id/order_item_status_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mar_40"
+        android:layout_toRightOf="@+id/order_item_date_tv"
+        android:text="Date"
+        android:textColor="@color/appcolorornage"
+        android:textSize="@dimen/textSize16sp" />
+
+    <TextView
+        android:id="@+id/order_item_amount_tv"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Amount"
+        android:textColor="@color/appcolorornage"
+        android:textSize="@dimen/textSize16sp" />
+
+</RelativeLayout>

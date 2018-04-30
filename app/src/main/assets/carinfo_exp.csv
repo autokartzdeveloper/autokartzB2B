@@ -1,0 +1,895 @@
+Brand,Model,Varient,Engine,Year
+Audi,A3,1.8,Petrol,2015-2016
+Audi,A3,2,Diesel,2015-2016
+Audi,"A3 35",2,Diesel,2016-2018
+Audi,"A3 40",1.8,Petrol,2016-2018
+Audi,"A3 Cabriolet",1.8,Petrol,2014-2018
+Audi,A4,1.4,Petrol,2016-2018
+Audi,A4,1.8,Petrol,2008-2016
+Audi,A4,2,Diesel,2007-2016
+Audi,A4,3,Diesel,2011-2016
+Audi,"A4 Quattro",1.8,Petrol,2011-2016
+Audi,"A4 Quattro",2,Diesel,2008-2016
+Audi,"A4 Quattro",3,Diesel,2011-2016
+Audi,"A4 Quattro",3.2,Petrol,2012-2016
+Audi,A5,4.2,Petrol,2014-2015
+Audi,A6,2,Diesel,2008-2011
+Audi,A6,3,Diesel,2004-2011
+Audi,A6,3.2,Petrol,2009-2011
+Audi,"A6 (4G2)",2,Diesel,2011-2017
+Audi,"A6 (4G2)",2,Petrol,2011-2017
+Audi,"A6 (4G2)",3,Diesel,2011-2017
+Audi,"A6 (4G2) Quattro",2.8,Petrol,2011-2017
+Audi,"A6 (4G2) Quattro",3,Diesel,2011-2017
+Audi,"A6 (4G2) Quattro",3,Petrol,2011-2017
+Audi,"A6 Matrix",1.8,Petrol,2015-2018
+Audi,"A6 Matrix",2,Diesel,2015-2018
+Audi,"A6 Quattro",2.4,Petrol,2005-2008
+Audi,"A6 Quattro",2.7,Diesel,2004-2008
+Audi,"A7 Quattro",3,Diesel,2011-2015
+Audi,A8,2.8,Petrol,2007-2010
+Audi,"A8 (4H)",3,Diesel,2010-2015
+Audi,"A8 (4H) Quattro",3,Diesel,2010-2015
+Audi,"A8 (4H) Quattro",3,Petrol,2010-2015
+Audi,"A8 (4H) Quattro",4,Petrol,2011-2015
+Audi,"A8 (4H) Quattro",4.2,Diesel,2011-2015
+Audi,"A8 L Quattro",3,Diesel,2016-2018
+Audi,"A8 L Quattro",4,Petrol,2016-2018
+Audi,"A8 L Quattro",4.2,Diesel,2016-2018
+Audi,"A8 L Security",6.3,Petrol,2016-2018
+Audi,"A8 L W12 Quattro",6.3,Petrol,2016-2018
+Audi,"A8 Quattro",4.2,Diesel,2005-2010
+Audi,"A8 Quattro",6,Petrol,2003-2010
+Audi,Q3,1.4,Petrol,2013-2016
+Audi,Q3,2,Diesel,2011-2016
+Audi,"Q3 30",2,Diesel,2016-2018
+Audi,"Q3 35 Quattro",2,Diesel,2016-2018
+Audi,"Q3 Quattro",2,Diesel,2011-2016
+Audi,"Q3 Quattro",2,Petrol,2011-2016
+Audi,Q5,2,Diesel,2010-2016
+Audi,Q5,2,Petrol,2010-2016
+Audi,"Q5 45 Quattro",3,Diesel,2016-2018
+Audi,"Q5 Quattro",2,Diesel,2010-2016
+Audi,"Q5 Quattro",3,Diesel,2010-2016
+Audi,"Q5 Quattro",3,Petrol,2010-2016
+Audi,Q7,3,Diesel,2007-2012
+Audi,"Q7 45 Quattro",3,Diesel,2016-2018
+Audi,"Q7 Quattro",3,Diesel,2012-2015
+Audi,"Q7 Quattro",3,Diesel,2012-2016
+Audi,R8,5.2,Petrol,2007-2014
+Audi,R8,5.2,Petrol,2014-2017
+Audi,TT,2,Diesel,2014-2017
+Audi,TT,2,Petrol,2014-2017
+BMW,"1 Series 116i",1.6,Diesel,2013-2014
+BMW,"1 Series 118d",2,Diesel,2013-2014
+BMW,"1 Series 118d (LCI)",2,Diesel,2015-2016
+BMW,"3 Series (E90) 320d",2,Diesel,2006-2011
+BMW,"3 Series (E90) 320i",2,Petrol,2006-2011
+BMW,"3 Series (E90) 325i",2.5,Petrol,2006-2011
+BMW,"3 Series (F30) 320d",2,Diesel,2012-2015
+BMW,"3 Series (F30) 320i",2,Petrol,2012-2015
+BMW,"3 Series (F34) 320d GT",2,Diesel,2013-2015
+BMW,"3 Series (F34) 320d GT",2,Diesel,2015-2016
+BMW,"3 Series (F80) M3",2,Petrol,2012-2015
+BMW,"4 Series (F82) M4",3,Petrol,2013-2016
+BMW,"5 Series (E60) 520d",2,Diesel,2007-2009
+BMW,"5 Series (E60) 523i",2.5,Petrol,2007-2009
+BMW,"5 Series (E60) 525d",3,Diesel,2007-2009
+BMW,"5 Series (E60) 525i",2.5,Petrol,2007-2009
+BMW,"5 Series (E60) 530d",3,Diesel,2007-2009
+BMW,"5 Series (E60) 530i",3,Petrol,2007-2009
+BMW,"5 Series (F07) GT 530d",3,Diesel,2009-2012
+BMW,"5 Series (F10) 520d",2,Diesel,2010-2013
+BMW,"5 Series (F10) 520i",2,Petrol,2010-2013
+BMW,"5 Series (F10) 523i",2.5,Petrol,2010-2013
+BMW,"5 Series (F10) 525d",3,Diesel,2010-2013
+BMW,"5 Series (F10) 530d",3,Diesel,2010-2013
+BMW,"5 Series (F10) 530i",3,Petrol,2010-2013
+BMW,"5 Series (F10) M5",4.4,Petrol,2010-2013
+BMW,"6 Series (F06) 640d",3,Diesel,2011-2015
+BMW,"6 Series (F06) M6",4.4,Petrol,2011-2015
+BMW,"6 Series (F13) M6",4.4,Petrol,2015-2017
+BMW,"7 Series (F02) 730 d",3,Diesel,2011-2015
+BMW,"7 Series (F02) 7L Hybrid",3,Petrol,2012-2015
+BMW,"7 Series (G12) 730d",3,Diesel,2015-2017
+BMW,"7 Series (G12) 750Li",3,Petrol,2015-2017
+BMW,"i8 (I12)",1.5,Petrol,2013-2018
+BMW,"X1 (E84) 18i",2,Petrol,2010-2015
+BMW,"X1 (E84) 20d",2,Diesel,2012-2015
+BMW,"X1 (F48) 20d",2,Diesel,2016-2018
+BMW,"X3 (F25) 20dX",2,Diesel,2016-2018
+BMW,"X3 (F25) 30dX",3,Diesel,2016-2018
+BMW,"X5 (F15) 30dx",3,Diesel,2014-2017
+BMW,"X5 (F15) 35iX",3,Petrol,2016-2018
+BMW,"X5 (F85) M",4.4,Petrol,2013-2017
+BMW,"X6 (F16) 40dx",3,Diesel,2014-2018
+BMW,"X6 (F86) M",4.4,Petrol,2013-2017
+BMW,"Z4 (E89) 35i",3,Petrol,2008-2015
+Chevrolet,Aveo,1.4,Petrol,2006-2012
+Chevrolet,Aveo,1.6,Petrol,2006-2012
+Chevrolet,"Aveo UV-A",1.2,Petrol,2008-2012
+Chevrolet,Beat,1,Diesel,2012-2016
+Chevrolet,Beat,1.2,LPG,2010-2016
+Chevrolet,Beat,1.2,Petrol,2012-2016
+Chevrolet,Captiva,2,Diesel,2006-2011
+Chevrolet,"Captiva (type 2)",2,Diesel,2012-2016
+Chevrolet,"Captiva (type 2) AWD",2.2,Diesel,2012-2016
+Chevrolet,"Captiva 4WD",2.2,Diesel,2006-2011
+Chevrolet,"Captiva 4WD",2.4,Diesel,2006-2011
+Chevrolet,Cruze,2,Diesel,2010-2012
+Chevrolet,Cruze,2,Diesel,2012-2015
+Chevrolet,"Cruze (type 2)",2,Diesel,2016-2018
+Chevrolet,Enjoy,1.3,Diesel,2013-2016
+Chevrolet,Enjoy,1.4,Petrol,2013-2016
+Chevrolet,Optra,1.6,Petrol,2003-2005
+Chevrolet,Optra,1.8,Petrol,2003-2005
+Chevrolet,"Optra Magnum",2,Diesel,2005-2009
+Chevrolet,"Optra Magnum",2,Petrol,2005-2009
+Chevrolet,"Optra S-RV",1.6,Petrol,2006-2010
+Chevrolet,Sail,1.2,Petrol,2013-2016
+Chevrolet,Sail,1.3,Diesel,2013-2016
+Chevrolet,"Sail Hatch",1.2,Petrol,2013-2016
+Chevrolet,"Sail Hatch",1.3,Diesel,2013-2016
+Chevrolet,Spark,0.8,Petrol,2005-2007
+Chevrolet,Spark,1,Petrol,2005-2007
+Chevrolet,Spark,1,Petrol,2007-2015
+Chevrolet,Tavera,2,Diesel,2012-2015
+Chevrolet,Tavera,2.5,Diesel,2004-2015
+Chevrolet,Trailblazer,2.8,Diesel,2015-2018
+Daewoo,Cielo,1.5,Petrol,1994-1997
+Daewoo,Matiz,0.8,Petrol,2000-2004
+Daewoo,Matiz,1,Petrol,2002-2004
+Fiat,"Abarth Punto TJET",1.4,Petrol,2015-2018
+Fiat,Avventura,1.3,Diesel,2014-2017
+Fiat,Avventura,1.4,Petrol,2014-2017
+Fiat,"Linea ",1.6,Diesel,2009-2015
+Fiat,"Linea ",1.8,Petrol,2010-2015
+Fiat,"Linea (Type 2)",1.3,Diesel,2015-2018
+Fiat,"Linea (Type 2)",1.4,Petrol,2015-2018
+Fiat,Palio,1.2,Petrol,2001-2010
+Fiat,Palio,1.3,Diesel,2003-2010
+Fiat,Palio,1.4,Petrol,2003-2010
+Fiat,Palio,1.4,Diesel,2005-2010
+Fiat,Punto,1.2,Petrol,2005-2011
+Fiat,Punto,1.3,Diesel,2005-2011
+Fiat,Punto,1.3,Diesel,2009-2011
+Fiat,Punto,1.4,Petrol,2005-2011
+Fiat,"Punto (type2)",1.2,Petrol,2008-2014
+Fiat,"Punto (type2)",1.3,Diesel,2008-2014
+Fiat,"Punto (type2)",1.4,Petrol,2008-2014
+Fiat,"Punto Evo",1.2,Petrol,2014-2017
+Fiat,"Punto Evo",1.3,Diesel,2014-2017
+Fiat,"Punto Evo",1.3,Diesel,2014-2017
+Fiat,"Punto Evo",1.4,Petrol,2014-2017
+Fiat,Siena,1.4,Petrol,2000-2003
+Fiat,Siena,1.6,Petrol,2000-2003
+Fiat,Siena,1.7,Diesel,2000-2003
+Fiat,"UNO ",1.2,Petrol,2000-2005
+Fiat,"UNO ",1.3,Diesel,2002-2005
+Fiat,Petra,1.6,Petrol,2004-2008
+Ford,Ecosport,1,Petrol,2013-2016
+Ford,Ecosport,1.5,Diesel,2013-2016
+Ford,Ecosport,1.5,Petrol,2013-2016
+Ford,"Endeavour T1",2.5,Diesel,2003-2006
+Ford,"Endeavour T2 2.5 4x2",2.5,Diesel,2007-2013
+Ford,"Endeavour T2 2.5 4x4",2.5,Diesel,2007-2013
+Ford,"Endeavour T2 3.0 4x2",3,Diesel,2008-2013
+Ford,"Endeavour T2 3.0 4x4",3,Diesel,2008-2013
+Ford,"Endeavour T3 2.5 4x2",2.5,Diesel,2014-2016
+Ford,"Endeavour T3 2.5 4x4",2.5,Diesel,2014-2016
+Ford,"Endeavour T3 3.0 4x4",3,Diesel,2014-2016
+Ford,"Fiesta Classic",1.6,Diesel,2005-2007
+Ford,"Fiesta Classic (Type 2)",1.4,Diesel,2012-2016
+Ford,"Fiesta Classic (Type 2)",1.6,Petrol,2012-2016
+Ford,"Fiesta Classic (Type 3)",1.4,Diesel,2011-2012
+Ford,"Fiesta Classic (Type 3)",1.6,Petrol,2011-2012
+Ford,"Fiesta Classic (Type 4)",1.4,Diesel,2012-2016
+Ford,"Fiesta Classic (Type 4)",1.6,Diesel,2012-2016
+Ford,"Fiesta Classic (Type 4)",1.6,Petrol,2012-2016
+Ford,Figo,1.2,Petrol,2010-2015
+Ford,Figo,1.4,Diesel,2010-2015
+Ford,"Figo Aspire",1.2,Petrol,2015-2018
+Ford,"Figo Aspire",1.5,Diesel,2015-2018
+Ford,"Figo Aspire",1.5,Petrol,2015-2018
+Ford,"Figo Type-2",1.2,Petrol,2015-2018
+Ford,"Figo Type-2",1.5,Diesel,2015-2018
+Ford,"Figo Type-2",1.5,Petrol,2015-2018
+Ford,Fusion,1.4,Diesel,2006-2010
+Ford,Ikon,1.3,Diesel,2001-2009
+Ford,Ikon,1.6,Petrol,2003-2009
+Ford,Ikon,1.8,Diesel,2003-2009
+Ford,"Ikon Type-2",1.6,Petrol,2008-2010
+Ford,Mondeo,2,Diesel,2001-2007
+Ford,Mondeo,2,Petrol,2001-2007
+Ford,"Mustang GT V8",5,Petrol,2016-2019
+Ford,Fiesta,1.6,Petrol,2005-2007
+Honda,"Accord VI",2.4,Petrol,2003-2006
+Honda,"Accord VII",2.4,Petrol,2006-2008
+Honda,"Accord VII",3,Petrol,2006-2008
+Honda,"Accord VIII",2.4,Petrol,2008-2014
+Honda,"Accord VIII",3.5,Petrol,2008-2014
+Honda,Amaze,1.2,Petrol,2013-2016
+Honda,Amaze,1.5,Diesel,2013-2016
+Honda,Brio,1.2,Petrol,2011-2017
+Honda,Brio,1.3,Petrol,2011-2017
+Honda,BR-V,1.5,Diesel,2016-2018
+Honda,BR-V,1.5,Petrol,2016-2018
+Honda,"City Type-3",1.5,Petrol,1999-2003
+Honda,"City Type-4",1.5,Petrol,2003-2007
+Honda,"City Type-4-2",1.5,Petrol,2007-2008
+Honda,"City Type-5",1.5,Petrol,2008-2014
+Honda,"City Type-6",1.5,Diesel,2014-2017
+Honda,"City Type-6",1.5,Petrol,2014-2017
+Honda,"Civic IX",1.8,Petrol,2012-2015
+Honda,"Civic VIII",1.8,Petrol,2005-2011
+Honda,"CR-V Type-2",2,Petrol,2005-2007
+Honda,"CR-V Type-2 4WD",2.4,Petrol,2005-2007
+Honda,"CR-V Type-2 4WD Auto",2.4,Petrol,2005-2007
+Honda,"CR-V Type-3",2,Petrol,2007-2011
+Honda,"CR-V Type-3 4WD",2.4,Petrol,2007-2011
+Honda,"CR-V Type-3 4WD Auto",2.4,Petrol,2007-2011
+Honda,"CR-V Type-4 ",2,Petrol,2012-2016
+Honda,"CR-V Type-4 4wd Auto",2.4,Petrol,2012-2016
+Honda,"CR-V Type-4 AT",2,Petrol,2012-2016
+Honda,Jazz,1.2,Petrol,2009-2011
+Honda,"Jazz Type-2",1.2,Petrol,2015-2018
+Honda,"Jazz Type-2",1.5,Diesel,2015-2018
+Honda,Mobilio,1.5,Diesel,2014-2017
+Honda,Mobilio,1.5,Petrol,2014-2017
+Jaguar,"F-Type 3.0",3,Petrol,2012-2016
+Jaguar,"F-Type 3.0",3,Petrol,2013-2016
+Jaguar,"F-Type 5.0",5,Petrol,2012-2016
+Jaguar,"F-Type 5.0",5,Petrol,2013-2016
+Jaguar,"XE 2.0",2,Petrol,2016-2019
+Jaguar,"XF (J05) 2.0",2,Petrol,2008-2016
+Jaguar,"XF (J05) 2.2",2.2,Diesel,2008-2016
+Jaguar,"XF (J05) 2.7",2.7,Diesel,2008-2016
+Jaguar,"XF (J05) 3.0",3,Diesel,2008-2016
+Jaguar,"XF (J05) 3.0",3,Petrol,2008-2016
+Jaguar,"XF (J05) 4.2",4.2,Petrol,2008-2016
+Jaguar,"XF (J05) 4.2",4.2,Petrol,2008-2016
+Jaguar,"XF (J05) 5.0",5,Petrol,2008-2016
+Jaguar,"XF (J05) 5.0",5,Petrol,2008-2016
+Jaguar,"XJ (X351) 2.0",2,Petrol,2012-2018
+Jaguar,"XJ (X351) 3.0",3,Diesel,2012-2018
+Jaguar,"XJ (X351) 3.0",3,Petrol,2012-2018
+Jaguar,"XJ (X351) 5.0",5,Petrol,2012-2018
+"Land Rover",Discovery,3,Diesel,2004-2009
+"Land Rover","Discovery 4",3,Diesel,2009-2013
+"Land Rover","Discovery Sport",2.2,Diesel,2015-2017
+"Land Rover",Evoque,2.2,Diesel,2011-2015
+"Land Rover","Evoque 4x4",2,Diesel,2011-2015
+"Land Rover","Evoque 4x4",2,Diesel,2015-2017
+"Land Rover","Evoque 4x4",2.2,Diesel,2011-2015
+"Land Rover","Freelander 2",2.2,Diesel,2006-2010
+"Land Rover","Freelander 3",2.2,Diesel,2009-2014
+"Land Rover","Range Rover (LS)",2.7,Diesel,2005-2013
+"Land Rover","Range Rover (LS)",3,Diesel,2009-2013
+"Land Rover","Range Rover (LS)",4.4,Diesel,2009-2013
+"Land Rover","Range Rover (LS)",5,Diesel,2009-2013
+"Land Rover","Range Rover (LW)",3,Diesel,2013-2017
+"Land Rover","Range Rover (LW)",4.4,Diesel,2013-2018
+"Land Rover","Range Rover (LW)",5,Diesel,2013-2019
+"Mercedes Benz","A-Class (W176) 160 CDI",1.5,Diesel,2013-2016
+"Mercedes Benz","A-Class (W176) 180 ",1.6,Petrol,2012-2016
+"Mercedes Benz","A-Class (W176) 180 CDI",1.8,Diesel,2012-2016
+"Mercedes Benz","A-Class (W176) 200",2,Petrol,2012-2016
+"Mercedes Benz","A-Class (W176) 200 CDI",2,Diesel,2012-2016
+"Mercedes Benz","A-Class (W176) 220 4MATIC",2,Petrol,2012-2016
+"Mercedes Benz","A-Class (W176) 220 CDI",2,Diesel,2012-2016
+"Mercedes Benz","A-Class (W176) 250",2,Petrol,2012-2016
+"Mercedes Benz","A-Class (W176) 45 AMG",2,Petrol,2012-2016
+"Mercedes Benz","B-Class (W245) 200",2,Petrol,2010-2016
+"Mercedes Benz","C-Class (W203) 180",2,Petrol,2000-2005
+"Mercedes Benz","C-Class (W203) 180 Kompressor",1.8,Petrol,2000-2005
+"Mercedes Benz","C-Class (W203) 200 CDI",2,Diesel,2000-2005
+"Mercedes Benz","C-Class (W203) 200 CGI",1.8,Petrol,2000-2005
+"Mercedes Benz","C-Class (W203) 200 Kompressor",2,Petrol,2000-2005
+"Mercedes Benz","C-Class (W203) 220 CDI",2.2,Diesel,2000-2005
+"Mercedes Benz","C-Class (W203) 230 Kompressor",1.8,Petrol,2000-2005
+"Mercedes Benz","C-Class (W204) 180 CDI",2,Diesel,2007-2011
+"Mercedes Benz","C-Class (W204) 180 Kompressor",1.8,Petrol,2007-2011
+"Mercedes Benz","C-Class (W204) 200 CDI",2,Diesel,2007-2011
+"Mercedes Benz","C-Class (W204) 200 Kompressor",1.8,Petrol,2007-2011
+"Mercedes Benz","C-Class (W204) 220 CDI",2,Diesel,2007-2011
+"Mercedes Benz","C-Class (W204) 230 ",2.5,Petrol,2007-2011
+"Mercedes Benz","C-Class (W204) 250 CDI",2,Diesel,2007-2011
+"Mercedes Benz","C-Class (W204) 280",3,Petrol,2007-2011
+"Mercedes Benz","C-Class (W204) 320 CDI",3,Diesel,2007-2011
+"Mercedes Benz","C-Class (W204) 350 CDI",3,Diesel,2007-2011
+"Mercedes Benz","C-Class (W205) 180",1.6,Petrol,2013-2016
+"Mercedes Benz","C-Class (W205) 180 BlueTEC",1.6,Diesel,2013-2016
+"Mercedes Benz","C-Class (W205) 200",2,Petrol,2013-2016
+"Mercedes Benz","C-Class (W205) 200 BlueTEC",1.6,Diesel,2013-2016
+"Mercedes Benz","C-Class (W205) 220 BlueTEC",2,Diesel,2013-2016
+"Mercedes Benz","C-Class (W205) 250 BlueTEC",2,Diesel,2013-2016
+"Mercedes Benz","C-Class (W206) 180",1.6,Petrol,2016-2019
+"Mercedes Benz","C-Class (W206) 180 BlueTEC",1.6,Diesel,2016-2019
+"Mercedes Benz","C-Class (W206) 200",2,Petrol,2016-2019
+"Mercedes Benz","C-Class (W206) 200 BlueTEC",1.6,Diesel,2016-2019
+"Mercedes Benz","C-Class (W206) 220 BlueTEC",2,Diesel,2016-2019
+"Mercedes Benz","C-Class (W206) 250 BlueTEC",2,Diesel,2016-2019
+"Mercedes Benz","CLA (C117) 180",1.6,Petrol,2013-2016
+"Mercedes Benz","CLA (C117) 180 CDI",1.5,Diesel,2013-2016
+"Mercedes Benz","CLA (C117) 200",1.6,Petrol,2013-2016
+"Mercedes Benz","CLA (C117) 200 CDI",1.8,Diesel,2013-2016
+"Mercedes Benz","CLA (C117) 220 CDI",2.1,Diesel,2013-2016
+"Mercedes Benz","CLA (C117) 250",2,Petrol,2013-2016
+"Mercedes Benz","CLA (C117) 45 AMG",2,Petrol,2013-2016
+"Mercedes Benz","CLS (C219) 280",3,Petrol,2008-2010
+"Mercedes Benz","CLS (C219) 320 CDI",3,Diesel,2008-2010
+"Mercedes Benz","CLS (C219) 350",3.5,Petrol,2008-2010
+"Mercedes Benz","CLS (C219) 350 CGI",3.5,Petrol,2008-2010
+"Mercedes Benz","E-Class (W211) 200 CDI",2.2,Diesel,2004-2008
+"Mercedes Benz","E-Class (W211) 200 Kompressor",1.8,Petrol,2004-2008
+"Mercedes Benz","E-Class (W211) 220 CDI",2.1,Diesel,2004-2008
+"Mercedes Benz","E-Class (W211) 230",2.5,Petrol,2004-2008
+"Mercedes Benz","E-Class (W211) 270 CDI",2.7,Diesel,2004-2008
+"Mercedes Benz","E-Class (W211) 280",3,Petrol,2004-2008
+"Mercedes Benz","E-Class (W211) 280 CDI",3.2,Diesel,2004-2008
+"Mercedes Benz","E-Class (W211) 300 BlueTEC",3,Diesel,2004-2008
+"Mercedes Benz","E-Class (W211) 320",3.2,Petrol,2004-2008
+"Mercedes Benz","E-Class (W211) 320 CDI",3.2,Diesel,2004-2008
+"Mercedes Benz","E-Class (W211) 350",3.5,Petrol,2004-2008
+"Mercedes Benz","E-Class (W211) 350 CGI",3.5,Petrol,2004-2008
+"Mercedes Benz","E-Class (W211) 420 CDI",4,Diesel,2004-2008
+"Mercedes Benz","E-Class (W212) 200",2,Petrol,2009-2013
+"Mercedes Benz","E-Class (W212) 200 CDI",2,Diesel,2009-2013
+"Mercedes Benz","E-Class (W212) 220 BlueTEC",2,Diesel,2009-2013
+"Mercedes Benz","E-Class (W212) 220 CDI",2.1,Diesel,2009-2013
+"Mercedes Benz","E-Class (W212) 250",2,Petrol,2009-2013
+"Mercedes Benz","E-Class (W212) 250 CDI",2.1,Diesel,2009-2013
+"Mercedes Benz","E-Class (W212) 250 CGI",1.8,Petrol,2009-2013
+"Mercedes Benz","E-Class (W212) 300",3,Petrol,2009-2013
+"Mercedes Benz","E-Class (W212) 350",3.5,Petrol,2009-2013
+"Mercedes Benz","E-Class (W212) 350 BlueTEC",3,Diesel,2009-2013
+"Mercedes Benz","E-Class (W212) 350 CDI",3,Diesel,2009-2013
+"Mercedes Benz","E-Class (W213) 200",2,Petrol,2013-2017
+"Mercedes Benz","E-Class (W213) 200 CDI",2,Diesel,2013-2017
+"Mercedes Benz","E-Class (W213) 220 BlueTEC",2,Diesel,2013-2017
+"Mercedes Benz","E-Class (W213) 220 CDI",2.1,Diesel,2013-2017
+"Mercedes Benz","E-Class (W213) 250",2,Petrol,2013-2017
+"Mercedes Benz","E-Class (W213) 250 CDI",2.1,Diesel,2013-2017
+"Mercedes Benz","E-Class (W213) 250 CGI",1.8,Petrol,2013-2017
+"Mercedes Benz","E-Class (W213) 300",3,Petrol,2013-2017
+"Mercedes Benz","E-Class (W213) 350",3.5,Petrol,2013-2017
+"Mercedes Benz","E-Class (W213) 350 BlueTEC",3,Diesel,2013-2017
+"Mercedes Benz","E-Class (W213) 350 CDI",3,Diesel,2013-2017
+"Mercedes Benz","E-Class Coupe (C207) 200",2,Petrol,2013-2016
+"Mercedes Benz","E-Class Coupe (C207) 200 CGI",1.8,Petrol,2013-2016
+"Mercedes Benz","E-Class Coupe (C207) 220 CDI",2.2,Diesel,2013-2016
+"Mercedes Benz","E-Class Coupe (C207) 250",2,Petrol,2013-2016
+"Mercedes Benz","E-Class Coupe (C207) 250 CDI",2.2,Diesel,2013-2016
+"Mercedes Benz","E-Class Coupe (C207) 250 CGI",1.8,Petrol,2013-2016
+"Mercedes Benz","E-Class Coupe (C207) 350",3.5,Petrol,2013-2016
+"Mercedes Benz","GL (X164) 320 CDI",3,Diesel,2006-2009
+"Mercedes Benz","GL (X164) 350 CDI",3,Diesel,2006-2009
+"Mercedes Benz","GL (X164) 420 CDI",4,Diesel,2006-2009
+"Mercedes Benz","GL (X164) 450",4.7,Petrol,2006-2009
+"Mercedes Benz","GL (X164) 550",5.5,Petrol,2006-2009
+"Mercedes Benz","GL (X166) 350 BlueTEC 4MATIC",3,Diesel,2015-2018
+"Mercedes Benz","GL (X166) 400 4MATIC",3,Petrol,2015-2018
+"Mercedes Benz","GL (X166) 450",4.7,Petrol,2015-2018
+"Mercedes Benz","GL (X166) 500",4.7,Petrol,2015-2018
+"Mercedes Benz","GL (X166) 63 AMG",5.5,Petrol,2015-2018
+"Mercedes Benz","GLA (X156) 200",1.6,Petrol,2013-2016
+"Mercedes Benz","GLA (X156) 200 CDI",2.1,Diesel,2013-2016
+"Mercedes Benz","GLA (X156) 220 CDI",2.1,Diesel,2013-2016
+"Mercedes Benz","GLA (X156) 250",2,Petrol,2013-2016
+"Mercedes Benz","GLA (X156) 45 AMG",2,Petrol,2013-2016
+"Mercedes Benz","GLC 220D",2.1,Diesel,2016-2019
+"Mercedes Benz","GLC 300",3,Petrol,2016-2019
+"Mercedes Benz","GLE 250 CDI",2.1,Diesel,2015-2018
+"Mercedes Benz","GLE 350 CDI",3,Diesel,2015-2018
+"Mercedes Benz","GLS 350 D",3,Diesel,2016-2019
+"Mercedes Benz","GLS 400 4MATIC",3,Petrol,2016-2019
+"Mercedes Benz","G-Wagon (W461) 230 GE",2.3,Petrol,1993-2016
+"Mercedes Benz","G-Wagon (W461) 250 GD",2.5,Diesel,1990-2016
+"Mercedes Benz","G-Wagon (W461) 290 GD",2.9,Diesel,1992-2016
+"Mercedes Benz","G-Wagon (W461) G 270 CDI",2.7,Diesel,2003-2016
+"Mercedes Benz","G-Wagon (W461) G 280 CDI",3,Diesel,2009-2016
+"Mercedes Benz","G-Wagon (W461) G 290 TDI",2.9,Diesel,1997-2016
+"Mercedes Benz","G-Wagon (W461) G 300 CDI",3,Diesel,2010-2016
+"Mercedes Benz","G-Wagon (W463) 250 GD",2.5,Diesel,1990-2016
+"Mercedes Benz","G-Wagon (W463) 300 GD",3,Diesel,1989-2016
+"Mercedes Benz","G-Wagon (W463) 300 GE",3,Petrol,1990-2016
+"Mercedes Benz","G-Wagon (W463) 350 TURBO GD",3.4,Diesel,1991-2016
+"Mercedes Benz","G-Wagon (W463) G 270 CDI",2.7,Diesel,2001-2016
+"Mercedes Benz","G-Wagon (W463) G 300 TD",3,Diesel,1996-2016
+"Mercedes Benz","G-Wagon (W463) G 320",3.2,Petrol,1997-2016
+"Mercedes Benz","G-Wagon (W463) G 320 CDI",3,Diesel,2006-2016
+"Mercedes Benz","G-Wagon (W463) G 350 CDI",3,Diesel,2011-2016
+"Mercedes Benz","G-Wagon (W463) G 36 AMG",3.6,Petrol,1995-2016
+"Mercedes Benz","G-Wagon (W463) G 400 CDI",4,Diesel,2000-2016
+"Mercedes Benz","G-Wagon (W463) G 500",5,Petrol,1998-2016
+"Mercedes Benz","G-Wagon (W463) G 500 E",4.9,Petrol,1993-2016
+"Mercedes Benz","G-Wagon (W463) G 55 AMG",5.5,Petrol,1999-2016
+"Mercedes Benz","G-Wagon (W463) G 550",5.5,Petrol,2008-2016
+"Mercedes Benz","G-Wagon (W463) G 63 AMG",5.5,Petrol,2012-2016
+"Mercedes Benz","ML (W163) 230",2.3,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 270 CDI",2.7,Diesel,1998-2005
+"Mercedes Benz","ML (W163) 320",3.2,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 350",3.7,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 350 4MATIC",3.7,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 400 CDI",4,Diesel,1998-2005
+"Mercedes Benz","ML (W163) 430",4.3,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 500",5,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 500 4MATIC",5,Petrol,1998-2005
+"Mercedes Benz","ML (W163) 55 AMG",5.4,Petrol,1998-2005
+"Mercedes Benz","ML (W164) 280 CDI",3,Diesel,2005-2011
+"Mercedes Benz","ML (W164) 300 CDI 4MATIC",3,Diesel,2005-2011
+"Mercedes Benz","ML (W164) 320 CDI 4MATIC",3,Diesel,2005-2011
+"Mercedes Benz","ML (W164) 350 4MATIC",3,Petrol,2005-2011
+"Mercedes Benz","ML (W164) 350 CDI 4MATIC",3,Diesel,2005-2011
+"Mercedes Benz","ML (W164) 420 CDI 4MATIC",4,Diesel,2005-2011
+"Mercedes Benz","ML (W164) 450 4MATIC",3.5,Petrol,2005-2011
+"Mercedes Benz","ML (W164) 500 4MATIC",5,Petrol,2005-2011
+"Mercedes Benz","ML (W164) 550 4MATIC",5.5,Petrol,2005-2011
+"Mercedes Benz","ML (W164) 63 AMG 4MATIC",6.2,Petrol,2005-2011
+"Mercedes Benz","ML (W166) 250 CDI BlueTEC 4MATIC",2.1,Diesel,2011-2014
+"Mercedes Benz","S-Class (W220) 280",2.8,Petrol,1998-2005
+"Mercedes Benz","S-Class (W220) 320",3.2,Petrol,1998-2005
+"Mercedes Benz","S-Class (W220) 320 CDI",3.2,Diesel,1998-2005
+"Mercedes Benz","S-Class (W220) 350",3.7,Petrol,1998-2005
+"Mercedes Benz","S-Class (W220) 400 CDI",4,Diesel,1998-2005
+"Mercedes Benz","S-Class (W220) 430 ",4.3,Petrol,1998-2005
+"Mercedes Benz","S-Class (W221) 250 CDI",2.1,Diesel,2006-2013
+"Mercedes Benz","S-Class (W221) 300",3,Petrol,2006-2013
+"Mercedes Benz","S-Class (W221) 320 CDI",3,Diesel,2006-2013
+"Mercedes Benz","S-Class (W221) 350",3.5,Petrol,2006-2013
+"Mercedes Benz","S-Class (W221) 350 BlueTEC",3,Diesel,2006-2013
+"Mercedes Benz","S-Class (W221) 350 CDI",3,Diesel,2006-2013
+"Mercedes Benz","S-Class (W221) 350 CDI 4Matic",3,Diesel,2006-2013
+"Mercedes Benz","S-Class (W221) 350 CGI",3.5,Petrol,2006-2013
+"Mercedes Benz","S-Class (W221) 420 CDI",4,Diesel,2006-2013
+"Mercedes Benz","S-Class (W221) 450",4.7,Petrol,2006-2013
+"Mercedes Benz","S-Class (W221) 550 CGI",4.7,Petrol,2006-2013
+"Mercedes Benz","S-Class (W222) 320",3,Petrol,2014-2018
+"Mercedes Benz","S-Class (W222) 350 BlueTEC",3,Diesel,2014-2018
+"Mercedes Benz","S-Class (W222) 400",3.5,Petrol,2014-2018
+"Mercedes Benz","S-Class (W222) 500",4.7,Petrol,2014-2018
+"Mercedes Benz","S-Class Coupe (C217) 500",4.7,Petrol,2014-2018
+"Mercedes Benz","S-Class Coupe (C217) 63 AMG",5.5,Petrol,2014-2018
+"Mercedes Benz","SLC-43 AMG",3,Petrol,2016-2019
+"Mercedes Benz","SLK (R171) 200",1.8,Petrol,2009-2011
+"Mercedes Benz","SLK (R171) 200 Kompressor",1.8,Petrol,2009-2011
+"Mercedes Benz","SLK (R171) 280",3,Petrol,2009-2011
+"Mercedes Benz","SLK (R171) 350",3.5,Petrol,2009-2011
+"Mercedes Benz","SLK (R171) 55 AMG",5.5,Petrol,2009-2011
+"Mercedes Benz","SLK (R172) 200",1.8,Petrol,2011-2017
+"Mercedes Benz","SLK (R172) 250",1.8,Petrol,2011-2017
+"Mercedes Benz","SLK (R172) 250 CDI",2.1,Diesel,2011-2017
+"Mercedes Benz","SLK (R172) 350",3.5,Petrol,2011-2017
+"Mercedes Benz","SLK (R172) 55 AMG",5.5,Petrol,2011-2017
+Mitsubishi,Cedia,1.3,Petrol,2004-2015
+Mitsubishi,Cedia,1.5,Petrol,2004-2015
+Mitsubishi,Cedia,1.8,Petrol,2004-2015
+Mitsubishi,Cedia,2,Petrol,2004-2015
+Mitsubishi,Cedia,2.4,Petrol,2004-2015
+Mitsubishi,Lancer,1.5,Petrol,1995-2003
+Mitsubishi,Lancer,1.8,Petrol,1995-2003
+Mitsubishi,Lancer,2,Petrol,1995-2003
+Mitsubishi,Lancer,2.4,Petrol,1995-2003
+Mitsubishi,"Lancer Evo",2,Petrol,2011-2016
+Mitsubishi,"Montero AT",3.5,Diesel,2007-2012
+Mitsubishi,"Montero MT",3.2,Diesel,2007-2012
+Mitsubishi,Outlander,2.4,Diesel,2011-2014
+Mitsubishi,"Outlander XL",2.4,Petrol,2007-2011
+Mitsubishi,"Pajero SFX",2.8,Diesel,1997-2010
+Mitsubishi,"Pajero Sport",2.5,Diesel,2012-2017
+Nissan,Evalia,1.5,Diesel,2012-2015
+Nissan,"GT-R (R35)3.8 V6",3.8,Petrol,2008-2016
+Nissan,"GT-R (R35)3.8 V6",3.8,Petrol,2016-2019
+Nissan,"Micra (K13K)",1.2,Petrol,2010-2013
+Nissan,"Micra (K13K)",1.2,Petrol,2013-2015
+Nissan,"Micra (K13K)",1.5,Diesel,2010-2013
+Nissan,"Micra (K13K)",1.5,Diesel,2013-2015
+Nissan,"Micra Active (MK13K)",1.2,Petrol,2013-2015
+Nissan,"Micra Active (MK13K)",1.2,Petrol,2015-2015
+Nissan,"Sunny (N17K)",1.5,Diesel,2011-2014
+Nissan,"Sunny (N17K)",1.5,Petrol,2011-2014
+Nissan,"Sunny (N17KK)",1.5,Diesel,2015-2018
+Nissan,"Sunny (N17KK)",1.5,Petrol,2015-2018
+Nissan,"Teana (J31)",2.3,Petrol,2005-2008
+Nissan,"Teana (J32)",2.5,Petrol,2008-2011
+Nissan,"Teana (J32)",2.5,Petrol,2011-2013
+Nissan,"Terrano 1.5 XE",1.5,Diesel,2013-2018
+Nissan,"Terrano 1.5 XL",1.6,Petrol,2013-2018
+Nissan,"Terrano 1.5 XV ",1.5,Diesel,2013-2018
+Nissan,"Xtrail (T30)",2.2,Diesel,2001-2013
+Nissan,"Xtrail (T31)",2,Diesel,2007-2014
+Opel,Astra,1.4,Petrol,1996-2003
+Opel,Corsa,1.4,Petrol,2000-2003
+Opel,Corsa,1.6,Petrol,2000-2003
+Opel,"Vectra C",2.2,Petrol,2002-2005
+Premier,Rio,1.2,Diesel,2013-2017
+Premier,Rio,1.2,Petrol,2013-2017
+Premier,Rio,1.5,Diesel,2013-2017
+Renault,Duster,1.5,Diesel,2012-2016
+Renault,Duster,1.6,Diesel,2012-2016
+Renault,Duster,1.6,Petrol,2012-2016
+Renault,Fluence,1.5,Diesel,2011-2014
+Renault,Fluence,1.5,Diesel,2014-2017
+Renault,Fluence,2,Petrol,2010-2017
+Renault,Koleos,2,Diesel,2008-2016
+Renault,Kwid,0.8,Petrol,2015-2018
+Renault,Kwid,1,Petrol,2016-2018
+Renault,Lodgy,1.5,Diesel,2015-2018
+Renault,Logan,1.4,Diesel,2004-2011
+Renault,Logan,1.4,Petrol,2007-2011
+Renault,"Logan CNG",1.6,Petrol,2008-2011
+Renault,Pulse,1.2,Petrol,2012-2016
+Renault,Pulse,1.5,Diesel,2012-2016
+Renault,Scala,1.5,Diesel,2012-2017
+Renault,Scala,1.5,Petrol,2012-2017
+Skoda,Fabia,1.2,Diesel,2007-2011
+Skoda,Fabia,1.2,Petrol,2007-2011
+Skoda,Fabia,1.4,Diesel,2007-2011
+Skoda,Fabia,1.4,Petrol,2007-2011
+Skoda,Fabia,1.6,Diesel,2007-2011
+Skoda,Fabia,1.6,Petrol,2007-2011
+Skoda,"Laura (1Z3)",1.8,Petrol,2007-2013
+Skoda,"Laura (1Z3)",2,Diesel,2007-2013
+Skoda,"Laura (1Z3)",2,Petrol,2007-2013
+Skoda,"Octavia (1U2)",1.8,Petrol,2001-2006
+Skoda,"Octavia (1U2)",1.9,Diesel,2001-2006
+Skoda,"Octavia (1U2)",2,Petrol,2001-2006
+Skoda,"Octavia (5E3)",1.8,Petrol,2013-2017
+Skoda,"Octavia (5E3)",2,Diesel,2013-2017
+Skoda,"Octavia (5E3)",2,Petrol,2013-2017
+Skoda,"Rapid (NA2)",1.6,Diesel,2011-2016
+Skoda,"Rapid (NA2)",1.6,Petrol,2011-2016
+Skoda,"Rapid (NA3)",1.6,Diesel,2016-2019
+Skoda,"Rapid (NA3)",1.6,Petrol,2016-2019
+Skoda,"Superb (3T4)",1.8,Petrol,2009-2016
+Skoda,"Superb (3T4)",1.9,Diesel,2009-2016
+Skoda,"Superb (3T4)",2,Diesel,2009-2016
+Skoda,"Superb (3T4)",2,Petrol,2009-2016
+Skoda,"Superb (3T4)",3.6,Petrol,2009-2016
+Skoda,"Superb (3U4)",1.9,Diesel,2005-2009
+Skoda,"Superb (3U4)",2,Diesel,2005-2009
+Skoda,"Superb (3U4)",2,Petrol,2005-2009
+Skoda,"Superb (3U4)",2.5,Diesel,2005-2009
+Skoda,"Superb (3V4)",1.8,Petrol,2016-2019
+Skoda,"Superb (3V4)",1.8,Petrol,2016-2019
+Skoda,"Superb (3V4)",2,Diesel,2016-2019
+Skoda,"Superb V8 (3U4)",2.8,Petrol,2005-2009
+Skoda,"Yeti (5L)",1.2,Petrol,2009-2016
+Skoda,"Yeti (5L)",1.4,Petrol,2009-2016
+Skoda,"Yeti (5L)",1.6,Diesel,2009-2016
+Skoda,"Yeti (5L)",2,Diesel,2009-2016
+Skoda,"Yeti (5L) 4x4",1.8,Petrol,2009-2016
+Skoda,"Yeti (5L) 4x4",2,Diesel,2009-2016
+Tata,Aria,2.2,Diesel,2010-2014
+Tata,"Aria 4WD",2.2,Diesel,2010-2014
+Tata,"Aria LET",2.2,Diesel,2014-2016
+Tata,"Aria LET 4WD",2.2,Diesel,2014-2016
+Tata,Bolt,1.2,Petrol,2015-2018
+Tata,Bolt,1.3,Diesel,2015-2018
+Tata,"Indica EV2",1.4,Diesel,2013-2016
+Tata,"Indica V2",1.4,Diesel,2001-2003
+Tata,"Indica V2 DiCOR",1.4,Diesel,2006-2013
+Tata,"Indica V2 DiCOR Type-2",1.4,Diesel,2010-2013
+Tata,"Indica V2 New",1.4,Diesel,2004-2006
+Tata,"Indica V2 Turbo",1.4,Diesel,2005-2013
+Tata,"Indica V2 Turbomax",1.4,Diesel,2010-2013
+Tata,"Indica V2 XETA",1.2,Petrol,2006-2013
+Tata,"Indica V2 XETA",1.4,Petrol,2006-2013
+Tata,"Indica Vista",1.2,Petrol,2008-2012
+Tata,"Indica Vista",1.3,Diesel,2008-2012
+Tata,"Indica Vista",1.4,Diesel,2008-2012
+Tata,"Indica Vista",1.4,Petrol,2008-2012
+Tata,"Indica Vista TECH",1.3,Diesel,2014-2015
+Tata,"Indica Vista TECH",1.4,Diesel,2014-2015
+Tata,"Indica Vista Type-2",1.2,Petrol,2012-2014
+Tata,"Indica Vista Type-2",1.3,Diesel,2012-2014
+Tata,"Indica Vista Type-2",1.4,Diesel,2012-2014
+Tata,"Indica Vista Type-2",1.4,Petrol,2012-2014
+Tata,Indigo,1.4,Diesel,2002-2005
+Tata,Indigo,1.4,Petrol,2005-2009
+Tata,"Indigo CS",1.2,Diesel,2008-2011
+Tata,"Indigo CS",1.4,Diesel,2008-2011
+Tata,"Indigo eCS",1.2,Petrol,2013-2016
+Tata,"Indigo eCS",1.4,Diesel,2013-2016
+Tata,"Indigo Marina",1.4,Diesel,2003-2010
+Tata,"Indigo Marina",1.4,Petrol,2003-2010
+Tata,"Indigo XL",1.4,Diesel,2007-2011
+Tata,"Indigo XL",1.4,Petrol,2007-2011
+Tata,Manza,1.3,Diesel,2009-2015
+Tata,Manza,1.4,Petrol,2009-2015
+Tata,"Manza Club Class",1.3,Diesel,2012-2015
+Tata,"Manza Club Class",1.4,Petrol,2012-2015
+Tata,Safari,2,Diesel,1998-2003
+Tata,Safari,2.1,Diesel,2003-2006
+Tata,Safari,2.2,Diesel,2007-2009
+Tata,Safari,2.2,Diesel,2010-2016
+Tata,Safari,3,Diesel,2005-2007
+Tata,"Safari 4WD",2.2,Diesel,2007-2009
+Tata,"Safari 4WD",2.2,Diesel,2010-2016
+Tata,"Safari 4WD",3,Diesel,2005-2007
+Tata,"Safari Storme",2.2,Diesel,2012-2015
+Tata,"Safari Storme",2.2,Diesel,2015-2018
+Tata,"Safari Storme 4WD",2.2,Diesel,2015-2018
+Tata,"Safari Storme VariCOR 400 ",2.2,Diesel,2015-2018
+Tata,"Safari Storme VariCOR 400 4WD",2.2,Diesel,2015-2018
+Tata,Sumo,2,Diesel,1994-2004
+Tata,"Sumo 4X4",2,Diesel,1998-2004
+Tata,"Sumo Spacio",3,Diesel,2000-2007
+Tata,"Sumo Spacio Plus",3,Diesel,2007-2010
+Toyota,"Camry (XV30)",2,Petrol,2001-2006
+Toyota,"Camry (XV30)",2.4,Petrol,2001-2006
+Toyota,"Camry (XV30)",3,Petrol,2001-2006
+Toyota,"Camry (XV40)",2.4,Petrol,2006-2011
+Toyota,"Camry (XV40)",3.5,Petrol,2006-2011
+Toyota,"Camry (XV50)",2.5,Petrol,2012-2017
+Toyota,"Camry (XV50)",2.5,Petrol,2012-2017
+Toyota,"Corolla (E120)",1.8,Petrol,2003-2008
+Toyota,"Corolla Altis (E140)",1.4,Diesel,2010-2013
+Toyota,"Corolla Altis (E140)",1.8,Petrol,2008-2011
+Toyota,"Corolla Altis (E140)",1.8,Petrol,2011-2013
+Toyota,"Corolla Altis (E170)",1.4,Diesel,2014-2017
+Toyota,"Corolla Altis (E170)",1.8,Petrol,2014-2017
+Toyota,Etios,1.4,Diesel,2011-2016
+Toyota,Etios,1.5,Petrol,2010-2016
+Toyota,"Etios Cross",1.2,Petrol,2014-2017
+Toyota,"Etios Cross",1.4,Diesel,2014-2017
+Toyota,"Etios Cross",1.5,Petrol,2014-2017
+Toyota,"Etios Liva",1.2,Petrol,2010-2017
+Toyota,"Etios Liva",1.4,Diesel,2013-2017
+Toyota,"Etios Liva",1.5,Petrol,2013-2017
+Toyota,"Fortuner Type-1",2.5,Diesel,2009-2012
+Toyota,"Fortuner Type-1",3,Diesel,2009-2012
+Toyota,"Fortuner Type-1 4WD",3,Diesel,2009-2012
+Toyota,"Fortuner Type-2",2.5,Diesel,2012-2016
+Toyota,"Fortuner Type-2",3,Diesel,2012-2016
+Toyota,"Fortuner Type-2 4WD",3,Diesel,2012-2016
+Toyota,"Fortuner Type-2 AT",3,Diesel,2012-2016
+Toyota,"Fortuner Type-3",2.5,Petrol,2016-2019
+Toyota,"Fortuner Type-3",3,Diesel,2016-2019
+Toyota,"Fortuner Type-3 4WD",3,Diesel,2016-2019
+Toyota,"Fortuner Type-3 AT",3,Diesel,2016-2019
+Toyota,Innova,2,Petrol,2005-2012
+Toyota,Innova,2.5,Diesel,2005-2012
+Toyota,"Innova Crysta",2.4,Diesel,2016-2019
+Toyota,"Innova Crysta",2.7,Petrol,2016-2019
+Toyota,"Innova Crysta",2.8,Diesel,2016-2019
+Toyota,"Innova Type-2",2,Petrol,2012-2015
+Toyota,"Innova Type-2",2.5,Diesel,2012-2015
+Toyota,"Land Cruiser (J100)",4.2,Diesel,1998-2003
+Toyota,"Land Cruiser (J100)",4.2,Diesel,2003-2007
+Toyota,"Land Cruiser (J100)",4.7,Petrol,1998-2002
+Toyota,"Land Cruiser (J100)",4.7,Petrol,2002-2007
+Toyota,"Land Cruiser (J200)",4.5,Diesel,2007-2015
+Toyota,"Land Cruiser (J200) AT",4.5,Diesel,2012-2016
+Toyota,"Land Cruiser (J200) MT",4.5,Diesel,2012-2016
+Toyota,"Land Cruiser (J200) V8",4.7,Petrol,2007-2012
+Toyota,"Prado (J120)",3,Diesel,2002-2004
+Toyota,"Prado (J120)",3,Diesel,2004-2009
+Toyota,"Prado (J120)",4,Petrol,2003-2004
+Toyota,"Prado (J120)",4,Petrol,2004-2009
+Toyota,"Prado (J150)",3,Diesel,2009-2015
+Toyota,"Prado (J150)",3,Diesel,2013-2016
+Toyota,Prius,1.8,Petrol,2012-2015
+Toyota,Qualis,2,Petrol,1999-2004
+Toyota,Qualis,2.4,Diesel,1999-2004
+VolksWagen,Ameo,1.2,Petrol,2016-2019
+VolksWagen,"Ameo TDI",1.5,Diesel,2016-2019
+VolksWagen,"Beetle (9C1) TDI",2,Diesel,2012-2017
+VolksWagen,"Jetta (6J)",1.4,Petrol,2011-2017
+VolksWagen,"Jetta (6J)",2,Diesel,2007-2011
+VolksWagen,"Jetta (6J)",2,Diesel,2011-2017
+VolksWagen,"Passat (362)",1.8,Petrol,2007-2010
+VolksWagen,"Passat (362) TDI",2,Diesel,2010-2012
+VolksWagen,"Passat (A32) FSI",3.6,Petrol,2011-2016
+VolksWagen,"Passat DSG",2,Diesel,2011-2014
+VolksWagen,"Passat TDI",2,Diesel,2014-2017
+VolksWagen,"Passat TSI",1.4,Petrol,2014-2017
+VolksWagen,"Passat TSI",1.8,Petrol,2007-2014
+VolksWagen,"Polo (6R)",1.2,Diesel,2011-2017
+VolksWagen,"Polo (6R)",1.2,Petrol,2011-2017
+VolksWagen,"Polo (6R) TDI",1.4,Diesel,2011-2017
+VolksWagen,"Polo (6R) TDI",1.6,Diesel,2011-2017
+VolksWagen,"Polo (6R) TSI",1.2,Petrol,2011-2017
+VolksWagen,"Polo (6R) TSI",1.6,Petrol,2011-2017
+VolksWagen,"Touareg (7P5) V6 TDI",3,Diesel,2011-2014
+VolksWagen,"Vento (162) ",1.6,Petrol,2011-2016
+VolksWagen,"Vento (162) ",1.6,Petrol,2011-2016
+VolksWagen,"Vento (162) TDI",1.5,Diesel,2016-2018
+VolksWagen,"Vento (162) TDI",1.6,Diesel,2011-2016
+VolksWagen,"Vento (162) TSI",1.2,Petrol,2011-2016
+Volvo,S60,2,Diesel,2013-2017
+Volvo,S60,2,Petrol,2013-2017
+Volvo,S60,2.4,Diesel,2010-2016
+Volvo,"S60 AWD",2.4,Diesel,2010-2016
+Volvo,"S80 II",2,Diesel,2010-2017
+Volvo,"S80 II",2,Petrol,2010-2017
+Volvo,"S80 II",2.4,Diesel,2010-2017
+Volvo,"S80 II AWD",2.4,Diesel,2010-2017
+Volvo,V40,1.6,Petrol,2013-2017
+Volvo,V40,2,Diesel,2013-2017
+Volvo,V40,2,Petrol,2013-2017
+Volvo,XC60,2,Diesel,2010-2012
+Volvo,XC60,2,Diesel,2012-2017
+Volvo,XC60,2.4,Diesel,2010-2012
+Volvo,"XC60 AWD",2.4,Diesel,2012-2017
+Volvo,XC90,2.4,Diesel,2009-2011
+Volvo,XC90,2.4,Diesel,2011-2016
+Volvo,XC90,3.2,Petrol,2011-2016
+Volvo,XC90,3.2,Petrol,2011-2016
+Volvo,"XC90 AWD",3.2,Petrol,2011-2016
+Hyundai,ACCENT,1.3,Petrol,1999-2006
+Hyundai,ACCENT,1.5,Diesel,2002-2007
+Hyundai,ACCENT,1.5,Petrol,1999-2007
+Hyundai,ACCENT,1.5,Petrol,2007-2013
+Hyundai,ACCENT,1.6,Petrol,1999-2007
+Hyundai,Creta,1.6,Petrol,2015-2017
+Hyundai,"Creta CRDI",1.4,Diesel,2015-2017
+Hyundai,"Creta CRDI",1.6,Diesel,2015-2017
+Hyundai,Elantra,1.8,Petrol,2004-2007
+Hyundai,Elantra,2,Petrol,2017-2017
+Hyundai,"Elantra CRDI",1.6,Diesel,2017-2017
+Hyundai,"Elantra CRDI",2,Diesel,2004-2007
+Hyundai,"Elantra Fluidic ",1.8,Petrol,2012-2015
+Hyundai,"Elantra Fluidic CRDI",1.6,Diesel,2012-2015
+Hyundai,Eon,0.8,Petrol,2011-2017
+Hyundai,Eon,1,Petrol,2011-2017
+Hyundai,Getz,1.1,Petrol,2004-2007
+Hyundai,Getz,1.1,Petrol,2007-2010
+Hyundai,Getz,1.3,Petrol,2004-2007
+Hyundai,Getz,1.3,Petrol,2007-2010
+Hyundai,"Getz CRDI",1.5,Diesel,2007-2010
+Hyundai,"Grand I10",1,Petrol,2013-2017
+Hyundai,"Grand I10",1.2,Petrol,2013-2017
+Hyundai,"Grand I10 CRDI",1.1,Diesel,2013-2017
+Hyundai,I10,1.1,Petrol,2007-2010
+Hyundai,I10,1.1,Petrol,2008-2010
+Hyundai,I10,1.1,Petrol,2010-2017
+Hyundai,I10,1.1,Petrol,2010-2017
+Hyundai,I20,1.2,Petrol,2008-2012
+Hyundai,I20,1.4,Petrol,2009-2012
+Hyundai,"I20 Active",1.2,Petrol,2014-2017
+Hyundai,"I20 Active Diesel",1.4,Diesel,2014-2017
+Hyundai,"I20 CRDI",1.4,Diesel,2009-2012
+Hyundai,"I20 CRDI",1.4,Diesel,2009-2012
+Hyundai,"I20 Elite",1.2,Petrol,2012-2014
+Hyundai,"I20 Elite",1.2,Petrol,2014-2017
+Hyundai,"I20 Elite",1.4,Petrol,2012-2015
+Hyundai,"I20 Elite Diesel",1.4,Diesel,2012-2014
+Hyundai,"I20 Elite Diesel",1.4,Diesel,2014-2017
+Hyundai,"Santa Fe II (CM)",2.4,Petrol,2009-2012
+Hyundai,"Santa Fe II (CM) CRDI",2.2,Diesel,2009-2012
+Hyundai,"Santa Fe II (CM) CRDI",2.2,Diesel,2011-2013
+Hyundai,"SANTA FE III (DM) CRDI",2.2,Diesel,2013-2017
+Hyundai,Santro,1,Petrol,1998-2005
+Hyundai,Santro,1.1,Petrol,1998-2005
+Hyundai,"Santro Xing",1.1,Petrol,2005-2007
+Hyundai,"Santro Xing",1.1,Petrol,2007-2010
+Hyundai,"SONATA EMBERA",2.4,Petrol,2005-2009
+Hyundai,"SONATA IV (EF-B) GOLD",2,Petrol,2001-2006
+Hyundai,"SONATA IV (EF-B) GOLD",2.7,Petrol,2002-2006
+Hyundai,"SONATA Transform",2.4,Petrol,2008-2011
+Hyundai,"SONATA V CRDI EMBERA",2,Diesel,2006-2009
+Hyundai,"SONATA V CRDI Transform",2,Diesel,2008-2011
+Hyundai,"SONATA VI (YF) FLUDIC",2.4,Petrol,2012-2014
+Hyundai,"TERRACAN (HP) CRDI",2.9,Diesel,2003-2005
+Hyundai,"Tucson CRDI",2,Diesel,2006-2008
+Hyundai,"Tucson CRDI Turbo",2,Diesel,2004-2006
+Hyundai,"Verna ",1.6,Petrol,2007-2011
+Hyundai,"Verna CRDI",1.5,Diesel,2007-2011
+Hyundai,"Verna Fluidic",1.4,Petrol,2011-2014
+Hyundai,"Verna Fluidic",1.4,Petrol,2014-2017
+Hyundai,"Verna Fluidic",1.6,Petrol,2011-2014
+Hyundai,"Verna Fluidic",1.6,Petrol,2014-2017
+Hyundai,"Verna Fluidic CRDI",1.4,Diesel,2011-2014
+Hyundai,"Verna Fluidic CRDI",1.4,Diesel,2014-2017
+Hyundai,"Verna Fluidic CRDI",1.6,Diesel,2011-2014
+Hyundai,"Verna Fluidic CRDI",1.6,Diesel,2014-2017
+Hyundai,Xcent,1,Petrol,2013-2017
+Hyundai,Xcent,1.2,Petrol,2013-2017
+Hyundai,"Xcent CRDI",1.1,Diesel,2013-2017
+Maruti,Alto,0.8,Petrol,2007-2012
+Maruti,Alto,0.8,Petrol,2010-2012
+Maruti,Astar,1,Petrol,2008-2014
+Maruti,"Ato 800",0.8,Petrol,2012-2017
+Maruti,"Ato K10",1,Petrol,2010-2014
+Maruti,Baleno,1.2,Petrol,2015-2017
+Maruti,Baleno,1.3,Diesel,2015-2017
+Maruti,Baleno,1.6,Petrol,1999-2007
+Maruti,Brezza,1.3,Diesel,2017-2017
+Maruti,Celerio,1,Diesel,2014-2017
+Maruti,Celerio,1,Petrol,2014-2017
+Maruti,Ciaz,1.3,Diesel,2014-2017
+Maruti,Ciaz,1.4,Petrol,2014-2017
+Maruti,Eeco,1.2,Petrol,2010-2017
+Maruti,Ertiga,1.3,Petrol,2012-2017
+Maruti,Ertiga,1.4,Petrol,2012-2017
+Maruti,Esteem,1.3,Petrol,2000-2007
+Maruti,Esteem,1.5,Diesel,2002-2004
+Maruti,Estilo,1,Petrol,2007-2014
+Maruti,"Grand Vitara",2,Petrol,2002-2006
+Maruti,"Grand Vitara",2.4,Petrol,2009-2015
+Maruti,"Grand Vitara",2.7,Petrol,2007-2008
+Maruti,"Gypsy 4WD",1.3,Petrol,2000-2015
+Maruti,Kizashi,2.4,Petrol,2010-2011
+Maruti,Kizashi,2.4,Petrol,2011-2014
+Maruti,"Maruti 800",0.8,Petrol,1986-2014
+Maruti,Omni,0.8,Petrol,2007-2017
+Maruti,Ritz,1.2,Petrol,2009-2017
+Maruti,Ritz,1.3,Diesel,2009-2017
+Maruti,Scross,1.3,Diesel,2015-2017
+Maruti,Scross,1.6,Diesel,2015-2017
+Maruti,"Swift  Type-1",1.2,Petrol,2010-2011
+Maruti,"Swift  Type-1",1.3,Diesel,2007-2011
+Maruti,"Swift  Type-1",1.3,Petrol,2005-2009
+Maruti,"Swift  Type-2",1.2,Petrol,2011-2017
+Maruti,"Swift  Type-2",1.3,Diesel,2011-2017
+Maruti,"Swift Dzire Type-1",1.2,Petrol,2010-2012
+Maruti,"Swift Dzire Type-1",1.3,Diesel,2008-2012
+Maruti,"Swift Dzire Type-1",1.3,Petrol,2007-2009
+Maruti,"Swift Dzire Type-2",1.2,Petrol,2012-2017
+Maruti,"Swift Dzire Type-2",1.3,Diesel,2012-2017
+Maruti,SX4,1.3,Petrol,2011-2014
+Maruti,SX4,1.6,Petrol,2010-2014
+Maruti,SX4,1.6,Petrol,2011-2014
+Maruti,Versa,1.3,Petrol,2007-2009
+Maruti,Wagonr,1,Petrol,2003-2010
+Maruti,Wagonr,1,Petrol,2010-2012
+Maruti,Wagonr,1,Petrol,2012-2014
+Maruti,Zen,1,Petrol,1993-2006
+Maruti,Zen,1,Petrol,2006-2008
+Maruti,Zen,1.5,Diesel,2004-2006
+Maruti,"Zen Estilo",1,Petrol,2006-2008
+Maruti,"Swift Dzire Type-3",1.2,Petrol,2017-2019
+Maruti,"Swift Dzire Type-3",1.2,Diesel,2017-2019
+Mahindra,"Maxx ",2.5,Diesel,2000-2005
+Mahindra,"Maxx Pick up",2.5,Diesel,2008-2017
+Mahindra,Marshal,2.5,Diesel,1996-2006
+Mahindra,Commander,2.5,Diesel,2002-2005
+Mahindra,"Commander 4*4",2.5,Diesel,2000-2005
+Mahindra,"Bolero Pickup",2,Diesel,2002-2004
+Mahindra,"Bolero Pickup",2.5,Diesel,2002-2017
+Mahindra,"Bolero Pickup 4*4",2.5,Diesel,1999-2017
+Mahindra,Bolero,2.5,Diesel,2000-2017
+Mahindra,"Bolero 4*4",2.5,Diesel,2000-2007
+Mahindra,"Bolero Power+",1.5,Diesel,2017-2017
+Mahindra,"Bolero Invader",2.5,Diesel,2001-2007
+Mahindra,"Bolero Camper",2.5,Diesel,2005-2010
+Mahindra,"Bolero Camper 4*4",2.5,Diesel,2006-2017
+Mahindra,"Bolero Camper Gold",2.5,Diesel,2010-2017
+Mahindra,"Bolero Maxi Truck",2.5,Diesel,2006-2017
+Mahindra,"Scorpio ",2,Petrol,2002-2017
+Mahindra,"Scorpio ",2.2,Diesel,2007-2017
+Mahindra,"Scorpio ",2.5,Diesel,2012-2017
+Mahindra,"Scorpio ",2.6,Diesel,2002-2014
+Mahindra,"Scorpio 4*4",2,Petrol,2002-2017
+Mahindra,"Scorpio 4*4",2.2,Diesel,2007-2017
+Mahindra,"Scorpio 4*4",2.6,Diesel,2002-2014
+Mahindra,"Scorpio Gateway",2.2,Diesel,2007-2017
+Mahindra,"Scorpio Gateway",2.5,Diesel,2007-2017
+Mahindra,"Scorpio Gateway",2.6,Diesel,2014-2017
+Mahindra,Savari,2.5,Diesel,2008-2017
+Mahindra,Gio,0.5,Diesel,2009-2017
+Mahindra,Xylo,2.2,Diesel,2010-2017
+Mahindra,Xylo,2.5,Diesel,2010-2017
+Mahindra,Thar,2.5,Diesel,2010-2017
+Mahindra,"Thar 4*4",2.5,Diesel,2010-2017
+Mahindra,Genio,2.2,Diesel,2012-2017
+Mahindra,Genio,2.5,Diesel,2010-2017
+Mahindra,Verito,1.4,Petrol,2011-2017
+Mahindra,Verito,1.5,Diesel,2011-2017
+Mahindra,XUV500,2.2,Diesel,2011-2017
+Mahindra,"XUV500 AWD",2.2,Diesel,2011-2017
+Mahindra,Rexton,2.7,Diesel,2012-2017
+Mahindra,Quanto,1.5,Diesel,2012-2017
+Mahindra,Reva-E20,,Electric,2013-2017
+Mahindra,"Maxximo Plus",0.9,Diesel,2013-2017
+Mahindra,"Maxximo Mini Van",0.9,Diesel,2013-2017
+Mahindra,TUV300,1.5,Diesel,2015-2017
+Mahindra,"Jeet0 L6-11",0.6,Diesel,2015-2017
+Mahindra,"Jeeto L6-16",0.6,Diesel,2015-2017
+Mahindra,"Jeeto S6-11",0.6,Diesel,2015-2017
+Mahindra,"Jeeto S6-16",0.6,Diesel,2015-2017
+Mahindra,"Jeeto X7-11",0.6,Diesel,2015-2017
+Mahindra,"Jeeto X7-16",0.6,Diesel,2015-2017
+Mahindra,KUV100,1.2,Petrol,2017-2017
+Mahindra,KUV100,1.2,Diesel,2017-2017

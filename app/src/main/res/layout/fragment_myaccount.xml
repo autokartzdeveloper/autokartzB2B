@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_account"
+        style="@style/MyToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0.2dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/account_char_name_tv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/mar_50"
+                android:background="@drawable/circle"
+                android:text="A"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/White"
+                android:textSize="@dimen/mar_50" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mar_20"
+                android:layout_marginRight="@dimen/mar_10"
+                android:layout_marginTop="@dimen/mar_40"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/account_garage_owner_name_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:cursorVisible="false"
+                    android:editable="false"
+                    android:text="Name"
+                    android:textColor="@color/appcolorblue"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/account_garage_owner_nameval_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:cursorVisible="false"
+                    android:editable="false"
+                    android:paddingLeft="@dimen/mar_10"
+                    android:text="Aditya"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/textSize18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mar_20"
+                android:layout_marginRight="@dimen/mar_10"
+                android:layout_marginTop="@dimen/mar_10">
+
+                <TextView
+                    android:id="@+id/account_email_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:cursorVisible="false"
+                    android:text="Email Id"
+                    android:textColor="@color/appcolorblue"
+                    android:textSize="@dimen/textSize18sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/account_emailval_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:cursorVisible="false"
+                    android:paddingLeft="@dimen/mar_10"
+                    android:text="aditya@gmail.com"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/textSize18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mar_20"
+                android:layout_marginRight="@dimen/mar_10"
+                android:layout_marginTop="@dimen/mar_10">
+
+                <TextView
+                    android:id="@+id/account_phone_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:cursorVisible="false"
+                    android:text="Phone"
+                    android:textColor="@color/appcolorblue"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/account_phoneval_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:cursorVisible="false"
+                    android:paddingLeft="@dimen/mar_10"
+                    android:text="7877737373"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/textSize18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mar_20"
+                android:layout_marginRight="@dimen/mar_10"
+                android:layout_marginTop="@dimen/mar_10">
+
+                <TextView
+                    android:id="@+id/address_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:cursorVisible="false"
+                    android:text="Address"
+                    android:textColor="@color/appcolorblue"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/addressval_tv"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:cursorVisible="false"
+                    android:paddingLeft="@dimen/mar_10"
+                    android:text="7877737373"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/textSize18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_bank_details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_10">
+
+                    <TextView
+                        android:id="@+id/bank_ac_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:cursorVisible="false"
+                        android:text="Bank A/c"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bank_ac_val_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:cursorVisible="false"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text="7877737373"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/textSize18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_10">
+
+                    <TextView
+                        android:id="@+id/ifsc_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:cursorVisible="false"
+                        android:text="IFSC code"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ifsc_val_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:cursorVisible="false"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text="7877737373"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/textSize18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_10">
+
+                    <TextView
+                        android:id="@+id/bank_branch_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:cursorVisible="false"
+                        android:text="Branch"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize18sp"
+
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bank_branch_val_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:cursorVisible="false"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text="aditya@gmail.com"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/textSize18sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_10">
+
+                    <TextView
+                        android:id="@+id/pan_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:cursorVisible="false"
+                        android:text="PAN"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/pan_val_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:cursorVisible="false"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text="7877737373"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/textSize18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/mar_20"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:layout_marginRight="@dimen/mar_10"
+                    android:layout_marginTop="@dimen/mar_10">
+
+                    <TextView
+                        android:id="@+id/gst_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:cursorVisible="false"
+                        android:text="GST No"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/gst_val_tv"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:cursorVisible="false"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text="7877737373"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/textSize18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
