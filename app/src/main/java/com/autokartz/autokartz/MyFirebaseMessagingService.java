@@ -42,6 +42,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         mContext = getApplicationContext();
         mAccountDetailHolder = new AccountDetailHolder(mContext);
         Log.d(TAG, "From: " + remoteMessage.getFrom());
+        String batchCount = String.valueOf(remoteMessage.getData().size());
+        mAccountDetailHolder.setNotificationCount(batchCount);
+
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
             user_id = remoteMessage.getData().get("user_id");
@@ -54,6 +57,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
         }
     }
+
 
     private void sendNotification(String messageBody) {
         if (mAccountDetailHolder.getIsUserLoggedIn() == true) {

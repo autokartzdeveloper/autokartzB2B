@@ -69,9 +69,9 @@ public class OrderDetailItemAdapter extends RecyclerView.Adapter<OrderDetailItem
         suggestion_id = mSuggestionResponseBeanList.get(position).getId();
         holder.mProductNameTv.setText(mSuggestionResponseBeanList.get(position).getPartName());
         holder.mBrandTv.setText(mSuggestionResponseBeanList.get(position).getBrand());
-        holder.mPriceTv.setText("Rs." + mSuggestionResponseBeanList.get(position).getPrice());
+        holder.mPriceTv.setText(mContext.getResources().getString(R.string.Rs) + mSuggestionResponseBeanList.get(position).getPrice());
         holder.mTaxTv.setText(mSuggestionResponseBeanList.get(position).getTax() + "%");
-        holder.mShipChargeTv.setText("Rs." + mSuggestionResponseBeanList.get(position).getShipCharges());
+        holder.mShipChargeTv.setText(mContext.getResources().getString(R.string.Rs) + mSuggestionResponseBeanList.get(position).getShipCharges());
         holder.mShipTimeTv.setText(mSuggestionResponseBeanList.get(position).getShipTime() + " " + "days");
         if (mSuggestionResponseBeanList.get(position).getAvailability().matches("1")) {
             holder.mAvailTv.setText("Yes");

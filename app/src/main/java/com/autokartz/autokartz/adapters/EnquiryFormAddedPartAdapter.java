@@ -6,14 +6,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.dialoges.ProductDetailDialog;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
+
+import org.apache.poi.hssf.record.formula.functions.T;
+
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -23,25 +30,29 @@ import butterknife.OnClick;
  */
 
 public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFormAddedPartAdapter.EnquiryFormAddedPartHolder> {
-
-
     private Context mContext;
     private Activity mActivity;
     private ArrayList<CategoryInformation> mAddedPartList;
     private AccountDetailHolder mAccountDetailHolder;
+    private Button mSubmitButton;
+    private Button mCarPartsBtn;
+    EnquiryCarPartsDetailsAdapter mEnquiryCarPartsDetailsAdapter;
 
-    public EnquiryFormAddedPartAdapter(Context context,Activity activity) {
-        mContext=context;
-        mActivity=activity;
-        mAccountDetailHolder=new AccountDetailHolder(mContext);
-        mAddedPartList=new ArrayList<>();
+    public EnquiryFormAddedPartAdapter(Context context, Activity activity, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn, EnquiryCarPartsDetailsAdapter enquiryCarPartsDetailsAdapter) {
+        mContext = context;
+        mActivity = activity;
+        mAccountDetailHolder = new AccountDetailHolder(mContext);
+        mSubmitButton = mSubmitCarPartsBtn;
+        mEnquiryCarPartsDetailsAdapter = enquiryCarPartsDetailsAdapter;
+        mCarPartsBtn = mAddCarPartsBtn;
+        mAddedPartList = new ArrayList<>();
         mAddedPartList.clear();
         mAddedPartList.addAll(mAccountDetailHolder.getAddPartDetails());
     }
 
     @Override
     public EnquiryFormAddedPartHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_enquiry_form_added_part_item,parent,false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_enquiry_form_added_part_item, parent, false);
         return new EnquiryFormAddedPartHolder(itemView);
     }
 
@@ -52,6 +63,11 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
 
     @Override
     public int getItemCount() {
+        if (mAddedPartList.size() != 0) {
+            mSubmitButton.setVisibility(View.VISIBLE);
+            mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
+            mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
+        }
         return mAddedPartList.size();
     }
 
@@ -66,7 +82,7 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
 
         public EnquiryFormAddedPartHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @OnClick({R.id.enquiry_form_add_part_detail_iv})
@@ -79,8 +95,9 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
 
         @OnClick({R.id.enquiry_form_add_part_delete_iv})
         public void onClickDeleteIv() {
-            int position=getAdapterPosition();
+            int position = getAdapterPosition();
             mAddedPartList.remove(position);
+            mEnquiryCarPartsDetailsAdapter.getItemCount();
             mAccountDetailHolder.setAddPart(mAddedPartList);
             notifyDataSetChanged();
         }

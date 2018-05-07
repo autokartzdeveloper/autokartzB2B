@@ -122,7 +122,7 @@ public class MyAccountFragment extends Fragment implements BankInfoResponseListe
                 return true;
             case R.id.item_update_bank:
                 // TODO put your code here to respond to the button tap
-              //  Toast.makeText(getActivity(), "update!", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getActivity(), "update!", Toast.LENGTH_SHORT).show();
                 updateBankInformation();
                 return true;
             default:
@@ -190,8 +190,8 @@ public class MyAccountFragment extends Fragment implements BankInfoResponseListe
             ifsc = userBankInfo.getIfsc();
             pan = userBankInfo.getPan();
             gst = userBankInfo.getGst();
-            if (!account_no.isEmpty() && account_no!=null && !branch.isEmpty()&& branch!=null &&
-                    !ifsc.isEmpty() && ifsc!=null && !pan.isEmpty() && pan != null && !gst.isEmpty() && gst !=null) {
+            if (!account_no.isEmpty() && account_no != null && !branch.isEmpty() && branch != null &&
+                    !ifsc.isEmpty() && ifsc != null && !pan.isEmpty() && pan != null && !gst.isEmpty() && gst != null) {
                 mBankAccount.setText(account_no);
                 mBankBranch.setText(branch);
                 mIfscCode.setText(ifsc);

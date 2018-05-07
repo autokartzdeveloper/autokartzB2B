@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -72,6 +73,7 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
     private AccountDetailHolder mAccountDetailHolder;
     String codeStatus;
     private static final String TAG = PaymentPayUActivity.class.getName();
+    protected static final String DEEPLINKING_URL_BASE = "upi://pay";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,6 +179,14 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                 Log.d(TAG, "Both objects are null!");
             }
         }
+
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
+            String str = data.getStringExtra("response").toString();
+            //txnId=(tid)&responseCode=(responsecode)&ApprovalRefNo=( ApprovalRefNo )&Status=(status)&txnRef=(tr)
+            //  processResponseIntent(responseIntent);
+        }
+
+
     }
 
     @OnClick({R.id.payment_method_payu_tv})
@@ -197,6 +207,42 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         orderAPI.callOrderApi(orderDataBean);
 
     }
+
+    @OnClick({R.id.hsbc_method_paytm_tv})
+    public void onClickHsbcTv() {
+
+       // startHsbcPayment();
+
+
+    }
+
+   /* private void startHsbcPayment() {
+         StringBuilder urlBuilder = new StringBuilder();
+        urlBuilder.append(DEEPLINKING_URL_BASE).append("?")
+                .append(pa).append("=").append(payeeVpa).append("&")
+                .append(pn).append("=").append(PayeeName).append("&")
+                .append(mc).append("=").append(payeeMcc).append("&")
+                .append(tid).append("=").append(txnId).append("&")
+                .append(tr).append("=").append(txnRef).append("&")
+                .append(tn).append("=").append(txnNote).append("&")
+                .append(am).append("=").append(payeeAmt).append("&")
+                .append(mam).append("=").append(minAmt).append("&")
+                .append(cu).append("=").append(payeeCur).append("&")
+                .append(url).append("=").append(Appurl);
+
+        // String deepLinkUrl = urlBuilder.toString();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        // intent.setData(Uri.parse(deepLinkUrl));
+        String title = "Pay with";
+        // Create intent to show chooser. It will display the list of available PSP apps (which have the same url in
+        // the maifest)
+        Intent chooser = Intent.createChooser(intent, title);
+        // Verify the intent will resolve to at least one activity
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(chooser, 1);
+        }
+    }*/
+
 
     @OnClick({R.id.payment_method_paytm_tv})
     public void onClickPayTMTv() {
@@ -237,7 +283,7 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         paramMap.put(AppConstantKeys.TXN_AMOUNT, PayTMParams.TXN_AMOUNT);
         paramMap.put(AppConstantKeys.WEBSITE, PayTMParams.WEBSITE);
         paramMap.put(AppConstantKeys.M_KEY, PayTMParams.M_KEY);
-        //paramMap.put("CALLBACK_URL" , "https://pguat.paytm.com/paytmchecksum/paytmCallback.jsp");
+        paramMap.put("CALLBACK_URL", "https://pguat.paytm.com/paytmchecksum/paytmCallback.jsp");
         paramMap.put(AppConstantKeys.CHECKSUMHASH, PayTMParams.HASH);
         PaytmOrder Order = new PaytmOrder(paramMap);
         PaytmMerchant Merchant = new PaytmMerchant(
@@ -252,10 +298,6 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                     @Override
                     public void someUIErrorOccurred(String inErrorMessage) {
                         // Some UI Error Occurred in Payment Gateway Activity.
-                        // // This may be due to initialization of views in
-                        // Payment Gateway Activity or may be due to //
-                        // initialization of webview. // Error Message details
-                        // the error occurred.
                     }
 
                     @Override
@@ -291,12 +333,6 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                     public void onBackPressedCancelTransaction() {
                         // TODO Auto-generated method stub
                         // Toast.makeText(getBaseContext(), "Payment  Failed ", Toast.LENGTH_LONG).show();
-                       /* orderDataBean.setStatus("3");
-                        orderDataBean.setPaymentMode("PayU");
-                        orderDataBean.setTxnId(PayUMoneyParams.TXN_ID);
-                        mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);
-                        OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);
-                        orderAPI.callOrderApi(orderDataBean);*/
                     }
 
                     @Override

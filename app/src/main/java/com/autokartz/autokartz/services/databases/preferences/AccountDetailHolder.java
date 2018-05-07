@@ -23,6 +23,7 @@ public class AccountDetailHolder {
     private static final String PREFERENCE_KEY = "user_detail_preference";
     private static final String KEY_SELECTED_PARTS = "key_selected_parts";
     private static final String KEY_USER_DETAIL_BEAN = "userDetailBean";
+    private static final String NOTIFICATION_COUNT = "notifiactionCount";
     private static final String KEY_USER_BANK_DETAIL_BEAN = "userBankDetailBean";
     private static final String KEY_IS_USER__LOGGED_IN = "isUserLoggedIn";
     private static final String KEY_IS_CAR_INFO_LOADED = "isCarInfoLoaded";
@@ -89,7 +90,8 @@ public class AccountDetailHolder {
     public ArrayList<CategoryInformation> getAddPartDetails() {
         Gson gson = new Gson();
         String jsonDetails = sharedPreferences.getString(KEY_ADD_PART_LIST, null);
-        Type type = new TypeToken<ArrayList<CategoryInformation>>() {}.getType();
+        Type type = new TypeToken<ArrayList<CategoryInformation>>() {
+        }.getType();
         ArrayList<CategoryInformation> list = gson.fromJson(jsonDetails, type);
         if (list == null) {
             list = new ArrayList<>();
@@ -101,6 +103,19 @@ public class AccountDetailHolder {
         Gson gson = new Gson();
         String json = gson.toJson(userDetailBean);
         sharedPreferences.edit().putString(KEY_USER_DETAIL_BEAN, json).apply();
+    }
+
+    public void setNotificationCount(String bacthcount) {
+
+        sharedPreferences.edit().putString(NOTIFICATION_COUNT, bacthcount).apply();
+    }
+
+    public String getNotificationCount() {
+
+
+        String count = sharedPreferences.getString(NOTIFICATION_COUNT,"");
+
+        return count;
     }
 
     public void setUserBankDetailBean(UserBankInfo userBankInfo) {

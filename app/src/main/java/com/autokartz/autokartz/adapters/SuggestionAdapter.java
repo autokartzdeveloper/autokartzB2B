@@ -52,9 +52,9 @@ public class SuggestionAdapter extends RecyclerView.Adapter<SuggestionAdapter.Su
     public void onBindViewHolder(SuggestionHolder holder, int position) {
         String suggestionProductName = mSuggestionList.get(position).getPartName();
         String suggestionBrand = mSuggestionList.get(position).getBrand();
-        String suggestionPrice = "Rs." + mSuggestionList.get(position).getPrice();
+        String suggestionPrice = mContext.getResources().getString(R.string.Rs) + mSuggestionList.get(position).getPrice();
         String suggestionTax = mSuggestionList.get(position).getTax() + "%";
-        String suggestionCharges = "Rs." + mSuggestionList.get(position).getShipCharges();
+        String suggestionCharges = mContext.getResources().getString(R.string.Rs) + mSuggestionList.get(position).getShipCharges();
         String suggestionAvailability = mSuggestionList.get(position).getAvailability();
         String suggestionWarranty = mSuggestionList.get(position).getWarranty();
         String suggestionPartUrl = mSuggestionList.get(position).getPartUrl();

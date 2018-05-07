@@ -19,6 +19,7 @@
     <string name="submit">Submit</string>
     <string name="enter_car_chassis_number">Enter Car Chassis Number</string>
     <string name="Rs">\u20B9</string>
+
     <string-array name="DRAWER_ITEMS">
         <item>Home</item>
         <item>Enquire Form</item>
@@ -71,12 +72,9 @@
     <string name="add_product_detail">Add Product Detail</string>
     <string name="add_product_images">Add Product Images</string>
     <string name="contact_us">Contact Us</string>
-
-
     <string name="err_host_unrechable">Jeenees server unreachable. Please try again after some time</string>
     <string name="err_unexpected_error">Oops! Something went wrong. Please try again</string>
     <string name="err_no_internet">Please check your internet connection.</string>
-
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
     <string name="admob_app_id">ca-app-pub-1805780237947508~2259395395</string>
     <string name="interstitial_full_screen">ca-app-pub-1805780237947508/1819168425</string>

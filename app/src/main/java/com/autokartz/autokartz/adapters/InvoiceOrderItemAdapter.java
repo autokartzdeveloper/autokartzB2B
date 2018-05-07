@@ -31,7 +31,6 @@ public class InvoiceOrderItemAdapter extends RecyclerView.Adapter<InvoiceOrderIt
         mContext = context;
         mOrderList = new ArrayList<>();
         mOrderList.clear();
-        ;
         mOrderList.addAll(list);
     }
 
@@ -44,7 +43,7 @@ public class InvoiceOrderItemAdapter extends RecyclerView.Adapter<InvoiceOrderIt
     @Override
     public void onBindViewHolder(InvoiceOrderItemHolder holder, int position) {
         holder.mNameTv.setText(mOrderList.get(position).getPartName());
-        holder.mAmountTv.setText("Rs."+ mOrderList.get(position).getPrice());
+        holder.mAmountTv.setText(mContext.getResources().getString(R.string.Rs) + mOrderList.get(position).getPrice());
 
     }
 

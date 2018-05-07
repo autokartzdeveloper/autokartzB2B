@@ -170,7 +170,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/appcolorornage"
                 android:textSize="@dimen/textSize16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/enquiry_form_added_part_rv"
@@ -189,7 +190,7 @@
                 android:layout_marginLeft="@dimen/mar_5"
                 android:layout_marginRight="@dimen/mar_5"
                 android:layout_marginTop="@dimen/mar_30"
-                android:background="@color/light_grey"
+                android:background="@color/white"
                 android:paddingLeft="@dimen/mar_20"
                 android:paddingRight="@dimen/mar_20"
                 android:text="ADD CAR PARTS"

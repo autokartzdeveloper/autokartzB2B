@@ -82,6 +82,9 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     private EnquiryFormAddedPartAdapter mEnquiryFormAddedPartAdapter;
     private ArrayList<CategoryInformation> mAddedPartList;
     private DatabaseCURDOperations mDatabaseCURDOperations;
+    ArrayList<CategoryInformation> fullList;
+    ArrayList<CategoryInformation> mSelectedParts;
+
 
     @Nullable
     @Override
@@ -108,7 +111,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     }
 
     private void setAddedPartRecyclerView() {
-        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity);
+        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn,enquiryCarPartsDetailsAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mAddedPartRv.setLayoutManager(layoutManager);
         mAddedPartRv.setItemAnimator(new DefaultItemAnimator());
@@ -125,11 +128,15 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         mRequirePartsList = mCarInfo.getmRequirePartsList();
         if (mRequirePartsList == null) {
             mRequirePartsList = new ArrayList<>();
+
         }
+        mRequirePartsList.size();
+
+
     }
 
     private void setSelectedPartRecyclerView() {
-        enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity);
+        enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mSelectedCarPartsRv.setLayoutManager(layoutManager);
         mSelectedCarPartsRv.setItemAnimator(new DefaultItemAnimator());
@@ -141,6 +148,9 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         mActivity = getActivity();
         mAccountDetailHolder = new AccountDetailHolder(mContext);
         mDatabaseCURDOperations = new DatabaseCURDOperations(mContext);
+        mSubmitCarPartsBtn.setVisibility(View.GONE);
+        mAddCarPartsBtn.setBackgroundColor(getResources().getColor(R.color.appcolorornage));
+        mAddCarPartsBtn.setTextColor(getResources().getColor(R.color.White));
         mCarInfo = (CarInformation) getArguments().getSerializable(IntentKeyConstants.TAG_FORM_DATA);
         String tag = getArguments().getString(IntentKeyConstants.KEY_FRAGMENT);
         if (tag != null && tag.equalsIgnoreCase(AppConstantKeys.TAG_PART_SUGGESTION)) {
@@ -148,6 +158,8 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         }
         partsList = new ArrayList<>();
         mAddedPartList = mAccountDetailHolder.getAddPartDetails();
+        mSelectedParts = mAccountDetailHolder.getSelectedCarParts();
+
     }
 
     @OnClick({R.id.add_car_parts_btn})
@@ -168,8 +180,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     @OnClick({R.id.submit_enquire_parts_btn})
     public void OnClickSubmitBtn() {
         mCarInfo.setmUserId(mAccountDetailHolder.getUserDetailBean().getUserId());
-
-        ArrayList<CategoryInformation> fullList = mAccountDetailHolder.getSelectedCarParts();
+        fullList = mAccountDetailHolder.getSelectedCarParts();
         fullList.addAll(mAccountDetailHolder.getAddPartDetails());
         mCarInfo.setmRequirePartsList(fullList);
         mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);

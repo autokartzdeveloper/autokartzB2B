@@ -50,19 +50,30 @@ public class PartListAdapter extends RecyclerView.Adapter<PartListAdapter.PartLi
     @Override
     public void onBindViewHolder(PartListHolder holder, int position) {
         holder.partNameTv.setText(mEnquiryPartSuggestionList.get(position).getPartName());
-        holder.mAgentRemarkTv.setText(mEnquiryPartSuggestionList.get(position).getAgentRemarks());
+        String agentremarks = mEnquiryPartSuggestionList.get(position).getAgentRemarks();
+        holder.mAgentRemarkTv.setText(agentremarks);
         holder.suggestionList.clear();
         holder.mNoTextTv.setVisibility(View.VISIBLE);
         holder.mPartRv.setVisibility(View.GONE);
         int size = mEnquiryPartSuggestionList.get(position).getSuggestionList().size();
         if (size > 0) {
-            holder.mNoTextTv.setVisibility(View.GONE);
-            holder.mPartRv.setVisibility(View.VISIBLE);
-            holder.mAgentRemark.setVisibility(View.VISIBLE);
-            holder.mAgentRemarkTv.setVisibility(View.VISIBLE);
-            holder.suggestionList.addAll(mEnquiryPartSuggestionList.get(position).getSuggestionList());
-            holder.suggestionAdapter.setSuggestionList(holder.suggestionList);
-            holder.suggestionAdapter.notifyDataSetChanged();
+            if (agentremarks.matches("")) {
+                holder.mNoTextTv.setVisibility(View.GONE);
+                holder.mPartRv.setVisibility(View.VISIBLE);
+                holder.mAgentRemark.setVisibility(View.GONE);
+                holder.mAgentRemarkTv.setVisibility(View.GONE);
+                holder.suggestionList.addAll(mEnquiryPartSuggestionList.get(position).getSuggestionList());
+                holder.suggestionAdapter.setSuggestionList(holder.suggestionList);
+                holder.suggestionAdapter.notifyDataSetChanged();
+            } else {
+                holder.mNoTextTv.setVisibility(View.GONE);
+                holder.mPartRv.setVisibility(View.VISIBLE);
+                holder.mAgentRemark.setVisibility(View.VISIBLE);
+                holder.mAgentRemarkTv.setVisibility(View.VISIBLE);
+                holder.suggestionList.addAll(mEnquiryPartSuggestionList.get(position).getSuggestionList());
+                holder.suggestionAdapter.setSuggestionList(holder.suggestionList);
+                holder.suggestionAdapter.notifyDataSetChanged();
+            }
 
         } else {
             holder.mNoTextTv.setVisibility(View.VISIBLE);

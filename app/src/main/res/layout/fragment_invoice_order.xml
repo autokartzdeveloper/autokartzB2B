@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/mar_20"
-
         android:paddingLeft="@dimen/mar_10"
         android:paddingRight="@dimen/mar_10"
         android:paddingTop="@dimen/mar_10">
@@ -130,22 +129,33 @@
             android:layout_marginTop="@dimen/mar_10"
             android:background="@color/blue" />
 
+
         <TextView
-            android:id="@+id/invoice_order_ship_charge_text_tv"
+            android:id="@+id/autocash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/invoice_order_rv"
-            android:layout_marginTop="@dimen/mar_20"
-            android:text="You have to pay shipping charges on delivery time."
+            android:layout_below="@+id/invoice_order_v12"
+            android:layout_toEndOf="@+id/invoice_order_invoice_text_tv"
+            android:layout_toRightOf="@+id/invoice_order_invoice_text_tv"
+            android:padding="@dimen/mar_10"
+            android:text="AutoCash applied for this order"
             android:textColor="@color/Black"
             android:textSize="@dimen/textSize16sp"
-            android:visibility="gone" />
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/viewpay2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mar_2"
+            android:layout_below="@+id/autocash"
+            android:layout_marginTop="@dimen/mar_10"
+            android:background="@color/blue" />
 
         <TextView
             android:id="@+id/invoice_order_total_amount_text_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/invoice_order_ship_charge_text_tv"
+            android:layout_below="@id/viewpay2"
             android:layout_marginTop="@dimen/mar_20"
             android:text="Total Payable Amount:"
             android:textColor="@color/appcolorblue"
@@ -168,7 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/invoice_order_ship_charge_text_tv"
+            android:layout_below="@id/viewpay2"
             android:layout_marginTop="@dimen/mar_20"
             android:textColor="@color/Black"
             android:textSize="@dimen/textSize16sp"
@@ -179,7 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/mar_2"
             android:layout_below="@+id/invoice_order_total_amount_text_includetax_tv"
-            android:layout_marginTop="@dimen/mar_10"
+            android:layout_marginTop="@dimen/mar_20"
             android:background="@color/blue" />
 
         <LinearLayout

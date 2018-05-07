@@ -58,7 +58,7 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersHold
         String date = mOrderIdList.get(position).getDate();
         String date1 = ConvertDateFormat.convertDateFormat(date);
         holder.mDateTv.setText(date1);
-        holder.mAmountTv.setText(mOrderIdList.get(position).getAmount() + " Rs.");
+        holder.mAmountTv.setText( mContext.getResources().getString(R.string.Rs) + mOrderIdList.get(position).getAmount() );
         if (mOrderIdList.get(position).getStatus().matches("1")) {
             holder.mOrderStatus.setText("Success");
             holder.mOrderStatus.setTextColor(mContext.getResources().getColor(R.color.primary_green));

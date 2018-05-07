@@ -25,7 +25,8 @@
             android:text="PayUMoney"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/textSize20sp" />
+            android:textSize="@dimen/textSize20sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/payment_method_cash_on_delivery_tv"
@@ -48,12 +49,27 @@
             android:layout_marginLeft="@dimen/mar_20"
             android:layout_marginRight="@dimen/mar_20"
             android:layout_marginTop="@dimen/mar_30"
-            android:background="@color/appcolorornage"
+            android:background="@color/appcolorblue"
             android:padding="@dimen/mar_10"
             android:text="PayTM"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/textSize20sp"
             android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/hsbc_method_paytm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mar_20"
+            android:layout_marginRight="@dimen/mar_20"
+            android:layout_marginTop="@dimen/mar_30"
+            android:background="@color/appcolorornage"
+            android:padding="@dimen/mar_10"
+            android:text="HSBC"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize20sp"
+            android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>

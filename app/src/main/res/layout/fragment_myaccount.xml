@@ -132,10 +132,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/mar_10"
                 android:layout_marginLeft="@dimen/mar_20"
                 android:layout_marginRight="@dimen/mar_10"
                 android:layout_marginTop="@dimen/mar_10">
-
                 <TextView
                     android:id="@+id/address_tv"
                     android:layout_width="@dimen/dimen_0dp"
@@ -158,6 +158,7 @@
                     android:textColor="@color/Black"
                     android:textSize="@dimen/textSize18sp" />
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/linear_bank_details_layout"

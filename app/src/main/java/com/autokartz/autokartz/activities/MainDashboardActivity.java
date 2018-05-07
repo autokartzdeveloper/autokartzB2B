@@ -16,6 +16,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -36,6 +37,7 @@ import android.widget.Toast;
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.adapters.SliderAdapter;
 import com.autokartz.autokartz.dialoges.SignOutDialog;
+import com.autokartz.autokartz.fragments.AutoCashFragment;
 import com.autokartz.autokartz.fragments.CompanyURLFragment;
 import com.autokartz.autokartz.fragments.ContactUsFragment;
 import com.autokartz.autokartz.fragments.EnquiryFormFragment;
@@ -92,7 +94,6 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     DrawerLayout mNavDrawerLayout;
     @BindView(R.id.nav_toolbar)
     Toolbar mToolbar;
-    // @BindView(R.id.indicator) ;
     TextView mEmailNavbar;
     TextView mDisplayNameNavbar;
     TextView mLetterNameNavbar;
@@ -116,6 +117,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     TabLayout indicator;
     List<Integer> imageSlider;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,10 +125,13 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         ButterKnife.bind(this);
         this.mContext = MainDashboardActivity.this;
         init();
+        Log.v("qwert", mAccountDetailHolder.getNotificationCount());
+
     }
 
     private void init() {
         CheckPermission.checkAndRequestPermissions(mContext);
+        setNavigationBar();
         setToolBar();
         setActionBarDrawer();
         // initMobileAds();
@@ -136,6 +141,39 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         openFragment(new HomeFragment());
         setViews();
     }
+
+    private void setNavigationBar() {
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    fragment = new HomeFragment();
+                    break;
+                case R.id.navigation_enquiry:
+                    fragment = new EnquiryFormFragment();
+                    break;
+                case R.id.navigation_orders:
+                    fragment = new OrdersFragment();
+                    break;
+                case R.id.navigation_myaccount:
+                    fragment = new MyAccountFragment();
+                    break;
+                case R.id.navigation_autocash:
+                    fragment = new AutoCashFragment();
+                    break;
+            }
+            return openFragment(fragment);
+
+        }
+    };
 
     private void initMobileAds() {
         MobileAds.initialize(this, getString(R.string.admob_app_id));
@@ -242,13 +280,17 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
                         fragment = new MyAccountFragment();
                         NAV_ITEM_INDEX = 4;
                         break;
+                    case R.id.nav_myautocash:
+                        fragment = new AutoCashFragment();
+                        NAV_ITEM_INDEX = 5;
+                        break;
                     case R.id.nav_companyurl:
                         fragment = new CompanyURLFragment();
-                        NAV_ITEM_INDEX = 5;
+                        NAV_ITEM_INDEX = 6;
                         break;
                     case R.id.nav_contact_us:
                         fragment = new ContactUsFragment();
-                        NAV_ITEM_INDEX = 6;
+                        NAV_ITEM_INDEX = 7;
                         break;
                     case R.id.nav_signout:
                         openSignOutDialog();
@@ -266,11 +308,12 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         signOutDialog.show();
     }
 
-    private void openFragment(Fragment fragment) {
+    private boolean openFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         //fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commitNowAllowingStateLoss();
+        return true;
     }
 
     private void setViews() {

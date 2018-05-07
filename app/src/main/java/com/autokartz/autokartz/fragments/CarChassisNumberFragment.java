@@ -34,7 +34,6 @@ import butterknife.OnClick;
 
 public class CarChassisNumberFragment extends Fragment {
 
-
     @BindView(R.id.car_chassis_num_et)
     EditText mCarChassisNumEt;
     @BindView(R.id.submit_car_chassis_num_btn)

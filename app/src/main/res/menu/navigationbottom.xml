@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_launcher_home"
+        android:title="Home " />
+
+    <item
+        android:id="@+id/navigation_enquiry"
+        android:icon="@drawable/enquiryform"
+        android:title="Enquiry" />
+
+    <item
+        android:id="@+id/navigation_orders"
+        android:icon="@drawable/ic_launcher_order"
+        android:title="Orders" />
+
+    <item
+        android:id="@+id/navigation_myaccount"
+        android:icon="@drawable/ic_launcher_acount"
+        android:title="My account" />
+
+    <item
+        android:id="@+id/navigation_autocash"
+        android:icon="@drawable/coin"
+        android:title="AutoCash" />
+
+</menu>

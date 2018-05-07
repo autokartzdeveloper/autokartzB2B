@@ -112,9 +112,7 @@ public class CategoryCarPartsFragment extends Fragment implements GetCarPartsLis
 
         databaseCURDOperations = new DatabaseCURDOperations(mContext);
         if (!mAccountDetailHolder.getIsCatInfoLoaded()) {
-            //readCatInfoExcelFile();
-            /*ReadCatInfoExcelFile readCatInfoExcelFile=new ReadCatInfoExcelFile();
-            readCatInfoExcelFile.execute();*/
+
         }
         selectedCarPartList = new ArrayList<>();
         addedPartList = mAccountDetailHolder.getAddPartDetails();
@@ -158,28 +156,6 @@ public class CategoryCarPartsFragment extends Fragment implements GetCarPartsLis
     public void onPause() {
         mAccountDetailHolder.setAddPart(mCategoryCarAddPartAdapter.updateAddedPartList());
         super.onPause();
-    }
-
-    private class ReadCatInfoExcelFile extends AsyncTask<Void, Void, Void> {
-
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            //readCatInfoExcelFile();
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            DismissDialog.dismissWithCheck(progressDialog);
-        }
-
     }
 
 }

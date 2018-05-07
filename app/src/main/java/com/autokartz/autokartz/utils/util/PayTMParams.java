@@ -6,25 +6,22 @@ package com.autokartz.autokartz.utils.util;
 
 public class PayTMParams {
 
-/*
-    public static final String MID = "AmanCh33463567404383";
-    public static String CUST_ID = "amang44444@gmail.com";
+  /*  public static final String MID = "AmanCh33463567404383";
+    public static String CUST_ID = "";
     public static final String INDUSTRY_TYPE_ID = "Retail";
     public static final String CHANNEL_ID = "WAP";
-    public static String TXN_AMOUNT = "2.0";
+    public static String TXN_AMOUNT = "";
     public static String ORDER_ID = "";
     public static final String WEBSITE = "APP_STAGING";
     public static final String M_KEY = "&WnEoXDKk2KfOXB%";
     public static String HASH = "";*/
-
-
-    public static final String MID = "AUTOKA87829976830491";
+    public static final String MID = "AUTOKA57345065422557";
     public static String CUST_ID = "";
-    public static final String INDUSTRY_TYPE_ID = " Retail120";
+    public static final String INDUSTRY_TYPE_ID = "Retail";
     public static final String CHANNEL_ID = "WAP";
     public static String TXN_AMOUNT = "";
     public static String ORDER_ID = "";
-    public static final String WEBSITE = "AUTOKARTZWEB";
-    public static final String M_KEY = "wFZTU5V!@&v1PEnP";
+    public static final String WEBSITE = "APPSTAGING";
+    public static final String M_KEY = "CEaGMlN@8NIcYV3a";
     public static String HASH = "";
 }

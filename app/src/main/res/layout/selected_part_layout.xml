@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/LightSkyBlue_b"
     android:layout_marginTop="@dimen/mar_2"
+    android:background="@color/LightSkyBlue_b"
     android:padding="@dimen/mar_10">
 
     <ImageView
@@ -17,9 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/mar_5"
+        android:layout_toRightOf="@+id/selected_car_part_iv"
         android:ellipsize="end"
         android:maxLength="15"
-        android:layout_toRightOf="@+id/selected_car_part_iv"
         android:text="Selected Item"
         android:textColor="@color/Black"
         android:textSize="@dimen/textSize20sp" />
@@ -35,8 +35,8 @@
         android:id="@+id/item_detail_iv"
         android:layout_width="@dimen/mar_30"
         android:layout_height="@dimen/mar_30"
-        android:layout_marginRight="@dimen/mar_20"
+        android:layout_marginRight="@dimen/mar_15"
         android:layout_toLeftOf="@+id/item_cancel_iv"
-        android:src="@drawable/ic_launcher_camera" />
+        android:src="@drawable/edit" />
 
 </RelativeLayout>

@@ -59,6 +59,10 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
     Button mcancelBtn;
     @BindView(R.id.invoice_order_pay_btn)
     Button mPayBtn;
+    @BindView(R.id.viewpay2)
+    View mView;
+    @BindView(R.id.autocash)
+    TextView mAutocash;
     private Context mContext;
     private Activity mActivity;
     private InvoiceOrderItemAdapter mInvoiceOrderItemAdapter;
@@ -68,7 +72,8 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
     String codeStatus;
     int totalPrice = 0;
     int shipingCharge = 0;
-    int totalPayableAmout;
+    int totalAmout;
+    int TotalPayableAmount;
     int tax;
 
     @Nullable
@@ -96,7 +101,18 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
         getData();
         setRecyclerView();
         getTotalPrice();
-        mAmount.setText("Rs."+String.valueOf(totalPayableAmout));
+        String autoCash = "0";
+        int autoCashint = Integer.parseInt(autoCash);
+        if (totalAmout > autoCashint && autoCashint != 0) {
+            mAutocash.setVisibility(View.VISIBLE);
+            TotalPayableAmount = totalAmout - autoCashint;
+            mAmount.setText(mContext.getResources().getString(R.string.Rs) + String.valueOf(TotalPayableAmount));
+
+        } else {
+            mAutocash.setVisibility(View.GONE);
+            mView.setVisibility(View.GONE);
+            mAmount.setText(mContext.getResources().getString(R.string.Rs) + String.valueOf(totalAmout));
+        }
 
     }
 
@@ -107,9 +123,9 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
             shipingCharge = Integer.parseInt(mOrderList.get(i).getShipCharges());
             tax = Integer.parseInt(mOrderList.get(i).getTax());
             int cal = (totalPrice / 100) * tax;
-            totalPayableAmout += totalPrice + shipingCharge + cal;
+            totalAmout += totalPrice + shipingCharge + cal;
         }
-        return (totalPayableAmout);
+        return (totalAmout);
     }
 
 
@@ -136,7 +152,7 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
     private OrderDataBean getOrderDataBean() {
         String userId = mAccountDetailHolder.getUserDetailBean().getUserId();
         String txnId = "";
-        String amount = String.valueOf(totalPayableAmout);
+        String amount = String.valueOf(TotalPayableAmount);
         int shipTime = 5;
         String prdtInfo = "";
         String paymentMode = "";
@@ -161,7 +177,7 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
     public void onClickPayBtn() {
         Intent paymentIntent = new Intent(mActivity, PaymentPayUActivity.class);
         paymentIntent.putExtra("orderDataBean", getOrderDataBean());
-        paymentIntent.putExtra("codestatus",codeStatus);
+        paymentIntent.putExtra("codestatus", codeStatus);
         startActivity(paymentIntent);
     }
 

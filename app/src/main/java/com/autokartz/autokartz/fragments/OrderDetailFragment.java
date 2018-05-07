@@ -94,13 +94,12 @@ public class OrderDetailFragment extends Fragment {
         Logger.LogDebug("hello", mOrderDetail.getProductInfo() + "");
         String date = mOrderDetail.getTimestamp();
         mDateTv.setText(ConvertDateFormat.convertDateFormat(date));
-        if (mOrderDetail.getStatus().matches("1") ){
+        if (mOrderDetail.getStatus().matches("1")) {
             mStatusTv.setText("Order Success");
-        }
-        else {
+        } else {
             mStatusTv.setText("Order Failed");
         }
-        mAmtTv.setText(" Rs." + mOrderDetail.getAmount());
+        mAmtTv.setText(mContext.getResources().getString(R.string.Rs) + mOrderDetail.getAmount());
         mOrderIdTv.setText(mOrderDetail.getOrderId() + "");
     }
 

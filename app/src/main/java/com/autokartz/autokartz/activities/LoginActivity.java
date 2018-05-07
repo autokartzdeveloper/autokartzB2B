@@ -42,6 +42,7 @@ import java.security.NoSuchAlgorithmException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 public class LoginActivity extends AppCompatActivity implements LoginResponseListener {
 
@@ -64,7 +65,10 @@ public class LoginActivity extends AppCompatActivity implements LoginResponseLis
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         init();
+
     }
+
+
 
     private void printKeyHash() {
         try {

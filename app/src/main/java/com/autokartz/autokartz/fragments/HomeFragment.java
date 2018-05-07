@@ -38,13 +38,8 @@ public class HomeFragment extends Fragment {
 
 
     private Activity mActivity;
-    @BindView(R.id.home_enquiry_btn)
-    Button mEnquiryButoon;
-    @BindView(R.id.home_order_btn)
-    Button mOrderButoon;
     private static final String CURRENT_TAG = "Home Fragment";
-    ViewPager viewPager;
-    TabLayout indicator;
+
     List<Integer> imageSlider;
     @BindView(R.id.viewPager)
     ViewPager mViewPager;
@@ -74,7 +69,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void imageSlideTimer() {
-
         imageSlider = new ArrayList<>();
         imageSlider.add(R.drawable.banner);
         imageSlider.add(R.drawable.banner2);
@@ -90,36 +84,12 @@ public class HomeFragment extends Fragment {
     private void initVariables() {
         mActivity = getActivity();
         imageSlideTimer();
+        offerLayout();
     }
 
-    @OnClick({R.id.home_order_btn})
-    public void onClickOrders() {
-        openOrdersFragment();
+    private void offerLayout() {
     }
 
-    private void openOrdersFragment() {
-
-        OrdersFragment fragment = new OrdersFragment();
-        String backStateName = fragment.getClass().getName();
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.main_frame, fragment, CURRENT_TAG);
-        fragmentTransaction.addToBackStack(CURRENT_TAG);
-        fragmentTransaction.commit();
-    }
-
-    @OnClick({R.id.home_enquiry_btn})
-    public void onClickAddEnquiry() {
-        openEnquiryFormFragment();
-    }
-
-    private void openEnquiryFormFragment() {
-        EnquiryFormFragment fragment = new EnquiryFormFragment();
-        String backStateName = fragment.getClass().getName();
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.main_frame, fragment, backStateName);
-        fragmentTransaction.addToBackStack(backStateName);
-        fragmentTransaction.commit();
-    }
 
     private class SliderTimer extends TimerTask {
         @Override

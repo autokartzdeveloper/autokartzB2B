@@ -108,6 +108,7 @@
                 android:layout_marginTop="@dimen/mar_10"
                 android:text="info@autokartz.com"
                 android:textSize="@dimen/textSize16sp" />
+
         </LinearLayout>
 
         <View

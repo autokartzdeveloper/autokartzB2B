@@ -7,12 +7,8 @@
             android:title="@string/home" />
         <item
             android:id="@+id/nav_enquiry_form"
-            android:icon="@drawable/ic_launcher_form"
+            android:icon="@drawable/enquiryform"
             android:title="@string/enquiry_form" />
-        <!--  <item
-              android:id="@+id/nav_transaction_history"
-              android:title="@string/transaction_history" />-->
-
         <item
             android:id="@+id/nav_orders"
             android:icon="@drawable/ic_launcher_order"
@@ -22,6 +18,11 @@
             android:id="@+id/nav_myaccount"
             android:icon="@drawable/ic_launcher_acount"
             android:title="@string/my_account" />
+
+        <item
+            android:id="@+id/nav_myautocash"
+            android:icon="@drawable/coin"
+            android:title="AutoCash" />
         <item
             android:id="@+id/nav_companyurl"
             android:icon="@drawable/ic_launcher_web"
@@ -33,7 +34,7 @@
             android:title="@string/contact_us" />
         <item
             android:id="@+id/nav_signout"
-            android:icon="@drawable/ic_launcher_signout"
+            android:icon="@drawable/logout"
             android:title="@string/signout" />
     </group>
 </menu>

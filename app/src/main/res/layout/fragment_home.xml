@@ -1,68 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_home"
-        style="@style/MyToolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/White"
-        android:minHeight="0.2dp"
-        app:subtitleTextColor="@color/Blue" />
+    android:background="@color/light_grey">
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="220dp">
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        android:orientation="vertical">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            style="@style/MyToolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/app_bar_layout" />
+            android:background="@color/White"
+            android:minHeight="0.2dp"
+            app:subtitleTextColor="@color/Blue" />
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/indicator"
+
+        <RelativeLayout
+            android:id="@+id/viewpager_relativelayout"
             android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/app_bar_layout" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:tabBackground="@drawable/indicator_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp" />
+
+        </RelativeLayout>
+
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalscrollview_tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:tabBackground="@drawable/indicator_selector"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp" />
+            android:layout_below="@+id/viewpager_relativelayout"
+            android:layout_marginTop="@dimen/mar_10"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:background="@color/blue"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/mar_20"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:text="Why Autokartz?"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/mar_20"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:text="Send enquiry for Auto Spare Parts and Accessories in real-time. "
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/mar_20"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:text="Get suggestion on recommended spare parts as per the requirement."
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="@color/blue"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/mar_20"
+                        android:layout_marginTop="@dimen/dimen_40dp"
+                        android:text="100% AutoCash Usage Allowed"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/horizontalscrollview_tv"
+            android:layout_marginTop="@dimen/mar_10"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:src="@drawable/banner_6"
+                    app:riv_corner_radius="20dip" />
+
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:src="@drawable/banner_7"
+                    app:riv_corner_radius="20dip" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="@dimen/mar_20"
+                    android:layout_marginRight="@dimen/mar_20"
+                    android:src="@drawable/banner_8"
+                    app:riv_corner_radius="20dip" />
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/dimen_20dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/home_enquiry_btn"
-            android:layout_width="@dimen/dimen_0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/mar_20"
-            android:layout_weight="1"
-            android:background="@color/orange"
-            android:text="Enquiry"
-            android:textColor="@color/white"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/home_order_btn"
-            android:layout_width="@dimen/dimen_0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/mar_5"
-            android:layout_marginRight="@dimen/mar_20"
-            android:layout_weight="1"
-            android:background="@color/light_grey"
-            android:text="@string/orders"
-            android:textColor="@color/orange"
-            android:visibility="gone" />
-    </LinearLayout>
-</RelativeLayout>
+</ScrollView>
