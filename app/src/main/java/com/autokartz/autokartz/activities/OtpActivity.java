@@ -40,7 +40,6 @@ public class OtpActivity extends AppCompatActivity implements ForgotPasswordList
         ButterKnife.bind(this);
         init();
         getIntentData();
-
     }
 
     private void init() {
@@ -48,13 +47,10 @@ public class OtpActivity extends AppCompatActivity implements ForgotPasswordList
     }
 
     private void getIntentData() {
-
         otp = getIntent().getStringExtra("otp");
-        Log.v("qwer", otp);
         user_id = getIntent().getStringExtra("user_id");
         email = getIntent().getStringExtra("email");
         phone = getIntent().getStringExtra("phone");
-
     }
 
     @OnClick({R.id.resend_otp})
@@ -63,7 +59,6 @@ public class OtpActivity extends AppCompatActivity implements ForgotPasswordList
         ForgotPasswordApi forgotPasswordApi = new ForgotPasswordApi(mContext, this, mProgressDialog);
         forgotPasswordApi.callForgotPasswordApi(email, phone);
     }
-
 
     @OnClick({R.id.submit_otp_btn})
     public void Submit() {
@@ -77,9 +72,7 @@ public class OtpActivity extends AppCompatActivity implements ForgotPasswordList
         } else {
             Toast.makeText(mContext, "Please enter valid OTP", Toast.LENGTH_SHORT).show();
         }
-
     }
-
 
     @Override
     public void forgotPasswordListsner(boolean success, ForgotPasswordBeanResponse forgotPasswordBeanResponse) {
@@ -98,5 +91,4 @@ public class OtpActivity extends AppCompatActivity implements ForgotPasswordList
 
         }
     }
-
 }

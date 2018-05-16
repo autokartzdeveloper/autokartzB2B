@@ -30,6 +30,7 @@ import butterknife.OnClick;
  */
 
 public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFormAddedPartAdapter.EnquiryFormAddedPartHolder> {
+
     private Context mContext;
     private Activity mActivity;
     private ArrayList<CategoryInformation> mAddedPartList;

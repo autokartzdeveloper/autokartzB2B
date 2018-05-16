@@ -41,6 +41,7 @@
             android:background="@drawable/et_border"
             android:inputType="textPhonetic"
             android:paddingLeft="@dimen/mar_5"
+            android:textAllCaps="true"
             android:textSize="@dimen/textSize18sp" />
 
         <Button

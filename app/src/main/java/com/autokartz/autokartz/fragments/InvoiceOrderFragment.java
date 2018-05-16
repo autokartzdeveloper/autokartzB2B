@@ -152,7 +152,7 @@ public class InvoiceOrderFragment extends Fragment implements OrderAPIResponseLi
     private OrderDataBean getOrderDataBean() {
         String userId = mAccountDetailHolder.getUserDetailBean().getUserId();
         String txnId = "";
-        String amount = String.valueOf(TotalPayableAmount);
+        String amount = String.valueOf(totalAmout);
         int shipTime = 5;
         String prdtInfo = "";
         String paymentMode = "";

@@ -12,12 +12,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.GetCarPartsListener;
 import com.autokartz.autokartz.services.databases.LocalDatabase.DatabaseCURDOperations;
 import com.autokartz.autokartz.utils.pojoClasses.CatItem;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
+
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -27,8 +30,6 @@ import butterknife.OnClick;
  */
 
 public class CategoryCarPartsAdapter extends RecyclerView.Adapter<CategoryCarPartsAdapter.CategoryCarPartsHolder> {
-
-
     private Context mContext;
     private Activity mActivity;
     private ArrayList<CatItem> mCatList;
@@ -37,14 +38,14 @@ public class CategoryCarPartsAdapter extends RecyclerView.Adapter<CategoryCarPar
     private GetCarPartsListener mGetCarPartsListener;
     private TypedArray icons;
 
-    public CategoryCarPartsAdapter(Context context,Activity activity,GetCarPartsListener getCarPartsListener, ArrayList<CatItem> catList) {
+    public CategoryCarPartsAdapter(Context context, Activity activity, GetCarPartsListener getCarPartsListener, ArrayList<CatItem> catList) {
         mContext = context;
         mCatList = catList;
-        mActivity=activity;
-        mGetCarPartsListener=getCarPartsListener;
-        databaseCURDOperations=new DatabaseCURDOperations(mContext);
-        categoryInformation=new CategoryInformation();
-        icons=mContext.getResources().obtainTypedArray(R.array.catImages);
+        mActivity = activity;
+        mGetCarPartsListener = getCarPartsListener;
+        databaseCURDOperations = new DatabaseCURDOperations(mContext);
+        categoryInformation = new CategoryInformation();
+        icons = mContext.getResources().obtainTypedArray(R.array.catImages);
     }
 
     @Override
@@ -59,7 +60,7 @@ public class CategoryCarPartsAdapter extends RecyclerView.Adapter<CategoryCarPar
         holder.dropDownIv.setImageResource(R.drawable.ic_drop_down);
         holder.catImageView.setImageDrawable(icons.getDrawable(position));
         holder.setIsRecyclable(false);
-        holder.id=mCatList.get(position).getId();
+        holder.id = mCatList.get(position).getId();
     }
 
     @Override
@@ -83,37 +84,37 @@ public class CategoryCarPartsAdapter extends RecyclerView.Adapter<CategoryCarPar
         ArrayList<CatItem> subCatList;
         String id;
         String catName;
-        boolean isOpen=false;
+        boolean isOpen = false;
 
         public CategoryCarPartsHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
             //catImageView.setColorFilter(mContext.getResources().getColor(R.color.Blue));
             dropDownIv.setColorFilter(mContext.getResources().getColor(R.color.Gray));
-            subCategoryPartAdapter=new SubCategoryPartAdapter(mContext,mActivity,mGetCarPartsListener);
-            RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(mContext);
+            subCategoryPartAdapter = new SubCategoryPartAdapter(mContext, mActivity, mGetCarPartsListener);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
             subCatRv.setLayoutManager(layoutManager);
             subCatRv.setItemAnimator(new DefaultItemAnimator());
             subCatRv.setAdapter(subCategoryPartAdapter);
         }
 
-        @OnClick({R.id.cat_item_name_tv,R.id.car_cat_drop_down_iv,R.id.cat_item_rel_layout})
+        @OnClick({R.id.cat_item_name_tv, R.id.car_cat_drop_down_iv, R.id.cat_item_rel_layout})
         public void onCatClick() {
-            if(isOpen) {
+            if (isOpen) {
                 dropDownIv.setImageResource(R.drawable.ic_drop_down);
                 subCatRv.setVisibility(View.GONE);
-                isOpen=false;
+                isOpen = false;
             } else {
-                int position=getAdapterPosition();
+                int position = getAdapterPosition();
                 subCatRv.setVisibility(View.VISIBLE);
                 dropDownIv.setImageResource(R.drawable.ic_drop_up);
-                isOpen=true;
-                catName=catNameTv.getText().toString();
+                isOpen = true;
+                catName = catNameTv.getText().toString();
                 categoryInformation.setmCatName(catName);
                 categoryInformation.setmCatId(id);
-                categoryInformation.setImageResId(icons.getResourceId(position,0));
+                categoryInformation.setImageResId(icons.getResourceId(position, 0));
                 subCategoryPartAdapter.setCatInfo(categoryInformation);
-                subCatList=databaseCURDOperations.getSubCategories(id);
+                subCatList = databaseCURDOperations.getSubCategories(id);
                 subCategoryPartAdapter.setSubCatList(subCatList);
                 subCategoryPartAdapter.notifyDataSetChanged();
             }

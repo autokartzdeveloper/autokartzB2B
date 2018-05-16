@@ -33,7 +33,6 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
     @BindView(R.id.submit_btn)
     Button mSubmit;
     ProgressDialog mProgressDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +40,6 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
         ButterKnife.bind(this);
         getIntentData();
         init();
-
     }
 
     private void getIntentData() {
@@ -55,7 +53,6 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
 
     private void initVariables() {
         mContext = getApplicationContext();
-
     }
 
     private boolean isInputValid() {
@@ -83,7 +80,6 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
         }
     }
 
-
     @Override
     public void resetPassword(boolean success) {
         if (success) {
@@ -91,6 +87,5 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
-
     }
 }

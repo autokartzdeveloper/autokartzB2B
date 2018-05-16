@@ -1,15 +1,11 @@
 package com.autokartz.autokartz.activities;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -20,6 +16,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -35,7 +32,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
-import com.autokartz.autokartz.adapters.SliderAdapter;
 import com.autokartz.autokartz.dialoges.SignOutDialog;
 import com.autokartz.autokartz.fragments.AutoCashFragment;
 import com.autokartz.autokartz.fragments.CompanyURLFragment;
@@ -45,16 +41,13 @@ import com.autokartz.autokartz.fragments.EnquiryFormsFragment;
 import com.autokartz.autokartz.fragments.HomeFragment;
 import com.autokartz.autokartz.fragments.MyAccountFragment;
 import com.autokartz.autokartz.fragments.OrdersFragment;
+import com.autokartz.autokartz.fragments.PartSuggestionFragment;
 import com.autokartz.autokartz.interfaces.FcmTokenResponseListsner;
 import com.autokartz.autokartz.interfaces.GetImageListener;
 import com.autokartz.autokartz.interfaces.SignOutResponseListener;
 import com.autokartz.autokartz.services.databases.LocalDatabase.DatabaseCURDOperations;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.services.webServices.apiRequests.FcmTokenApi;
-import com.autokartz.autokartz.services.webServices.apiRequests.GetOrderDetailAPI;
-import com.autokartz.autokartz.services.webServices.apiRequests.ManualSignUpApi;
-import com.autokartz.autokartz.utils.apiRequestBeans.FcmTokenBean;
-import com.autokartz.autokartz.utils.apiRequestBeans.SignUpBean;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
@@ -62,6 +55,7 @@ import com.autokartz.autokartz.utils.util.AppToast;
 import com.autokartz.autokartz.utils.util.CheckPermission;
 
 import com.autokartz.autokartz.utils.util.Logger;
+import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
 import com.autokartz.autokartz.utils.util.converter.CSVFile;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
@@ -78,16 +72,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 
 public class MainDashboardActivity extends AppCompatActivity implements GetImageListener, SignOutResponseListener, FcmTokenResponseListsner {
     @BindView(R.id.main_nav_drawer_layout)
@@ -116,6 +103,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     ViewPager viewPager;
     TabLayout indicator;
     List<Integer> imageSlider;
+    BottomNavigationView navigation;
 
 
     @Override
@@ -125,8 +113,6 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         ButterKnife.bind(this);
         this.mContext = MainDashboardActivity.this;
         init();
-        Log.v("qwert", mAccountDetailHolder.getNotificationCount());
-
     }
 
     private void init() {
@@ -143,35 +129,37 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     }
 
     private void setNavigationBar() {
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     fragment = new HomeFragment();
+                    NAV_ITEM_INDEX = 0;
                     break;
                 case R.id.navigation_enquiry:
                     fragment = new EnquiryFormFragment();
+                    NAV_ITEM_INDEX = 7;
                     break;
                 case R.id.navigation_orders:
                     fragment = new OrdersFragment();
+                    NAV_ITEM_INDEX = 8;
                     break;
                 case R.id.navigation_myaccount:
                     fragment = new MyAccountFragment();
+                    NAV_ITEM_INDEX = 9;
                     break;
                 case R.id.navigation_autocash:
                     fragment = new AutoCashFragment();
+                    NAV_ITEM_INDEX = 10;
                     break;
             }
             return openFragment(fragment);
-
         }
     };
 
@@ -238,6 +226,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         mAccountDetailHolder = new AccountDetailHolder(mContext);
         mUserDetailBean = mAccountDetailHolder.getUserDetailBean();
         fcmToken();
+        notificationintent();
         carInfoList = new ArrayList<>();
         catInfoList = new ArrayList();
         databaseCURDOperations = new DatabaseCURDOperations(mContext);
@@ -245,6 +234,19 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
             mProgressDialog = ShowDialog.show(MainDashboardActivity.this, "", "Loading Data", true, false);
             ReadExcelFile readExcelFile = new ReadExcelFile();
             readExcelFile.execute();
+        }
+    }
+
+    private void notificationintent() {
+        String fragment_name = getIntent().getStringExtra("fragment_name");
+        String enquiry_id = getIntent().getStringExtra("enquiry_id");
+        if (fragment_name != null && fragment_name.matches("PartSuggestionFragment")) {
+            Fragment fragment1 = new EnquiryFormsFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("enquiryId", enquiry_id);
+            fragment1.setArguments(bundle);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.main_frame, fragment1).commit();
         }
     }
 
@@ -266,31 +268,42 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         fragment = new HomeFragment();
+                        MenuItem itemHome = navigation.getMenu().getItem(0);//set bottom navigation wrt navigation drawer
+                        navigation.setSelectedItemId(itemHome.getItemId());
                         NAV_ITEM_INDEX = 0;
                         break;
                     case R.id.nav_enquiry_form:
                         fragment = new EnquiryFormsFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("enquiryId", "");
+                        fragment.setArguments(bundle);
                         NAV_ITEM_INDEX = 1;
                         break;
                     case R.id.nav_orders:
                         fragment = new OrdersFragment();
-                        NAV_ITEM_INDEX = 3;
+                        MenuItem itemOrder = navigation.getMenu().getItem(2);//set bottom navigation wrt navigation drawer
+                        navigation.setSelectedItemId(itemOrder.getItemId());
+                        NAV_ITEM_INDEX = 2;
                         break;
                     case R.id.nav_myaccount:
                         fragment = new MyAccountFragment();
-                        NAV_ITEM_INDEX = 4;
+                        MenuItem itemAccount = navigation.getMenu().getItem(3);//set bottom navigation wrt navigation drawer
+                        navigation.setSelectedItemId(itemAccount.getItemId());
+                        NAV_ITEM_INDEX = 3;
                         break;
                     case R.id.nav_myautocash:
                         fragment = new AutoCashFragment();
-                        NAV_ITEM_INDEX = 5;
+                        MenuItem itemCash = navigation.getMenu().getItem(4);//set bottom navigation wrt navigation drawer
+                        navigation.setSelectedItemId(itemCash.getItemId());
+                        NAV_ITEM_INDEX = 4;
                         break;
                     case R.id.nav_companyurl:
                         fragment = new CompanyURLFragment();
-                        NAV_ITEM_INDEX = 6;
+                        NAV_ITEM_INDEX = 5;
                         break;
                     case R.id.nav_contact_us:
                         fragment = new ContactUsFragment();
-                        NAV_ITEM_INDEX = 7;
+                        NAV_ITEM_INDEX = 6;
                         break;
                     case R.id.nav_signout:
                         openSignOutDialog();
@@ -310,7 +323,6 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
 
     private boolean openFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        //fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commitNowAllowingStateLoss();
         return true;
@@ -435,16 +447,19 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
             super.onPostExecute(aVoid);
             DismissDialog.dismissWithCheck(mProgressDialog);
         }
+
     }
 
     @Override
     public void onBackPressed() {
+        MenuItem homeItem = navigation.getMenu().getItem(0);
         if (NAV_ITEM_INDEX == 0) {
             finish();
         } else if (getSupportFragmentManager().getBackStackEntryCount() == 0 && NAV_ITEM_INDEX != 0) {
             NAV_ITEM_INDEX = 0;
             getSupportActionBar().setTitle("Home");
             openFragment(new HomeFragment());
+            navigation.setSelectedItemId(homeItem.getItemId());
         } else {
             super.onBackPressed();
         }

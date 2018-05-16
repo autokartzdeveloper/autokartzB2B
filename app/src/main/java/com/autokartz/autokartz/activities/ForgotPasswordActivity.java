@@ -62,8 +62,8 @@ public class ForgotPasswordActivity extends AppCompatActivity implements ForgotP
     @OnClick({R.id.forgot_password_btn})
     public void SignIn() {
         if (isInputValid()) {
-             email = mEmail.getText().toString().trim();
-             phone = mPhone.getText().toString().trim();
+            email = mEmail.getText().toString().trim();
+            phone = mPhone.getText().toString().trim();
             mProgressDialog = ShowDialog.show(this, "", "Sending OTP..", true, false);
             ForgotPasswordApi forgotPasswordApi = new ForgotPasswordApi(mContext, this, mProgressDialog);
             forgotPasswordApi.callForgotPasswordApi(email, phone);
@@ -79,8 +79,8 @@ public class ForgotPasswordActivity extends AppCompatActivity implements ForgotP
             String otp = forgotPasswordBeanResponse.getOtp();
             String user_id = forgotPasswordBeanResponse.getUserId();
             Intent intent = new Intent(this, OtpActivity.class);
-            intent.putExtra("email",email);
-            intent.putExtra("phone",phone);
+            intent.putExtra("email", email);
+            intent.putExtra("phone", phone);
             intent.putExtra("otp", otp);
             intent.putExtra("user_id", user_id);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -28,13 +28,10 @@ import butterknife.OnClick;
  */
 
 public class SuggestionAdapter extends RecyclerView.Adapter<SuggestionAdapter.SuggestionHolder> {
-
-
     private Context mContext;
     private Activity mActivity;
     private ArrayList<SuggestionResponseBean> mSuggestionList;
     private SuggestionOrderListener mSuggestionOrderListener;
-
 
     public SuggestionAdapter(Context context, SuggestionOrderListener listener) {
         mContext = context;
@@ -168,5 +165,4 @@ public class SuggestionAdapter extends RecyclerView.Adapter<SuggestionAdapter.Su
 
         }
     }
-
 }

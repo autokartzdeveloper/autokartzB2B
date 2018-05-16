@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.EnquiryFormsAdapterListener;
 import com.autokartz.autokartz.utils.apiResponses.EnquiryFormsResponseBean;
 import com.autokartz.autokartz.utils.converter.ConvertDateFormat;
 
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -23,29 +25,27 @@ import butterknife.OnClick;
  */
 
 public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapter.EnquiryFormsHolder> {
-
-
     private Context mContext;
     private ArrayList<EnquiryFormsResponseBean> mEnquiryFormsList;
     private ProgressDialog mProgressDialog;
     private EnquiryFormsAdapterListener mEnquiryFormsAdapterListener;
 
     public EnquiryFormsAdapter(Context context, EnquiryFormsAdapterListener listener) {
-        mContext=context;
-        mEnquiryFormsList=new ArrayList<>();
-        mEnquiryFormsAdapterListener=listener;
+        mContext = context;
+        mEnquiryFormsList = new ArrayList<>();
+        mEnquiryFormsAdapterListener = listener;
     }
 
     @Override
     public EnquiryFormsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_enquiry,parent,false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_enquiry, parent, false);
         return new EnquiryFormsHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(EnquiryFormsHolder holder, int position) {
-        holder.enquiryText.setText(position+1+".");
-        String date=mEnquiryFormsList.get(position).getCreatedAt();
+        holder.enquiryText.setText(position + 1 + ".");
+        String date = mEnquiryFormsList.get(position).getCreatedAt();
         holder.dateTv.setText(ConvertDateFormat.convertDateFormat(date));
         holder.mEnquiryBrand.setText(mEnquiryFormsList.get(position).getBrand());
     }
@@ -71,15 +71,16 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
         LinearLayout mLayout;
         @BindView(R.id.enquiry_form_brand)
         TextView mEnquiryBrand;
+
         public EnquiryFormsHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @OnClick({R.id.item_enquiry_layout})
         public void onClickEnquiry() {
-            int position=getAdapterPosition();
-            String enquiryId=mEnquiryFormsList.get(position).getEnquiry_id();
+            int position = getAdapterPosition();
+            String enquiryId = mEnquiryFormsList.get(position).getEnquiry_id();
             mEnquiryFormsAdapterListener.getDataOfEnquirySelection(enquiryId);
         }
 

@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,13 @@ import com.autokartz.autokartz.utils.pojoClasses.OrderDetail;
 import com.autokartz.autokartz.utils.util.Logger;
 import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +57,9 @@ public class OrderDetailFragment extends Fragment {
     private OrderDetailItemAdapter mOrderDetailItemAdapter;
     private ArrayList<SuggestionResponseBean> mSuggestionBeanResponse;
     private OrderDetail mOrderDetail;
+    Date dateDelivery;
+    Date dateCurrentTime;
+    int disputeClosingDay;
 
     @Nullable
     @Override
@@ -78,7 +88,7 @@ public class OrderDetailFragment extends Fragment {
     }
 
     private void setRecyclerView() {
-        mOrderDetailItemAdapter = new OrderDetailItemAdapter(mContext, mActivity, mSuggestionBeanResponse, mOrderDetail);
+        mOrderDetailItemAdapter = new OrderDetailItemAdapter(mContext, mActivity, mSuggestionBeanResponse, mOrderDetail, disputeClosingDay);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mItemsRv.setLayoutManager(layoutManager);
         mItemsRv.setItemAnimator(new DefaultItemAnimator());
@@ -93,6 +103,32 @@ public class OrderDetailFragment extends Fragment {
         mSuggestionBeanResponse = mOrderDetail.getProductInfo();
         Logger.LogDebug("hello", mOrderDetail.getProductInfo() + "");
         String date = mOrderDetail.getTimestamp();
+        String deliveryUpdated = mOrderDetail.getDeliveryUpdated();
+        if (deliveryUpdated != null && !(deliveryUpdated.isEmpty())) {
+            //deliverydate
+            String deliveryDate = ConvertDateFormat.convertDateTimeFormat(deliveryUpdated);
+            //current date
+            Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
+            Date currentLocalTime = cal.getTime();
+            DateFormat date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+            date1.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
+            String currentDateTimeString = date1.format(currentLocalTime);
+            //convert string in Date format
+            try {
+                dateDelivery = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z").parse(deliveryDate);
+                dateCurrentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z").parse(currentDateTimeString);
+                long difference = dateCurrentTime.getTime() - dateDelivery.getTime();
+                //Find number of days by dividing the mili seconds
+                disputeClosingDay = (int) (difference / (24 * 60 * 60 * 1000));
+                float asd = (difference / (1000 * 60 * 60)) % 24;
+              //  Log.v("qwer", String.valueOf(asd));
+                //Log.v("qwer", String.valueOf(dateDelivery));
+                Log.v("qwer", String.valueOf(disputeClosingDay));
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
         mDateTv.setText(ConvertDateFormat.convertDateFormat(date));
         if (mOrderDetail.getStatus().matches("1")) {
             mStatusTv.setText("Order Success");

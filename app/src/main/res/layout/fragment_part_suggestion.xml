@@ -232,11 +232,11 @@
                     android:layout_marginRight="@dimen/mar_10"
                     android:layout_weight="1"
                     android:background="@drawable/button_background"
-                    android:text="Show Form"
-                    android:textAllCaps="false"
-                    android:textColor="@color/Blue"
+                    android:text="ADD PARTS"
+                    android:textAllCaps="true"
+                    android:textColor="@color/appcolorornage"
                     android:textSize="@dimen/textSize16sp"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <Button
                     android:id="@+id/submit_order_btn"
@@ -247,9 +247,10 @@
                     android:layout_weight="1"
                     android:background="@color/appcolorornage"
                     android:text="Submit"
-                    android:textAllCaps="false"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
                     android:textSize="@dimen/textSize16sp" />
+
 
             </LinearLayout>
 

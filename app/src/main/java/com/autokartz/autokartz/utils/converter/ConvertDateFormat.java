@@ -1,6 +1,5 @@
 package com.autokartz.autokartz.utils.converter;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,7 +19,6 @@ public class ConvertDateFormat {
         long time = Long.valueOf(timeStamp);
         Date date = new Date(time * 1000L);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-        simpleDateFormat.setTimeZone(getTimeZone("GMT-4"));
         return simpleDateFormat.format(date);
     }
 
@@ -28,9 +26,7 @@ public class ConvertDateFormat {
         long time = Long.valueOf(timeStamp);
         Date date = new Date(time * 1000L);
         SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
-        simpleDateFormat.setTimeZone(getTimeZone("GMT-4"));
         return simpleDateFormat.format(date);
-
 
     }
 }

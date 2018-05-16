@@ -84,7 +84,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     private DatabaseCURDOperations mDatabaseCURDOperations;
     ArrayList<CategoryInformation> fullList;
     ArrayList<CategoryInformation> mSelectedParts;
-
+    String carchass;
 
     @Nullable
     @Override
@@ -111,7 +111,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     }
 
     private void setAddedPartRecyclerView() {
-        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn,enquiryCarPartsDetailsAdapter);
+        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn, enquiryCarPartsDetailsAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mAddedPartRv.setLayoutManager(layoutManager);
         mAddedPartRv.setItemAnimator(new DefaultItemAnimator());
@@ -131,9 +131,8 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
 
         }
         mRequirePartsList.size();
-
-
     }
+
 
     private void setSelectedPartRecyclerView() {
         enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn);
@@ -154,11 +153,13 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         mCarInfo = (CarInformation) getArguments().getSerializable(IntentKeyConstants.TAG_FORM_DATA);
         String tag = getArguments().getString(IntentKeyConstants.KEY_FRAGMENT);
         if (tag != null && tag.equalsIgnoreCase(AppConstantKeys.TAG_PART_SUGGESTION)) {
-            mAccountDetailHolder.setSelectedCarParts(mCarInfo.getmRequirePartsList());
+            //during update parts please check it
+            // mAccountDetailHolder.setSelectedCarParts(mCarInfo.getmRequirePartsList());
         }
         partsList = new ArrayList<>();
         mAddedPartList = mAccountDetailHolder.getAddPartDetails();
         mSelectedParts = mAccountDetailHolder.getSelectedCarParts();
+
 
     }
 

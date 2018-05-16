@@ -19,6 +19,7 @@ import com.autokartz.autokartz.fragments.OrdersFragment;
 import com.autokartz.autokartz.interfaces.GetPayTMApiResponseListener;
 import com.autokartz.autokartz.interfaces.GetPayUMoneyApiResponseListener;
 import com.autokartz.autokartz.interfaces.OrderAPIResponseListener;
+import com.autokartz.autokartz.services.connectionClasses.UserConnection;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.services.webServices.apiRequests.OrderAPI;
 import com.autokartz.autokartz.services.webServices.apiRequests.PayTMApi;
@@ -27,13 +28,18 @@ import com.autokartz.autokartz.utils.apiRequestBeans.OrderDataBean;
 import com.autokartz.autokartz.utils.apiRequestBeans.PayTmRequestBean;
 import com.autokartz.autokartz.utils.apiRequestBeans.PayUMoneyRequestBean;
 import com.autokartz.autokartz.utils.apiResponses.PayTmResponseBean;
+import com.autokartz.autokartz.utils.apiResponses.PayTmTransactionResponse;
 import com.autokartz.autokartz.utils.apiResponses.PayUMoneyResponseBean;
+import com.autokartz.autokartz.utils.apiResponses.TransactionStatus;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
+import com.autokartz.autokartz.utils.retrofitAdapter.RetroFitAdapter;
 import com.autokartz.autokartz.utils.util.AppToast;
+import com.autokartz.autokartz.utils.util.HsbcParams;
 import com.autokartz.autokartz.utils.util.Logger;
 import com.autokartz.autokartz.utils.util.PayTMParams;
 import com.autokartz.autokartz.utils.util.PayUMoneyParams;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
+import com.autokartz.autokartz.utils.util.constants.ServerApi;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 import com.paytm.pgsdk.Log;
@@ -55,6 +61,9 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMoneyApiResponseListener, GetPayTMApiResponseListener, OrderAPIResponseListener {
 
@@ -108,11 +117,9 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         PayUMoneyParams.PRODUCT_INFO = orderDataBean.getProductInfo();
         PayUMoneyParams.AMOUNT = String.valueOf(payableAmount);
         PayTMParams.TXN_AMOUNT = String.valueOf(payableAmount);
-
     }
 
     private void initPayUMoneySDK() {
-
         PayUmoneyConfig payUmoneyConfig = PayUmoneyConfig.getInstance();
         //Use this to set your custom text on result screen button
         payUmoneyConfig.setDoneButtonText("Done");
@@ -141,7 +148,7 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // Result Code is -1 send from Payumoney activity
+       /* // Result Code is -1 send from Payumoney activity
         Logger.LogDebug("MainActivity", "request code " + requestCode + " resultcode " + resultCode);
         if (requestCode == PayUmoneyFlowManager.REQUEST_CODE_PAYMENT && resultCode == RESULT_OK && data != null) {
             TransactionResponse transactionResponse = data.getParcelableExtra(PayUmoneyFlowManager.INTENT_EXTRA_TRANSACTION_RESPONSE);
@@ -178,15 +185,16 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                 AppToast.showToast(mContext, "Transaction Error");
                 Log.d(TAG, "Both objects are null!");
             }
-        }
+        }*/
 
         if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
             String str = data.getStringExtra("response").toString();
+            Toast.makeText(mContext, "hsbc integration", Toast.LENGTH_SHORT).show();
             //txnId=(tid)&responseCode=(responsecode)&ApprovalRefNo=( ApprovalRefNo )&Status=(status)&txnRef=(tr)
             //  processResponseIntent(responseIntent);
+        } else {
+            AppToast.showToast(mContext, "Transaction Error");
         }
-
-
     }
 
     @OnClick({R.id.payment_method_payu_tv})
@@ -195,7 +203,7 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         mProgressDialog = ShowDialog.show(this, "", "Please Wait", true, false);
         PayUMoneyApi payUMoneyApi = new PayUMoneyApi(mContext, this, mProgressDialog);
         payUMoneyApi.callPayUMoneyApi(payUMoneyRequestBean);
-        initPayUMoneySDK();
+        // initPayUMoneySDK();
     }
 
     @OnClick({R.id.payment_method_cash_on_delivery_tv})
@@ -205,34 +213,30 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         mProgressDialog = ShowDialog.show(this, "", "Please Wait", true, false);
         OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);
         orderAPI.callOrderApi(orderDataBean);
-
     }
 
     @OnClick({R.id.hsbc_method_paytm_tv})
     public void onClickHsbcTv() {
-
-       // startHsbcPayment();
-
-
+        startHsbcPayment();
     }
 
-   /* private void startHsbcPayment() {
-         StringBuilder urlBuilder = new StringBuilder();
+    private void startHsbcPayment() {
+        StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(DEEPLINKING_URL_BASE).append("?")
-                .append(pa).append("=").append(payeeVpa).append("&")
-                .append(pn).append("=").append(PayeeName).append("&")
-                .append(mc).append("=").append(payeeMcc).append("&")
-                .append(tid).append("=").append(txnId).append("&")
-                .append(tr).append("=").append(txnRef).append("&")
-                .append(tn).append("=").append(txnNote).append("&")
-                .append(am).append("=").append(payeeAmt).append("&")
-                .append(mam).append("=").append(minAmt).append("&")
-                .append(cu).append("=").append(payeeCur).append("&")
-                .append(url).append("=").append(Appurl);
+                .append(HsbcParams.pa).append("=").append("").append("&")
+                .append(HsbcParams.pn).append("=").append("").append("&")
+                .append(HsbcParams.mc).append("=").append("").append("&")
+                .append(HsbcParams.tid).append("=").append("").append("&")//blank
+                .append(HsbcParams.tr).append("=").append("AUTO001234").append("&")
+                .append(HsbcParams.tn).append("=").append("").append("&")//blank
+                .append(HsbcParams.am).append("=").append("2.0").append("&")
+                .append(HsbcParams.mam).append("=").append("").append("&")//blank
+                .append(HsbcParams.cu).append("=").append("").append("&")//blank
+                .append(HsbcParams.url).append("=").append("");//blank
 
-        // String deepLinkUrl = urlBuilder.toString();
+        String deepLinkUrl = urlBuilder.toString();
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        // intent.setData(Uri.parse(deepLinkUrl));
+        intent.setData(Uri.parse(deepLinkUrl));
         String title = "Pay with";
         // Create intent to show chooser. It will display the list of available PSP apps (which have the same url in
         // the maifest)
@@ -241,8 +245,7 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(chooser, 1);
         }
-    }*/
-
+    }
 
     @OnClick({R.id.payment_method_paytm_tv})
     public void onClickPayTMTv() {
@@ -282,16 +285,10 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         paramMap.put(AppConstantKeys.CHANNEL_ID, PayTMParams.CHANNEL_ID);
         paramMap.put(AppConstantKeys.TXN_AMOUNT, PayTMParams.TXN_AMOUNT);
         paramMap.put(AppConstantKeys.WEBSITE, PayTMParams.WEBSITE);
-        paramMap.put(AppConstantKeys.M_KEY, PayTMParams.M_KEY);
-        paramMap.put("CALLBACK_URL", "https://pguat.paytm.com/paytmchecksum/paytmCallback.jsp");
+        paramMap.put(AppConstantKeys.CALLBACK_URL, "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=" + PayTMParams.ORDER_ID);
         paramMap.put(AppConstantKeys.CHECKSUMHASH, PayTMParams.HASH);
         PaytmOrder Order = new PaytmOrder(paramMap);
-        PaytmMerchant Merchant = new PaytmMerchant(
-                "https://pguat.paytm.com/paytmchecksum/paytmCheckSumGenerator.jsp",
-                "https://pguat.paytm.com/paytmchecksum/paytmCheckSumVerify.jsp");
-
         Service.initialize(Order, null);
-
         Service.startPaymentTransaction(this, true, true,
                 new PaytmPaymentTransactionCallback() {
 
@@ -299,11 +296,25 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                     public void someUIErrorOccurred(String inErrorMessage) {
                         // Some UI Error Occurred in Payment Gateway Activity.
                     }
-
                     @Override
                     public void onTransactionResponse(Bundle inResponse) {
-                        Logger.LogDebug("LOG", "Payment Transaction : " + inResponse);
-                        Toast.makeText(mContext, "Payment Transaction response " + inResponse.toString(), Toast.LENGTH_LONG).show();
+                        UserConnection userConnection = RetroFitAdapter.createService(UserConnection.class, ServerApi.SERVER_URL);
+                        Call<PayTmTransactionResponse> call = userConnection.getPaytmCheckSum(AppConstantKeys.CONTENT_TYPE, PayTMParams.MID, PayTMParams.ORDER_ID, PayTMParams.M_KEY);
+
+                        call.enqueue(new Callback<PayTmTransactionResponse>() {
+                            @Override
+                            public void onResponse(Call<PayTmTransactionResponse> call, Response<PayTmTransactionResponse> response) {
+                                TransactionStatus body = response.body().getStatus();
+                                PaytmOrderSuccessStatus();
+                                Toast.makeText(PaymentPayUActivity.this, "Payment success", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<PayTmTransactionResponse> call, Throwable t) {
+                            }
+                        });
+                        Log.v("paytmt", "Payment Transaction : " + inResponse);
+
                     }
 
                     @Override
@@ -325,23 +336,63 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                     @Override
                     public void onErrorLoadingWebPage(int iniErrorCode,
                                                       String inErrorMessage, String inFailingUrl) {
-
                     }
 
                     // had to be added: NOTE
                     @Override
                     public void onBackPressedCancelTransaction() {
                         // TODO Auto-generated method stub
-                        // Toast.makeText(getBaseContext(), "Payment  Failed ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), "Payment Transaction Cancelled ", Toast.LENGTH_LONG).show();
+                        PaytmOrderCancelledStatus();
                     }
 
                     @Override
                     public void onTransactionCancel(String inErrorMessage, Bundle inResponse) {
-                        android.util.Log.d("LOG", "Payment Transaction Failed " + inErrorMessage);
+                        UserConnection userConnection = RetroFitAdapter.createService(UserConnection.class, ServerApi.SERVER_URL);
+                        Call<PayTmTransactionResponse> call = userConnection.getPaytmCheckSum(AppConstantKeys.CONTENT_TYPE, PayTMParams.MID, PayTMParams.ORDER_ID, PayTMParams.M_KEY);
+                        call.enqueue(new Callback<PayTmTransactionResponse>() {
+                            @Override
+                            public void onResponse(Call<PayTmTransactionResponse> call, Response<PayTmTransactionResponse> response) {
+                                TransactionStatus body = response.body().getStatus();
+                            }
+
+                            @Override
+                            public void onFailure(Call<PayTmTransactionResponse> call, Throwable t) {
+
+                            }
+                        });
+                        PaytmOrderFailedStatus();
+                        //  android.util.Log.d("LOG", "Payment Transaction Failed " + inErrorMessage);
                         Toast.makeText(getBaseContext(), "Payment Transaction Failed ", Toast.LENGTH_LONG).show();
+
                     }
 
                 });
+    }
+
+    private void PaytmOrderFailedStatus() {
+        orderDataBean.setStatus("3");
+        orderDataBean.setPaymentMode("PAYTM");
+        mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);
+        OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);
+        orderAPI.callOrderApi(orderDataBean);
+    }
+
+    private void PaytmOrderCancelledStatus() {
+        orderDataBean.setStatus("2");
+        orderDataBean.setPaymentMode("PAYTM");
+        mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);
+        OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);
+        orderAPI.callOrderApi(orderDataBean);
+    }
+
+    private void PaytmOrderSuccessStatus() {
+        orderDataBean.setStatus("1");
+        orderDataBean.setPaymentMode("PAYTM");
+        mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);
+        OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);
+        orderAPI.callOrderApi(orderDataBean);
+
     }
 
     @Override
@@ -350,7 +401,6 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         Intent intent = new Intent(mContext, MainDashboardActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-
     }
 
 }

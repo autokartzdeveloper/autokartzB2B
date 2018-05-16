@@ -22,8 +22,6 @@ import butterknife.ButterKnife;
  */
 
 public class InvoiceOrderItemAdapter extends RecyclerView.Adapter<InvoiceOrderItemAdapter.InvoiceOrderItemHolder> {
-
-
     private Context mContext;
     private ArrayList<SuggestionResponseBean> mOrderList;
 

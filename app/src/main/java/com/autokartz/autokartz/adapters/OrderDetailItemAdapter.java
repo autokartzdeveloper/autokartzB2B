@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.activities.MainDashboardActivity;
@@ -40,13 +41,15 @@ public class OrderDetailItemAdapter extends RecyclerView.Adapter<OrderDetailItem
     private static final String CURRENT_TAG = OrderDetailItemAdapter.class.getName();
     private Context mContext;
     String suggestion_id;
+    int closingDispute;
     private Activity mActivity;
     private OrderDetail mOrderDetail;
     private ArrayList<SuggestionResponseBean> mSuggestionResponseBeanList;
 
 
-    public OrderDetailItemAdapter(Context context, Activity activity, ArrayList<SuggestionResponseBean> list, OrderDetail mOrderDetail) {
+    public OrderDetailItemAdapter(Context context, Activity activity, ArrayList<SuggestionResponseBean> list, OrderDetail mOrderDetail, int disputeClosingDay) {
         mContext = context;
+        this.closingDispute = disputeClosingDay;
         mActivity = activity;
         this.mOrderDetail = mOrderDetail;
         mSuggestionResponseBeanList = new ArrayList<>();
@@ -58,11 +61,9 @@ public class OrderDetailItemAdapter extends RecyclerView.Adapter<OrderDetailItem
     public OrderDetailItemAdapter.OrderDetailItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_order_detail_items, parent, false);
 
-
         return new OrderDetailItemHolder(itemView);
 
     }
-
 
     @Override
     public void onBindViewHolder(final OrderDetailItemAdapter.OrderDetailItemHolder holder, int position) {
@@ -104,13 +105,18 @@ public class OrderDetailItemAdapter extends RecyclerView.Adapter<OrderDetailItem
         if (mOrderDetail.getStatus().matches("2")) {
             holder.mDisputeBtn.setVisibility(View.GONE);
         }
+
+        if (closingDispute == 1) {
+            Toast.makeText(mContext, "asd", Toast.LENGTH_SHORT).show();
+            holder.mDisputeBtn.setVisibility(View.GONE);
+        } else {
+            Toast.makeText(mContext, "asd", Toast.LENGTH_SHORT).show();
+        }
         if (mOrderDetail.getDeliveryStatus() != null && mOrderDetail.getDeliveryStatus().matches("3")) {
             holder.mDisputeBtn.setVisibility(View.VISIBLE);
         } else {
             holder.mDisputeBtn.setVisibility(View.GONE);
         }
-
-
     }
 
     @Override
@@ -146,7 +152,6 @@ public class OrderDetailItemAdapter extends RecyclerView.Adapter<OrderDetailItem
             ButterKnife.bind(this, itemView);
 
         }
-
 
         @OnClick({R.id.order_detail_item_dispute_btn})
         public void onClickDisputeBtn() {

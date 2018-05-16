@@ -30,49 +30,49 @@ public class EnquiryApi implements Callback<EnquiryResponseBean> {
 
 
     private Context mContext;
-    private static final String TAG=ManualLoginApi.class.getName();
+    private static final String TAG = ManualLoginApi.class.getName();
     private ProgressDialog mProgressDialog;
     private GetEnquiryApiResponseListener mGetEnquiryApiResponseListener;
 
-    public EnquiryApi(Context context,GetEnquiryApiResponseListener getEnquiryApiResponseListener,ProgressDialog progressDialog) {
-        mContext=context;
-        mProgressDialog=progressDialog;
-        mGetEnquiryApiResponseListener=getEnquiryApiResponseListener;
+    public EnquiryApi(Context context, GetEnquiryApiResponseListener getEnquiryApiResponseListener, ProgressDialog progressDialog) {
+        mContext = context;
+        mProgressDialog = progressDialog;
+        mGetEnquiryApiResponseListener = getEnquiryApiResponseListener;
     }
 
     public void callEnquiryApi(CarInformation carInfo) {
-        Gson gson=new Gson();
-        String jsonDetails=gson.toJson(carInfo);
-        Logger.LogDebug("hello",jsonDetails);
-        if(!InternetConnection.isInternetConnected(mContext)) {
+        Gson gson = new Gson();
+        String jsonDetails = gson.toJson(carInfo);
+        Logger.LogDebug("hello", jsonDetails);
+        if (!InternetConnection.isInternetConnected(mContext)) {
             DismissDialog.dismissWithCheck(mProgressDialog);
-            AppToast.showToast(mContext,mContext.getResources().getString(R.string.err_no_internet));
+            AppToast.showToast(mContext, mContext.getResources().getString(R.string.err_no_internet));
             return;
         }
-        UserConnection userConnection= RetroFitAdapter.createService(UserConnection.class, ServerApi.SERVER_URL);
-        Call<EnquiryResponseBean> call=userConnection.callEnuiryApi(jsonDetails);
+        UserConnection userConnection = RetroFitAdapter.createService(UserConnection.class, ServerApi.SERVER_URL);
+        Call<EnquiryResponseBean> call = userConnection.callEnuiryApi(jsonDetails);
         call.enqueue(this);
     }
 
     @Override
     public void onResponse(Call<EnquiryResponseBean> call, Response<EnquiryResponseBean> response) {
 
-        if(response.isSuccessful()&& response.body().isSuccess()) {
+        if (response.isSuccessful() && response.body().isSuccess()) {
             DismissDialog.dismissWithCheck(mProgressDialog);
-            AppToast.showToast(mContext,response.body().getMessage());
+            AppToast.showToast(mContext, response.body().getMessage());
             afterSuccessfullResponse(true);
         } else {
             DismissDialog.dismissWithCheck(mProgressDialog);
-            AppToast.showToast(mContext,response.body().getMessage());
+            AppToast.showToast(mContext, response.body().getMessage());
             afterSuccessfullResponse(false);
         }
     }
 
     @Override
     public void onFailure(Call<EnquiryResponseBean> call, Throwable t) {
-        Logger.LogError(TAG,t.getMessage());
+        Logger.LogError(TAG, t.getMessage());
         DismissDialog.dismissWithCheck(mProgressDialog);
-        AppToast.showToast(mContext,"Network Error");
+        AppToast.showToast(mContext, "Network Error");
     }
 
     private void afterSuccessfullResponse(boolean status) {

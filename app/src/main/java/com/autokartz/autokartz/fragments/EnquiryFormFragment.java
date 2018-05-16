@@ -32,8 +32,6 @@ import butterknife.OnClick;
 import butterknife.OnItemSelected;
 
 public class EnquiryFormFragment extends Fragment {
-
-
     @BindView(R.id.carbrand_spinner)
     Spinner mCarBraND;
     @BindView(R.id.modelcar_spinner)

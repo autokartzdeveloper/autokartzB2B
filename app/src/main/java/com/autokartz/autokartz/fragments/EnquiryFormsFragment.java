@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.adapters.EnquiryFormsAdapter;
@@ -50,12 +51,10 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
     @BindView(R.id.fab_add_enquiry_form)
     FloatingActionButton mAddEnuiryFormFabBtn;
     @BindView(R.id.no_enquiry_form_tv)
-
     TextView mNoEnquiryFormTv;
-
     @BindView(R.id.linearlayout1)
     LinearLayout mLinearLayout;
-
+    private static int NAV_ITEM_INDEX = 0;
     private Context mContext;
     private Activity mActivity;
     private ArrayList<Integer> enquiryFormList;
@@ -78,8 +77,8 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         if (actionBar != null)
             actionBar.setTitle("Enquiry Forms");
-
         init();
+
     }
 
     private void init() {
@@ -120,7 +119,6 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment, CURRENT_TAG);
         fragmentTransaction.addToBackStack(CURRENT_TAG);
-
         fragmentTransaction.commit();
     }
 
@@ -135,6 +133,13 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
                 mLinearLayout.setVisibility(View.VISIBLE);
                 mEnquiryFormsAdapter.setEnquiryFormsList(list);
                 mEnquiryFormsAdapter.notifyDataSetChanged();
+                String enquiryId = getArguments().getString("enquiryId");
+                //GET Intent from main dashboard notification methhod
+                if (enquiryId.matches("")) {
+                } else {
+                    openPartSuggestionFragment(enquiryId);
+                }
+
             }
         } else {
             mEnquiryFormsRv.setVisibility(View.GONE);
@@ -160,6 +165,5 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
         fragmentTransaction.addToBackStack(CURRENT_TAG);
         fragmentTransaction.commit();
     }
-
 
 }

@@ -1,6 +1,7 @@
 package com.autokartz.autokartz.utils.pojoClasses;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -12,23 +13,26 @@ public class CarInformation implements Serializable {
 
 
     @SerializedName("user_id")
-    private String mUserId="";
+    private String mUserId = "";
     @SerializedName("brand")
-    private String mBarnd="";
+    private String mBarnd = "";
     @SerializedName("model")
-    private String mModel="";
+    private String mModel = "";
     @SerializedName("variant")
-    private String mVariant="";
+    private String mVariant = "";
     @SerializedName("engine")
-    private String mEnginne="";
+    private String mEnginne = "";
     @SerializedName("year")
-    private String mYear="";
+    private String mYear = "";
     @SerializedName("car_chassis_number")
-    private String mCarChassisNumber="";
+    private String mCarChassisNumber = "";
     @SerializedName("partdetails")
-    private ArrayList<CategoryInformation> mRequirePartsList=new ArrayList<>();
+    private ArrayList<CategoryInformation> mRequirePartsList = new ArrayList<>();
+    @SerializedName("enquiry_id")
+    private String mEnquiry = "";
 
-    public CarInformation() {}
+    public CarInformation() {
+    }
 
     public CarInformation(String mBarnd, String mModel, String mVariant, String mEnginne, String mYear) {
         this.mBarnd = mBarnd;
@@ -36,6 +40,14 @@ public class CarInformation implements Serializable {
         this.mVariant = mVariant;
         this.mEnginne = mEnginne;
         this.mYear = mYear;
+    }
+
+    public String getmEnquiry() {
+        return mEnquiry;
+    }
+
+    public void setmEnquiry(String mEnquiry) {
+        this.mEnquiry = mEnquiry;
     }
 
     public String getmUserId() {

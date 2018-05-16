@@ -23,6 +23,7 @@ public class ServerApi {
     public static final String PRODUCT_SUGGETIONS = "suggestion/product-suggestion";
     public static final String PAYUMONEY = "payment/payu-hash";
     public static final String PAYTM = "payment/paytm-hash";
+    public static final String PAYTMCHECKSUM = "payment/paytm-txn-status";
     public static final String PRODUCT_ORDER = "enquiry/product-order";
     public static final String ORDERS = "enquiry/order-id";
     public static final String ORDERDETAIL = "enquiry/order-detail";

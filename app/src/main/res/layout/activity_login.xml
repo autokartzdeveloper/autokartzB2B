@@ -34,6 +34,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:layout_marginLeft="@dimen/mar_10"
                     android:layout_marginRight="@dimen/mar_10">
 
@@ -50,7 +51,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/mar_10"
-                    android:layout_marginRight="@dimen/mar_10">
+                    android:layout_marginRight="@dimen/mar_10"
+                    app:passwordToggleContentDescription="dadad"
+                    app:passwordToggleDrawable="@drawable/toggle"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/gray">
 
                     <EditText
                         android:id="@+id/et_passwordlogin"
@@ -90,18 +95,8 @@
                     android:layout_marginTop="10dp"
                     android:text="OR"
                     android:textAlignment="center"
-                    android:textSize="@dimen/dimen_20dp" />
-
-                <TextView
-                    android:id="@+id/register_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/not_a_member_yet_create_an_account"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/dimen_16dp" />
+                    android:textSize="@dimen/dimen_18dp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/register_button"

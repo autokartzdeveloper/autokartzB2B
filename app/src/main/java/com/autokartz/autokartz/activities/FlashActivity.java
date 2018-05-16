@@ -53,5 +53,4 @@ public class FlashActivity extends AppCompatActivity {
 
         }, DELAY);
     }
-
 }

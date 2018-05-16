@@ -7,6 +7,7 @@ import com.autokartz.autokartz.utils.apiResponses.EnquiryResponseBean;
 import com.autokartz.autokartz.utils.apiResponses.OrderApiResponse;
 import com.autokartz.autokartz.utils.apiResponses.OrderDetailApiResponse;
 import com.autokartz.autokartz.utils.apiResponses.PayTmResponseBean;
+import com.autokartz.autokartz.utils.apiResponses.PayTmTransactionResponse;
 import com.autokartz.autokartz.utils.apiResponses.PayUMoneyResponseBean;
 import com.autokartz.autokartz.utils.apiResponses.ProductOrderAPIResponse;
 import com.autokartz.autokartz.utils.apiResponses.ProductSuggestionResponseBean;
@@ -112,6 +113,15 @@ public interface UserConnection {
                                          @Field("TXN_AMOUNT") String TXN_AMOUNT,
                                          @Field("WEBSITE") String WEBSITE,
                                          @Field("M_KEY") String M_KEY);
+
+
+    @FormUrlEncoded
+    @POST(ServerApi.PAYTMCHECKSUM)
+    Call<PayTmTransactionResponse> getPaytmCheckSum(@Header("Content-Type") String authtoken,
+                                                    @Field("MID") String MID,
+                                                    @Field("ORDERID") String ORDERID,
+                                                    @Field("M_KEY") String M_KEY);
+
 
     @FormUrlEncoded
     @POST(ServerApi.PRODUCT_ORDER)

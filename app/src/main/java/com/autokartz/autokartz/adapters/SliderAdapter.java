@@ -28,7 +28,6 @@ public class SliderAdapter extends PagerAdapter {
     public SliderAdapter(Context context, List<Integer> imageSlider) {
         this.context = context;
         this.imageSlider = imageSlider;
-
     }
 
     @Override

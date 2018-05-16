@@ -35,11 +35,8 @@ import butterknife.OnClick;
  */
 
 public class HomeFragment extends Fragment {
-
-
     private Activity mActivity;
     private static final String CURRENT_TAG = "Home Fragment";
-
     List<Integer> imageSlider;
     @BindView(R.id.viewPager)
     ViewPager mViewPager;

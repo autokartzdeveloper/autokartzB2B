@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">AutokartzB2B</string>
     <string name="autokartz">AutoKartz</string>
     <string name="google_map_api_key">AIzaSyBrdS159ufdXuVenlql7DZfNmdA2oIJ84w</string>
@@ -65,7 +64,7 @@
     <string name="transaction_history">Transaction History</string>
     <string name="orders">Orders</string>
     <string name="my_account">My Account</string>
-    <string name="company_url">Company URL</string>
+    <string name="company_url">Shop Online</string>
     <string name="signout">Signout</string>
     <string name="openDrawer">Open Drawer</string>
     <string name="closeDrawer">CloseDrawer</string>

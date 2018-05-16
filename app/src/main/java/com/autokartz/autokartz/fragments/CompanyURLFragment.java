@@ -28,8 +28,6 @@ import butterknife.ButterKnife;
  */
 
 public class CompanyURLFragment extends Fragment {
-
-
     @BindView(R.id.company_url_webview)
     WebView mWebView;
     private ProgressDialog mProgressDialog;

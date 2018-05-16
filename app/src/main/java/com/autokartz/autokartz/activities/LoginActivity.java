@@ -46,8 +46,6 @@ import me.leolin.shortcutbadger.ShortcutBadger;
 
 public class LoginActivity extends AppCompatActivity implements LoginResponseListener {
 
-    @BindView(R.id.register_tv)
-    TextView mSignUp;
     @BindView(R.id.login_button)
     Button mLoginButton;
     @BindView(R.id.et_emaillogin)
@@ -65,10 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoginResponseLis
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         init();
-
     }
-
-
 
     private void printKeyHash() {
         try {

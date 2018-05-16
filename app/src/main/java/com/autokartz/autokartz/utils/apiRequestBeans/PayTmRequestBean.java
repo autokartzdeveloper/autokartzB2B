@@ -23,6 +23,8 @@ public class PayTmRequestBean {
     private String WEBSITE;
     @SerializedName("M_KEY")
     private String M_KEY;
+    @SerializedName("CALLBACK_URL")
+    private String CALLBACK_URL;
 
     public PayTmRequestBean(String MID, String CUST_ID, String INDUSTRY_TYPE_ID, String CHANNEL_ID, String TXN_AMOUNT, String WEBSITE, String M_KEY) {
         this.MID = MID;
@@ -32,6 +34,7 @@ public class PayTmRequestBean {
         this.TXN_AMOUNT = TXN_AMOUNT;
         this.WEBSITE = WEBSITE;
         this.M_KEY = M_KEY;
+        this.CALLBACK_URL = CALLBACK_URL;
     }
 
     public String getmID() {
@@ -88,6 +91,14 @@ public class PayTmRequestBean {
 
     public void setMerchantKey(String merchantKey) {
         this.M_KEY = M_KEY;
+    }
+
+    public String getCALLBACK_URL() {
+        return CALLBACK_URL;
+    }
+
+    public void setCALLBACK_URL(String CALLBACK_URL) {
+        this.CALLBACK_URL = CALLBACK_URL;
     }
 
 }

@@ -75,9 +75,7 @@ public class BankInfoFragment extends Fragment implements FcmTokenResponseListsn
         if (actionBar != null) {
             actionBar.setTitle("Bank Information");
         }
-
     }
-
 
     private void init() {
         initVariables();
@@ -106,9 +104,7 @@ public class BankInfoFragment extends Fragment implements FcmTokenResponseListsn
     }
 
     private void getViews() {
-
     }
-
     private boolean isInputValid() {
         if (InputValidation.validateBankAcName(mbankAccountEt) && InputValidation.validateIfscCode(mbankIfscEt)
                 && InputValidation.validateBranch(mBranchEt) && InputValidation.validatePanNumber(mPanNumEt)
@@ -118,9 +114,7 @@ public class BankInfoFragment extends Fragment implements FcmTokenResponseListsn
         return false;
     }
 
-
     @OnClick({R.id.btn_account_add_submit})
-
     public void submit() {
         if (isInputValid()) {
             String user_id = mUserDetailBean.getUserId();

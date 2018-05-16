@@ -69,9 +69,7 @@ public class AutoCashFragment extends Fragment {
         getViews();
     }
 
-
     private void getViews() {
-
 
     }
 

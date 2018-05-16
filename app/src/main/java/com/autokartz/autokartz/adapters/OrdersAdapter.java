@@ -27,7 +27,6 @@ import butterknife.OnClick;
 
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersHolder> {
 
-
     private Context mContext;
     private Activity mActivity;
     private ArrayList<OrderIdResponse> mOrderIdList;
@@ -55,10 +54,12 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersHold
         } else {
         }
         holder.mOrderIdTv.setText(position + 1 + ".");
+
         String date = mOrderIdList.get(position).getDate();
         String date1 = ConvertDateFormat.convertDateFormat(date);
+
         holder.mDateTv.setText(date1);
-        holder.mAmountTv.setText( mContext.getResources().getString(R.string.Rs) + mOrderIdList.get(position).getAmount() );
+        holder.mAmountTv.setText(mContext.getResources().getString(R.string.Rs) + mOrderIdList.get(position).getAmount());
         if (mOrderIdList.get(position).getStatus().matches("1")) {
             holder.mOrderStatus.setText("Success");
             holder.mOrderStatus.setTextColor(mContext.getResources().getColor(R.color.primary_green));

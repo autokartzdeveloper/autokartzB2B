@@ -89,7 +89,7 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
     TextView mCarEngineValTv;
     @BindView(R.id.car_year_val_tv)
     TextView mCarYearValTv;
-
+    String carChassis;
     private Context mContext;
     private Activity mActivity;
     private AccountDetailHolder mAccountDetailHolder;
@@ -146,7 +146,7 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
     }
 
     private void setRecyclerView() {
-        mPartListAdapter = new PartListAdapter(mContext);
+        mPartListAdapter = new PartListAdapter(mContext, mSubmitOrderBtn, mUpdateFormBtn);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mPartListRv.setLayoutManager(layoutManager);
         mPartListRv.setItemAnimator(new DefaultItemAnimator());
@@ -168,25 +168,23 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
         carInformation = new CarInformation();
         mAccountDetailHolder = new AccountDetailHolder(mContext);
         enquiryId = getArguments().getString(IntentKeyConstants.TAG_ENQUIRY_ID);
-       // enquiryId = getArguments().getString("enq_id");
+        carInformation.setmEnquiry(enquiryId);
+        // enquiryId = getArguments().getString("enq_id");
     }
 
     @OnClick({R.id.submit_order_btn})
     public void onClickSubmitOrder() {
-
         //fragment.setArguments(bundle1);
         mOrderList.clear();
         mOrderList.addAll(mPartListAdapter.getOrderList());
         if (mOrderList.size() > 0) {
             Fragment fragment = new InvoiceOrderFragment();
-
             Bundle bundle = new Bundle();
             Gson gson = new Gson();
             String jsonDetails = gson.toJson(mOrderList);
             bundle.putString(IntentKeyConstants.TAG_ORDER_LIST, jsonDetails);
             bundle.putString(IntentKeyConstants.TAG_ORDER_COD, codstatus);
             fragment.setArguments(bundle);
-
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_frame, fragment, CURRENT_TAG);
             fragmentTransaction.addToBackStack(CURRENT_TAG);
@@ -239,7 +237,7 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
     private void updateVisibility() {
         mNoItemTextTv.setVisibility(View.GONE);
         mPartListRv.setVisibility(View.VISIBLE);
-        mUpdateFormBtn.setVisibility(View.GONE);
+        mUpdateFormBtn.setVisibility(View.VISIBLE);
         mSubmitOrderBtn.setVisibility(View.VISIBLE);
         mCarChassisNumValTv.setVisibility(View.VISIBLE);
         mCarBrandValTv.setVisibility(View.VISIBLE);
@@ -256,7 +254,8 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
     }
 
     private void getRequirementDataFromResponse(EnquirySuggestionResponseBean enquirySuggestionResponseBean) {
-        mCarChassisNumValTv.setText(enquirySuggestionResponseBean.getCarChassisNumber());
+        carChassis = enquirySuggestionResponseBean.getCarChassisNumber();
+        mCarChassisNumValTv.setText(carChassis);
         mCarBrandValTv.setText(enquirySuggestionResponseBean.getBrand());
         mCarModelValTv.setText(enquirySuggestionResponseBean.getModel());
         mCarVarientValTv.setText(enquirySuggestionResponseBean.getVariant());
@@ -284,7 +283,6 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
             carInformation.setmRequirePartsList(requirePartList);
         }
     }
-
 
 
 }

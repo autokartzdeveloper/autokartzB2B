@@ -28,7 +28,6 @@ import butterknife.OnClick;
 
 public class EnquiryCarPartsDetailsAdapter extends RecyclerView.Adapter<EnquiryCarPartsDetailsAdapter.EnquiryCarPartsDetailsHolder> {
 
-
     private Activity mActivity;
     private Button mSubmitCarBtn;
     private Context mContext;

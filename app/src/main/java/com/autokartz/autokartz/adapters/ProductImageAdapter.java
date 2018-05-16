@@ -34,8 +34,6 @@ import butterknife.OnClick;
  */
 
 public class ProductImageAdapter extends RecyclerView.Adapter<ProductImageAdapter.ProductImageHolder> {
-
-
     private Activity mContext;
     private AccountDetailHolder mAccountDetailHolder;
     private static ArrayList<String> mImageList;

@@ -31,12 +31,16 @@ public class PartListAdapter extends RecyclerView.Adapter<PartListAdapter.PartLi
 
     private Context mContext;
     private Activity mActivity;
+    private Button mSubmit;
+    private Button mUpdate;
 
     private ArrayList<EnquiryPartSuggestionResponseBean> mEnquiryPartSuggestionList;
     private ArrayList<SuggestionResponseBean> mOrderList;
 
-    public PartListAdapter(Context context) {
+    public PartListAdapter(Context context, Button mSubmitOrderBtn, Button mUpdateFormBtn) {
         mContext = context;
+        this.mSubmit = mSubmitOrderBtn;
+        this.mUpdate = mUpdateFormBtn;
         mEnquiryPartSuggestionList = new ArrayList<>();
         mOrderList = new ArrayList<>();
     }
@@ -78,6 +82,8 @@ public class PartListAdapter extends RecyclerView.Adapter<PartListAdapter.PartLi
         } else {
             holder.mNoTextTv.setVisibility(View.VISIBLE);
             holder.mPartRv.setVisibility(View.GONE);
+            holder.mAgentRemark.setVisibility(View.GONE);
+            holder.mAgentRemarkTv.setVisibility(View.GONE);
 
         }
     }

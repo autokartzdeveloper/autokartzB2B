@@ -8,7 +8,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class PayTmResponseBean {
 
-
+    @SerializedName("status")
+    private String status;
     @SerializedName("success")
     private boolean isSuccess;
     @SerializedName("result_order_id")
@@ -39,6 +40,14 @@ public class PayTmResponseBean {
 
     public void setResultOrderId(String resultOrderId) {
         this.resultOrderId = resultOrderId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }

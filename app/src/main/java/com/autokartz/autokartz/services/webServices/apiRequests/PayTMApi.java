@@ -52,10 +52,10 @@ public class PayTMApi implements Callback<PayTmResponseBean> {
         PayTmResponseBean responseBean = new PayTmResponseBean();
         if (response.isSuccessful() && response.body().isSuccess()) {
             responseBean = response.body();
-            AppToast.showToast(mContext, "Hash Generated Successfully.");
+          //   AppToast.showToast(mContext, "Hash Generated Successfully.");
             afterSuccessfullResponse(true, responseBean);
         } else {
-            AppToast.showToast(mContext, "Hash Generation Failed");
+            // AppToast.showToast(mContext, "Hash Generation Failed");
             afterSuccessfullResponse(false, responseBean);
         }
     }
