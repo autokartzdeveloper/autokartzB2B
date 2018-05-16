@@ -106,14 +106,11 @@ public class OrderDetailItemAdapter extends RecyclerView.Adapter<OrderDetailItem
             holder.mDisputeBtn.setVisibility(View.GONE);
         }
 
-        if (closingDispute == 1) {
-            Toast.makeText(mContext, "asd", Toast.LENGTH_SHORT).show();
-            holder.mDisputeBtn.setVisibility(View.GONE);
-        } else {
-            Toast.makeText(mContext, "asd", Toast.LENGTH_SHORT).show();
-        }
         if (mOrderDetail.getDeliveryStatus() != null && mOrderDetail.getDeliveryStatus().matches("3")) {
             holder.mDisputeBtn.setVisibility(View.VISIBLE);
+            if (closingDispute > 15) {
+                holder.mDisputeBtn.setVisibility(View.GONE);
+            }
         } else {
             holder.mDisputeBtn.setVisibility(View.GONE);
         }

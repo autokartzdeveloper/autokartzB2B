@@ -3,6 +3,7 @@ package com.autokartz.autokartz.fragments;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.autokartz.autokartz.R;
+import com.autokartz.autokartz.activities.MainDashboardActivity;
 import com.autokartz.autokartz.adapters.EnquiryCarPartsDetailsAdapter;
 import com.autokartz.autokartz.adapters.EnquiryFormAddedPartAdapter;
 import com.autokartz.autokartz.interfaces.GetCategoryPartListener;
@@ -175,7 +177,6 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         }
         //todo update part list in database
         //mCarInfo.setmRequirePartsList(partsList);
-
     }
 
     @OnClick({R.id.submit_enquire_parts_btn})
@@ -220,6 +221,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     public void getEnquiryApiResponse(boolean isSent) {
         if (isSent) {
             mAccountDetailHolder.setSelectedCarParts(new ArrayList<CategoryInformation>());
+            mAccountDetailHolder.getSelectedCarParts();
             FragmentManager fm1 = getActivity().getSupportFragmentManager();
             fm1.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }

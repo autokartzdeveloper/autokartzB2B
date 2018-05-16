@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.adapters.OrderDetailItemAdapter;
@@ -76,8 +77,6 @@ public class OrderDetailFragment extends Fragment {
         if (actionBar != null)
             actionBar.setTitle("Order Details");
         init();
-
-
     }
 
     private void init() {
@@ -120,10 +119,6 @@ public class OrderDetailFragment extends Fragment {
                 long difference = dateCurrentTime.getTime() - dateDelivery.getTime();
                 //Find number of days by dividing the mili seconds
                 disputeClosingDay = (int) (difference / (24 * 60 * 60 * 1000));
-                float asd = (difference / (1000 * 60 * 60)) % 24;
-              //  Log.v("qwer", String.valueOf(asd));
-                //Log.v("qwer", String.valueOf(dateDelivery));
-                Log.v("qwer", String.valueOf(disputeClosingDay));
 
             } catch (ParseException e) {
                 e.printStackTrace();

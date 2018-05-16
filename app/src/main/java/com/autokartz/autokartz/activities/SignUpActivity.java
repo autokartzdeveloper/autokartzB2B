@@ -99,7 +99,6 @@ public class SignUpActivity extends AppCompatActivity implements SignUpResponseL
         alertDialog2.show();
         return;
     }
-
     private boolean isInputValid() {
         if (InputValidation.validateFirstName(mGarrageOwnerName) && InputValidation.validateLastName(mCustomerName)
                 && InputValidation.validateAddress(mAddress) && InputValidation.validateCity(mCity)

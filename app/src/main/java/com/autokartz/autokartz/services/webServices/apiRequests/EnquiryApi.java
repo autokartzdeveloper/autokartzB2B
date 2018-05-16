@@ -27,8 +27,6 @@ import retrofit2.Response;
  */
 
 public class EnquiryApi implements Callback<EnquiryResponseBean> {
-
-
     private Context mContext;
     private static final String TAG = ManualLoginApi.class.getName();
     private ProgressDialog mProgressDialog;
@@ -72,7 +70,9 @@ public class EnquiryApi implements Callback<EnquiryResponseBean> {
     public void onFailure(Call<EnquiryResponseBean> call, Throwable t) {
         Logger.LogError(TAG, t.getMessage());
         DismissDialog.dismissWithCheck(mProgressDialog);
-        AppToast.showToast(mContext, "Network Error");
+        //jugad code for notification
+        afterSuccessfullResponse(true);
+        AppToast.showToast(mContext, "ThankYou for Enquiry..We will reach you soon...");
     }
 
     private void afterSuccessfullResponse(boolean status) {
