@@ -127,6 +127,9 @@ public class OrderDetailFragment extends Fragment {
         mDateTv.setText(ConvertDateFormat.convertDateFormat(date));
         if (mOrderDetail.getStatus().matches("1")) {
             mStatusTv.setText("Order Success");
+        } else if (mOrderDetail.getStatus().matches("2")) {
+            mStatusTv.setText("Order Cancelled");
+
         } else {
             mStatusTv.setText("Order Failed");
         }

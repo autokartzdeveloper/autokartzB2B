@@ -24,11 +24,16 @@ import com.autokartz.autokartz.fragments.EnquiryFormFragment;
 import com.autokartz.autokartz.fragments.EnquiryFormsFragment;
 import com.autokartz.autokartz.fragments.PartSuggestionFragment;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
+import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
+import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 import com.autokartz.autokartz.utils.util.Logger;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.apache.poi.hssf.record.formula.functions.Count;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Map;
 
 import me.leolin.shortcutbadger.ShortcutBadger;
@@ -41,25 +46,72 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private Context mContext;
     String enq_id;
     final int NOTIFY_ID = 1; // any integer number
-    int count = 0;
+    String count;
+    // UserNotificationCount mUserNotificationCount;
+    String savedNotificationCount;
+    ArrayList<UserNotificationCount> mUserNotificationCount = new ArrayList<>();
+    int counter;
 
     // [START receive_message]
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         mContext = getApplicationContext();
         mAccountDetailHolder = new AccountDetailHolder(mContext);
+        mUserNotificationCount = mAccountDetailHolder.getNotificationCount();
+        int a = mUserNotificationCount.size();
+        Log.v("qwert", String.valueOf(mUserNotificationCount));
+
+
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
+            count = remoteMessage.getData().get("count");// count
             user_id = remoteMessage.getData().get("user_id");
             enq_id = remoteMessage.getData().get("enq_id");
             message = remoteMessage.getData().get("message");
-            sendNotification(message);
+            if (mUserNotificationCount.size() == 0) {
+                UserNotificationCount userNotificationCount = new UserNotificationCount();
+                userNotificationCount.setUserNotificationCount(count);
+                userNotificationCount.setUserEnquiryId(enq_id);
+                userNotificationCount.setUserId(user_id);
+                mUserNotificationCount.add(userNotificationCount);
+                mAccountDetailHolder.setNotificationCount(mUserNotificationCount);
+            } else {
+                counter = 0;
+                for (int i = 0; i < a; i++) {
+                    if (mUserNotificationCount.get(i).getUserEnquiryId().matches(enq_id)) {
+                        String count_notification = mUserNotificationCount.get(i).getUserNotificationCount();
+                        int savedNotificationINT = Integer.parseInt(count_notification);
+                        int countINT = Integer.parseInt(count);
+                        int totalNotificationCount = savedNotificationINT + countINT;
+                        UserNotificationCount userNotificationCount = new UserNotificationCount();
+                        userNotificationCount.setUserNotificationCount(String.valueOf(totalNotificationCount));
+                        userNotificationCount.setUserEnquiryId(enq_id);
+                        userNotificationCount.setUserId(user_id);
+                        mUserNotificationCount.set(i, userNotificationCount);
+                        mAccountDetailHolder.setNotificationCount(mUserNotificationCount);
+
+                    } else {
+                        if (counter < a) {
+                            if (counter == a - 1) {
+                                UserNotificationCount userNotificationCount = new UserNotificationCount();
+                                userNotificationCount.setUserNotificationCount(count);
+                                userNotificationCount.setUserEnquiryId(enq_id);
+                                userNotificationCount.setUserId(user_id);
+                                mUserNotificationCount.add(userNotificationCount);
+                                mAccountDetailHolder.setNotificationCount(mUserNotificationCount);
+                            }
+
+                        }
+                        counter++;
+                    }
+                }
+            }
+
         }
-        // Check if message contains a notification payload.
-        if (remoteMessage.getNotification() != null) {
-            Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-        }
+
+        sendNotification(message);
+
     }
 
 

@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import com.autokartz.autokartz.utils.apiResponses.UserBankInfo;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
+import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,7 +25,10 @@ public class AccountDetailHolder {
     private static final String KEY_SELECTED_PARTS = "key_selected_parts";
     private static final String KEY_USER_DETAIL_BEAN = "userDetailBean";
     private static final String NOTIFICATION_COUNT = "notifiactionCount";
+    private static final String NOTIFICATION_COUNT_ENQUIRYFORM = "notifiactionCountenquiryform";
+    private static final String NOTIFICATION_COUNT_ENQUIRY = "notifiactionCountEnquiry";
     private static final String KEY_USER_BANK_DETAIL_BEAN = "userBankDetailBean";
+    private static final String KEY_ABC = "ABC";
     private static final String KEY_IS_USER__LOGGED_IN = "isUserLoggedIn";
     private static final String KEY_IS_CAR_INFO_LOADED = "isCarInfoLoaded";
     private static final String KEY_IS_CAT_INFO_LOADED = "isCatInfoLoaded";
@@ -105,19 +109,6 @@ public class AccountDetailHolder {
         sharedPreferences.edit().putString(KEY_USER_DETAIL_BEAN, json).apply();
     }
 
-    public void setNotificationCount(String bacthcount) {
-
-        sharedPreferences.edit().putString(NOTIFICATION_COUNT, bacthcount).apply();
-    }
-
-    public String getNotificationCount() {
-
-
-        String count = sharedPreferences.getString(NOTIFICATION_COUNT,"");
-
-        return count;
-    }
-
     public void setUserBankDetailBean(UserBankInfo userBankInfo) {
         Gson gson = new Gson();
         String json = gson.toJson(userBankInfo);
@@ -133,6 +124,25 @@ public class AccountDetailHolder {
             userDetailBean = new UserDetailBean();
         }
         return userDetailBean;
+    }
+
+    public void setNotificationCount(ArrayList<UserNotificationCount> userNotificationCount) {
+        Gson gson = new Gson();
+        String json = gson.toJson(userNotificationCount);
+        sharedPreferences.edit().putString(NOTIFICATION_COUNT, json).apply();
+    }
+
+
+    public ArrayList<UserNotificationCount> getNotificationCount() {
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(NOTIFICATION_COUNT, null);
+        Type type = new TypeToken<ArrayList<UserNotificationCount>>() {
+        }.getType();
+        ArrayList<UserNotificationCount> list = gson.fromJson(json, type);
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        return list;
     }
 
     public UserBankInfo getUserBankDetailBean() {
@@ -176,6 +186,10 @@ public class AccountDetailHolder {
         sharedPreferences.edit().remove(KEY_SELECTED_PARTS).apply();
         sharedPreferences.edit().remove(KEY_USER_DETAIL_BEAN).apply();
         sharedPreferences.edit().remove(KEY_IS_USER__LOGGED_IN).apply();
+
     }
 
+    public void deleteNotificationCount() {
+        sharedPreferences.edit().remove(NOTIFICATION_COUNT).apply();
+    }
 }

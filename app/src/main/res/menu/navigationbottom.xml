@@ -10,7 +10,8 @@
     <item
         android:id="@+id/navigation_enquiry"
         android:icon="@drawable/enquiryform"
-        android:title="Enquiry" />
+        android:title="Enquiry"
+        app:actionViewClass="android.widget.TextView" />
 
     <item
         android:id="@+id/navigation_orders"

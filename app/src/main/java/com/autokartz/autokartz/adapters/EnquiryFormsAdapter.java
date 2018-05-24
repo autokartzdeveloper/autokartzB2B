@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.EnquiryFormsAdapterListener;
+import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.utils.apiResponses.EnquiryFormsResponseBean;
 import com.autokartz.autokartz.utils.converter.ConvertDateFormat;
+import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 
 import java.util.ArrayList;
 
@@ -30,10 +32,15 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
     private ProgressDialog mProgressDialog;
     private EnquiryFormsAdapterListener mEnquiryFormsAdapterListener;
 
-    public EnquiryFormsAdapter(Context context, EnquiryFormsAdapterListener listener) {
+    AccountDetailHolder mAccountHolder;
+    private ArrayList<UserNotificationCount> mNotification;
+
+    public EnquiryFormsAdapter(Context context, EnquiryFormsAdapterListener listener, ArrayList<UserNotificationCount> mUserNotificationCount, AccountDetailHolder mAccountDetailHolder) {
         mContext = context;
         mEnquiryFormsList = new ArrayList<>();
+        this.mNotification = mUserNotificationCount;
         mEnquiryFormsAdapterListener = listener;
+        this.mAccountHolder = mAccountDetailHolder;
     }
 
     @Override
@@ -45,6 +52,16 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
     @Override
     public void onBindViewHolder(EnquiryFormsHolder holder, int position) {
         holder.enquiryText.setText(position + 1 + ".");
+        String enquiryId = mEnquiryFormsList.get(position).getEnquiry_id();
+        for (int i = 0; i < mNotification.size(); i++) {
+            String notification_count = mNotification.get(i).getUserNotificationCount();
+            String notificationCountEnquiryID = mNotification.get(i).getUserEnquiryId();
+            if (enquiryId.matches(notificationCountEnquiryID)) {
+                holder.mNotificationCount.setText(notification_count);
+                holder.mNotificationCount.setVisibility(View.VISIBLE);
+            }
+        }
+
         String date = mEnquiryFormsList.get(position).getCreatedAt();
         holder.dateTv.setText(ConvertDateFormat.convertDateFormat(date));
         holder.mEnquiryBrand.setText(mEnquiryFormsList.get(position).getBrand());
@@ -61,8 +78,6 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
     }
 
     public class EnquiryFormsHolder extends RecyclerView.ViewHolder {
-
-
         @BindView(R.id.enquiry_form_text)
         TextView enquiryText;
         @BindView(R.id.enquiry_form_date)
@@ -71,6 +86,8 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
         LinearLayout mLayout;
         @BindView(R.id.enquiry_form_brand)
         TextView mEnquiryBrand;
+        @BindView(R.id.notification_count_tv)
+        TextView mNotificationCount;
 
         public EnquiryFormsHolder(View itemView) {
             super(itemView);
@@ -81,6 +98,16 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
         public void onClickEnquiry() {
             int position = getAdapterPosition();
             String enquiryId = mEnquiryFormsList.get(position).getEnquiry_id();
+
+            for (int i = 0; i < mNotification.size(); i++) {
+                String notificationCountEnquiryID = mNotification.get(i).getUserEnquiryId();
+                if (enquiryId.matches(notificationCountEnquiryID)) {
+                    mNotification.remove(mNotification.get(i));
+                    mAccountHolder.setNotificationCount(mNotification);
+
+                }
+            }
+
             mEnquiryFormsAdapterListener.getDataOfEnquirySelection(enquiryId);
         }
 

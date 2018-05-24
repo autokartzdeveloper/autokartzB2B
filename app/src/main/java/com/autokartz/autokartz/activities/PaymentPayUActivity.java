@@ -276,7 +276,8 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
     }
 
     public void onStartTransaction() {
-        PaytmPGService Service = PaytmPGService.getStagingService();
+        // PaytmPGService Service = PaytmPGService.getStagingService();
+        PaytmPGService Service = PaytmPGService.getProductionService();
         Map<String, String> paramMap = new HashMap<>();
         paramMap.put(AppConstantKeys.MID, PayTMParams.MID);
         paramMap.put(AppConstantKeys.ORDER_ID, PayTMParams.ORDER_ID);
@@ -296,8 +297,10 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                     public void someUIErrorOccurred(String inErrorMessage) {
                         // Some UI Error Occurred in Payment Gateway Activity.
                     }
+
                     @Override
                     public void onTransactionResponse(Bundle inResponse) {
+
                         UserConnection userConnection = RetroFitAdapter.createService(UserConnection.class, ServerApi.SERVER_URL);
                         Call<PayTmTransactionResponse> call = userConnection.getPaytmCheckSum(AppConstantKeys.CONTENT_TYPE, PayTMParams.MID, PayTMParams.ORDER_ID, PayTMParams.M_KEY);
 
@@ -305,21 +308,30 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
                             @Override
                             public void onResponse(Call<PayTmTransactionResponse> call, Response<PayTmTransactionResponse> response) {
                                 TransactionStatus body = response.body().getStatus();
-                                PaytmOrderSuccessStatus();
-                                Toast.makeText(PaymentPayUActivity.this, "Payment success", Toast.LENGTH_SHORT).show();
+                                String bankTxnId = body.getBANKTXNID();
+                                if (body.getSTATUS().matches("TXN_SUCCESS")) {
+                                    Toast.makeText(getBaseContext(), "Payment Transaction Success ", Toast.LENGTH_LONG).show();
+                                    PaytmOrderSuccessStatus(bankTxnId);
+
+                                } else if (body.getSTATUS().matches("TXN_FAILURE") && bankTxnId.matches("")) {
+                                    Toast.makeText(getBaseContext(), "Payment Transaction Cancelled ", Toast.LENGTH_LONG).show();
+                                    PaytmOrderCancelledStatus();
+                                } else if (body.getSTATUS().matches("TXN_FAILURE")) {
+                                    Toast.makeText(getBaseContext(), "Payment Transaction Failed ", Toast.LENGTH_LONG).show();
+                                    PaytmOrderFailedStatus(bankTxnId);
+                                }
                             }
 
                             @Override
                             public void onFailure(Call<PayTmTransactionResponse> call, Throwable t) {
+
                             }
                         });
-                        Log.v("paytmt", "Payment Transaction : " + inResponse);
 
                     }
 
                     @Override
                     public void networkNotAvailable() {
-
                     }
 
                     @Override
@@ -348,31 +360,15 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
 
                     @Override
                     public void onTransactionCancel(String inErrorMessage, Bundle inResponse) {
-                        UserConnection userConnection = RetroFitAdapter.createService(UserConnection.class, ServerApi.SERVER_URL);
-                        Call<PayTmTransactionResponse> call = userConnection.getPaytmCheckSum(AppConstantKeys.CONTENT_TYPE, PayTMParams.MID, PayTMParams.ORDER_ID, PayTMParams.M_KEY);
-                        call.enqueue(new Callback<PayTmTransactionResponse>() {
-                            @Override
-                            public void onResponse(Call<PayTmTransactionResponse> call, Response<PayTmTransactionResponse> response) {
-                                TransactionStatus body = response.body().getStatus();
-                            }
-
-                            @Override
-                            public void onFailure(Call<PayTmTransactionResponse> call, Throwable t) {
-
-                            }
-                        });
-                        PaytmOrderFailedStatus();
-                        //  android.util.Log.d("LOG", "Payment Transaction Failed " + inErrorMessage);
                         Toast.makeText(getBaseContext(), "Payment Transaction Failed ", Toast.LENGTH_LONG).show();
-
                     }
-
                 });
     }
 
-    private void PaytmOrderFailedStatus() {
+    private void PaytmOrderFailedStatus(String bankTxnId) {
         orderDataBean.setStatus("3");
         orderDataBean.setPaymentMode("PAYTM");
+        orderDataBean.setTxnId(bankTxnId);
         mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);
         OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);
         orderAPI.callOrderApi(orderDataBean);
@@ -386,8 +382,9 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         orderAPI.callOrderApi(orderDataBean);
     }
 
-    private void PaytmOrderSuccessStatus() {
+    private void PaytmOrderSuccessStatus(String bankTxnId) {
         orderDataBean.setStatus("1");
+        orderDataBean.setTxnId(bankTxnId);
         orderDataBean.setPaymentMode("PAYTM");
         mProgressDialog = ShowDialog.show(mContext, "", "Please Wait", true, false);
         OrderAPI orderAPI = new OrderAPI(mContext, this, mProgressDialog);

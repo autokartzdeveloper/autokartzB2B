@@ -30,6 +30,7 @@ import com.autokartz.autokartz.interfaces.GetEnquiryFormsResponseListener;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.services.webServices.apiRequests.GetEnquiryFormsApi;
 import com.autokartz.autokartz.utils.apiResponses.EnquiryFormsResponseBean;
+import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
@@ -62,6 +63,10 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
     private ProgressDialog mProgressDialog;
     private AccountDetailHolder mAccountDetailHolder;
     private static final String CURRENT_TAG = EnquiryFormsFragment.class.getName();
+    String notification_count;
+    String notificationCountEnquiryID;
+    String notificationUserID;
+    ArrayList<UserNotificationCount> mUserNotificationCount = new ArrayList<>();
 
     @Nullable
     @Override
@@ -78,6 +83,7 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
         if (actionBar != null)
             actionBar.setTitle("Enquiry Forms");
         init();
+
 
     }
 
@@ -98,11 +104,12 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
         mContext = getContext();
         mActivity = getActivity();
         mAccountDetailHolder = new AccountDetailHolder(mContext);
+        mUserNotificationCount = mAccountDetailHolder.getNotificationCount();
         setRvAdapter();
     }
 
     private void setRvAdapter() {
-        mEnquiryFormsAdapter = new EnquiryFormsAdapter(mContext, this);
+        mEnquiryFormsAdapter = new EnquiryFormsAdapter(mContext, this, mUserNotificationCount, mAccountDetailHolder);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mEnquiryFormsRv.setLayoutManager(layoutManager);
         mEnquiryFormsRv.setItemAnimator(new DefaultItemAnimator());
@@ -133,13 +140,14 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
                 mLinearLayout.setVisibility(View.VISIBLE);
                 mEnquiryFormsAdapter.setEnquiryFormsList(list);
                 mEnquiryFormsAdapter.notifyDataSetChanged();
-                String enquiryId = getArguments().getString("enquiryId");
                 //GET Intent from main dashboard notification methhod
+               /* String enquiryId = getArguments().getString("enquiryId");
                 if (enquiryId.matches("")) {
                 } else {
                     openPartSuggestionFragment(enquiryId);
-                }
 
+
+                }*/
             }
         } else {
             mEnquiryFormsRv.setVisibility(View.GONE);

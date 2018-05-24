@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -18,6 +19,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -26,6 +28,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -51,6 +54,7 @@ import com.autokartz.autokartz.services.webServices.apiRequests.FcmTokenApi;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
+import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 import com.autokartz.autokartz.utils.util.AppToast;
 import com.autokartz.autokartz.utils.util.CheckPermission;
 
@@ -75,6 +79,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.google.android.gms.internal.zzbfq.NULL;
 
 public class MainDashboardActivity extends AppCompatActivity implements GetImageListener, SignOutResponseListener, FcmTokenResponseListsner {
     @BindView(R.id.main_nav_drawer_layout)
@@ -104,7 +110,11 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     TabLayout indicator;
     List<Integer> imageSlider;
     BottomNavigationView navigation;
-
+    TextView notifiaction_count;
+    int notification_count;
+    int countTotal = 0;
+    int totalCount;
+    ArrayList<UserNotificationCount> mUserNotificationCount = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,12 +223,15 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     }
 
     private void initViews() {
+
         //imageSlideTimer();
         mNavView = (NavigationView) findViewById(R.id.nav_view);
         View header = mNavView.getHeaderView(0);
         mEmailNavbar = (TextView) header.findViewById(R.id.nav_email_tv);
         mLetterNameNavbar = (TextView) header.findViewById(R.id.nav_firstletter_tv);
         mDisplayNameNavbar = (TextView) header.findViewById(R.id.nav_displayname_tv);
+        notifiaction_count = (TextView) MenuItemCompat.getActionView(mNavView.getMenu().
+                findItem(R.id.nav_enquiry_form));
     }
 
     private void initVariables() {
@@ -227,6 +240,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         mUserDetailBean = mAccountDetailHolder.getUserDetailBean();
         fcmToken();
         notificationintent();
+        sendNotification();
         carInfoList = new ArrayList<>();
         catInfoList = new ArrayList();
         databaseCURDOperations = new DatabaseCURDOperations(mContext);
@@ -237,7 +251,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
         }
     }
 
-    private void notificationintent() {
+    private void sendNotification() {
         String fragment_name = getIntent().getStringExtra("fragment_name");
         String enquiry_id = getIntent().getStringExtra("enquiry_id");
         if (fragment_name != null && fragment_name.matches("PartSuggestionFragment")) {
@@ -247,6 +261,24 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
             fragment1.setArguments(bundle);
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.main_frame, fragment1).commit();
+
+        }
+    }
+
+
+    private void notificationintent() {
+        mUserNotificationCount = mAccountDetailHolder.getNotificationCount();
+        for (int i = 0; i < mUserNotificationCount.size(); i++) {
+            notification_count = Integer.parseInt(mUserNotificationCount.get(i).getUserNotificationCount());
+            totalCount = countTotal += notification_count;
+            notifiaction_count.setGravity(Gravity.CENTER_VERTICAL);
+            notifiaction_count.setTypeface(null, Typeface.BOLD);
+            notifiaction_count.setTextColor(getResources().getColor(R.color.appcolorornage));
+            notifiaction_count.setText(String.valueOf(totalCount));
+            String textNotification = String.valueOf(notifiaction_count.getText());
+            if (textNotification.matches("0")) {
+                notifiaction_count.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -276,6 +308,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
                         fragment = new EnquiryFormsFragment();
                         Bundle bundle = new Bundle();
                         bundle.putString("enquiryId", "");
+                        notifiaction_count.setVisibility(View.GONE);
                         fragment.setArguments(bundle);
                         NAV_ITEM_INDEX = 1;
                         break;
