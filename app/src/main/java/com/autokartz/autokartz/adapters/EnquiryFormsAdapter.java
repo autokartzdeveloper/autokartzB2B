@@ -17,6 +17,7 @@ import com.autokartz.autokartz.utils.converter.ConvertDateFormat;
 import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,6 +54,7 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
     public void onBindViewHolder(EnquiryFormsHolder holder, int position) {
         holder.enquiryText.setText(position + 1 + ".");
         String enquiryId = mEnquiryFormsList.get(position).getEnquiry_id();
+
         for (int i = 0; i < mNotification.size(); i++) {
             String notification_count = mNotification.get(i).getUserNotificationCount();
             String notificationCountEnquiryID = mNotification.get(i).getUserEnquiryId();
@@ -75,6 +77,7 @@ public class EnquiryFormsAdapter extends RecyclerView.Adapter<EnquiryFormsAdapte
     public void setEnquiryFormsList(ArrayList<EnquiryFormsResponseBean> enquiryFormList) {
         mEnquiryFormsList.clear();
         mEnquiryFormsList.addAll(enquiryFormList);
+        Collections.reverse(mEnquiryFormsList);
     }
 
     public class EnquiryFormsHolder extends RecyclerView.ViewHolder {

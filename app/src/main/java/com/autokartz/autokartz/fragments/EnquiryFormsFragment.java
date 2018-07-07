@@ -2,9 +2,7 @@ package com.autokartz.autokartz.fragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.adapters.EnquiryFormsAdapter;
@@ -63,9 +60,7 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
     private ProgressDialog mProgressDialog;
     private AccountDetailHolder mAccountDetailHolder;
     private static final String CURRENT_TAG = EnquiryFormsFragment.class.getName();
-    String notification_count;
-    String notificationCountEnquiryID;
-    String notificationUserID;
+    RecyclerView.LayoutManager layoutManager;
     ArrayList<UserNotificationCount> mUserNotificationCount = new ArrayList<>();
 
     @Nullable
@@ -114,6 +109,8 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
         mEnquiryFormsRv.setLayoutManager(layoutManager);
         mEnquiryFormsRv.setItemAnimator(new DefaultItemAnimator());
         mEnquiryFormsRv.setAdapter(mEnquiryFormsAdapter);
+
+
     }
 
     @OnClick({R.id.fab_add_enquiry_form})
@@ -140,14 +137,7 @@ public class EnquiryFormsFragment extends Fragment implements GetEnquiryFormsRes
                 mLinearLayout.setVisibility(View.VISIBLE);
                 mEnquiryFormsAdapter.setEnquiryFormsList(list);
                 mEnquiryFormsAdapter.notifyDataSetChanged();
-                //GET Intent from main dashboard notification methhod
-               /* String enquiryId = getArguments().getString("enquiryId");
-                if (enquiryId.matches("")) {
-                } else {
-                    openPartSuggestionFragment(enquiryId);
 
-
-                }*/
             }
         } else {
             mEnquiryFormsRv.setVisibility(View.GONE);

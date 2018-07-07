@@ -27,12 +27,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.dialoges.SignOutDialog;
@@ -44,7 +42,6 @@ import com.autokartz.autokartz.fragments.EnquiryFormsFragment;
 import com.autokartz.autokartz.fragments.HomeFragment;
 import com.autokartz.autokartz.fragments.MyAccountFragment;
 import com.autokartz.autokartz.fragments.OrdersFragment;
-import com.autokartz.autokartz.fragments.PartSuggestionFragment;
 import com.autokartz.autokartz.interfaces.FcmTokenResponseListsner;
 import com.autokartz.autokartz.interfaces.GetImageListener;
 import com.autokartz.autokartz.interfaces.SignOutResponseListener;
@@ -57,9 +54,7 @@ import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.pojoClasses.UserNotificationCount;
 import com.autokartz.autokartz.utils.util.AppToast;
 import com.autokartz.autokartz.utils.util.CheckPermission;
-
 import com.autokartz.autokartz.utils.util.Logger;
-import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
 import com.autokartz.autokartz.utils.util.converter.CSVFile;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
@@ -68,7 +63,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.iid.FirebaseInstanceId;
-
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -79,8 +73,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.google.android.gms.internal.zzbfq.NULL;
 
 public class MainDashboardActivity extends AppCompatActivity implements GetImageListener, SignOutResponseListener, FcmTokenResponseListsner {
     @BindView(R.id.main_nav_drawer_layout)

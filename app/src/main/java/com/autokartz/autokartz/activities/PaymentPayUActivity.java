@@ -188,8 +188,12 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         }*/
 
         if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
+            //String str = data.
+
             String str = data.getStringExtra("response").toString();
+            Log.v("poiuy", str);
             Toast.makeText(mContext, "hsbc integration", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, str, Toast.LENGTH_SHORT).show();
             //txnId=(tid)&responseCode=(responsecode)&ApprovalRefNo=( ApprovalRefNo )&Status=(status)&txnRef=(tr)
             //  processResponseIntent(responseIntent);
         } else {
@@ -223,13 +227,13 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
     private void startHsbcPayment() {
         StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(DEEPLINKING_URL_BASE).append("?")
-                .append(HsbcParams.pa).append("=").append("").append("&")
-                .append(HsbcParams.pn).append("=").append("").append("&")
-                .append(HsbcParams.mc).append("=").append("").append("&")
+                .append(HsbcParams.pa).append("=").append("autokartz@hsbc").append("&")
+                .append(HsbcParams.pn).append("=").append("AUTOKARTZ INTERNET PRIVATE LIMITED").append("&")
+                .append(HsbcParams.mc).append("=").append("5399").append("&")
                 .append(HsbcParams.tid).append("=").append("").append("&")//blank
                 .append(HsbcParams.tr).append("=").append("AUTO001234").append("&")
                 .append(HsbcParams.tn).append("=").append("").append("&")//blank
-                .append(HsbcParams.am).append("=").append("2.0").append("&")
+                .append(HsbcParams.am).append("=").append("0.1").append("&")
                 .append(HsbcParams.mam).append("=").append("").append("&")//blank
                 .append(HsbcParams.cu).append("=").append("").append("&")//blank
                 .append(HsbcParams.url).append("=").append("");//blank

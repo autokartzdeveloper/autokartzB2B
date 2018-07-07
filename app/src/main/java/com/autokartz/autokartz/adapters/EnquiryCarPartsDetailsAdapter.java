@@ -33,12 +33,16 @@ public class EnquiryCarPartsDetailsAdapter extends RecyclerView.Adapter<EnquiryC
     private Context mContext;
     private AccountDetailHolder mAccountDetailHolder;
     private ArrayList<CategoryInformation> selectedCarPartList;
+    private Button mCustomerSubmitBtn;
+    private Button mSelfSubmitBtn;
     private Button mCarPartsBtn;
 
-    public EnquiryCarPartsDetailsAdapter(Activity context, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn) {
+    public EnquiryCarPartsDetailsAdapter(Activity context, Button mSubmitForSelfBtn, Button mSubmitForCustomerBtn, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn) {
         mActivity = context;
         mCarPartsBtn = mAddCarPartsBtn;
         mSubmitCarBtn = mSubmitCarPartsBtn;
+        mCustomerSubmitBtn = mSubmitForCustomerBtn;
+        mSelfSubmitBtn = mSubmitForSelfBtn;
         mAccountDetailHolder = new AccountDetailHolder(mActivity);
         selectedCarPartList = mAccountDetailHolder.getSelectedCarParts();
     }
@@ -60,7 +64,9 @@ public class EnquiryCarPartsDetailsAdapter extends RecyclerView.Adapter<EnquiryC
     public int getItemCount() {
         selectedCarPartList.size();
         if (selectedCarPartList.size() != 0) {
-            mSubmitCarBtn.setVisibility(View.VISIBLE);
+            mSubmitCarBtn.setVisibility(View.GONE);
+            mSelfSubmitBtn.setVisibility(View.VISIBLE);
+            mCustomerSubmitBtn.setVisibility(View.VISIBLE);
             mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
             mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
         }

@@ -26,17 +26,6 @@ public class HsbcParams {
     public static final String mam = "mam";
     public static String cu = "cu";
     public static String url = "url";
-/*
-    public static final String pa = "";
-    public static String pn = "";
-    public static final String mc = "";
-    public static final String tid = "";
-    public static String tr = "";
-    public static String tn = "";
-    public static final String am = "";
-    public static final String mam = "";
-    public static String cu = "";
-    public static String url = "";*/
 
     public static final String payeeVpa = "";
     public static String PayeeName = "";

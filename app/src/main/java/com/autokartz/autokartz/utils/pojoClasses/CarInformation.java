@@ -30,6 +30,23 @@ public class CarInformation implements Serializable {
     private ArrayList<CategoryInformation> mRequirePartsList = new ArrayList<>();
     @SerializedName("enquiry_id")
     private String mEnquiry = "";
+    //new implementaion
+    @SerializedName("cname")
+    private String mCustomerName = "";
+    @SerializedName("caddress")
+    private String mCustomerAddress = "";
+    @SerializedName("cstate")
+    private String mState = "";
+    @SerializedName("ccity")
+    private String mCity = "";
+    @SerializedName("cmobile")
+    private String mPhone = "";
+    @SerializedName("cemail")
+    private String mEmail = "";
+    @SerializedName("cpincode")
+    private String mPin = "";
+    @SerializedName("ccountry")
+    private String mCountry = "";
 
     public CarInformation() {
     }
@@ -40,6 +57,7 @@ public class CarInformation implements Serializable {
         this.mVariant = mVariant;
         this.mEnginne = mEnginne;
         this.mYear = mYear;
+
     }
 
     public String getmEnquiry() {
@@ -113,5 +131,70 @@ public class CarInformation implements Serializable {
     public void setmRequirePartsList(ArrayList<CategoryInformation> mRequirePartsList) {
         this.mRequirePartsList = mRequirePartsList;
     }
+
+    public String getmCustomerName() {
+        return mCustomerName;
+    }
+
+    public void setmCustomerName(String mCustomerName) {
+        this.mCustomerName = mCustomerName;
+    }
+
+    public String getmCustomerAddress() {
+        return mCustomerAddress;
+    }
+
+    public void setmCustomerAddress(String mCustomerAddress) {
+        this.mCustomerAddress = mCustomerAddress;
+    }
+
+    public String getmState() {
+        return mState;
+    }
+
+    public void setmState(String mState) {
+        this.mState = mState;
+    }
+
+    public String getmCity() {
+        return mCity;
+    }
+
+    public void setmCity(String mCity) {
+        this.mCity = mCity;
+    }
+
+    public String getmPhone() {
+        return mPhone;
+    }
+
+    public void setmPhone(String mPhone) {
+        this.mPhone = mPhone;
+    }
+
+    public String getmEmail() {
+        return mEmail;
+    }
+
+    public void setmEmail(String mEmail) {
+        this.mEmail = mEmail;
+    }
+
+    public String getmPin() {
+        return mPin;
+    }
+
+    public void setmPin(String mPin) {
+        this.mPin = mPin;
+    }
+
+    public String getmCountry() {
+        return mCountry;
+    }
+
+    public void setmCountry(String mCountry) {
+        this.mCountry = mCountry;
+    }
+
 
 }

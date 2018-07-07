@@ -36,14 +36,18 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
     private ArrayList<CategoryInformation> mAddedPartList;
     private AccountDetailHolder mAccountDetailHolder;
     private Button mSubmitButton;
+    private Button mCustomerSubmitBtn;
+    private Button mSelfSubmitBtn;
     private Button mCarPartsBtn;
     EnquiryCarPartsDetailsAdapter mEnquiryCarPartsDetailsAdapter;
 
-    public EnquiryFormAddedPartAdapter(Context context, Activity activity, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn, EnquiryCarPartsDetailsAdapter enquiryCarPartsDetailsAdapter) {
+    public EnquiryFormAddedPartAdapter(Context context, Activity activity, Button mSubmitForSelfBtn, Button mSubmitForCustomerBtn, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn, EnquiryCarPartsDetailsAdapter enquiryCarPartsDetailsAdapter) {
         mContext = context;
         mActivity = activity;
         mAccountDetailHolder = new AccountDetailHolder(mContext);
         mSubmitButton = mSubmitCarPartsBtn;
+        mCustomerSubmitBtn = mSubmitForCustomerBtn;
+        mSelfSubmitBtn = mSubmitForSelfBtn;
         mEnquiryCarPartsDetailsAdapter = enquiryCarPartsDetailsAdapter;
         mCarPartsBtn = mAddCarPartsBtn;
         mAddedPartList = new ArrayList<>();
@@ -65,7 +69,9 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
     @Override
     public int getItemCount() {
         if (mAddedPartList.size() != 0) {
-            mSubmitButton.setVisibility(View.VISIBLE);
+            mSubmitButton.setVisibility(View.GONE);
+            mSelfSubmitBtn.setVisibility(View.VISIBLE);
+            mCustomerSubmitBtn.setVisibility(View.VISIBLE);
             mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
             mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
         }

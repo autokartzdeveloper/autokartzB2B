@@ -13,22 +13,22 @@ import java.util.regex.Pattern;
 
 public class InputValidation {
 
-    public static boolean validateFirstName(EditText nameEt) {
+    public static boolean validateGarageName(EditText nameEt) {
         String name = nameEt.getText().toString().trim();
         if (name != null && !name.isEmpty()) {
             return true;
         } else {
-            nameEt.setError("Please enter your first name");
+            nameEt.setError("Please enter garage owner name");
             return false;
         }
     }
 
-    public static boolean validateLastName(EditText nameEt) {
+    public static boolean validateCustomerName(EditText nameEt) {
         String name = nameEt.getText().toString().trim();
         if (name != null && !name.isEmpty()) {
             return true;
         } else {
-            nameEt.setError("Please enter your last name");
+            nameEt.setError("Please enter customer name");
             return false;
         }
     }
@@ -59,6 +59,16 @@ public class InputValidation {
             return true;
         } else {
             nameEt.setError("Please enter your state");
+            return false;
+        }
+    }
+
+    public static boolean validateCountry(EditText nameEt) {
+        String name = nameEt.getText().toString().trim();
+        if (name != null && !name.isEmpty()) {
+            return true;
+        } else {
+            nameEt.setError("Please enter your country");
             return false;
         }
     }
@@ -96,7 +106,7 @@ public class InputValidation {
         }
         // Check if pattern matches
         else if (!matcher.matches()) {
-            panEt.setError("Enter Your Correct PAN");
+            panEt.setError("Enter Your valid PAN");
         } else {
             return true;
         }
@@ -112,7 +122,7 @@ public class InputValidation {
         if (IFSC == null || IFSC.isEmpty()) {
             nameEt.setError("Please enter your IFSC code");
         } else if (!matcher.matches()) {
-            nameEt.setError("Please enter your correct IFSC code");
+            nameEt.setError("Please enter your valid IFSC code");
         } else {
             return true;
         }
@@ -128,7 +138,7 @@ public class InputValidation {
         if (gst == null || gst.isEmpty()) {
             nameEt.setError("Please enter your Gst Number");
         } else if (!matcher.matches()) {
-            nameEt.setError("Please enter your correct Gst Number");
+            nameEt.setError("Please enter your valid Gst Number");
         } else {
             return true;
         }

@@ -3,7 +3,7 @@ package com.autokartz.autokartz.fragments;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,9 +22,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.autokartz.autokartz.R;
-import com.autokartz.autokartz.activities.MainDashboardActivity;
 import com.autokartz.autokartz.adapters.EnquiryCarPartsDetailsAdapter;
 import com.autokartz.autokartz.adapters.EnquiryFormAddedPartAdapter;
+import com.autokartz.autokartz.dialoges.EnquiryDialogue;
 import com.autokartz.autokartz.interfaces.GetCategoryPartListener;
 import com.autokartz.autokartz.interfaces.GetEnquiryApiResponseListener;
 import com.autokartz.autokartz.services.databases.LocalDatabase.DatabaseCURDOperations;
@@ -36,9 +36,7 @@ import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
 import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
-import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
-import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 
@@ -56,6 +54,10 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     Button mAddCarPartsBtn;
     @BindView(R.id.submit_enquire_parts_btn)
     Button mSubmitCarPartsBtn;
+    @BindView(R.id.for_self_submit_btn)
+    Button mSubmitForSelfBtn;
+    @BindView(R.id.for_customer_submit_btn)
+    Button mSubmitForCustomerBtn;
     @BindView(R.id.car_chassis_number_value_tv)
     TextView mCarChassisNumValTv;
     @BindView(R.id.car_brand_val_tv)
@@ -106,6 +108,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     }
 
     private void init() {
+        Log.v("poiu", String.valueOf(mCarInfo));
         initVariables();
         setViews();
         setSelectedPartRecyclerView();
@@ -113,7 +116,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     }
 
     private void setAddedPartRecyclerView() {
-        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn, enquiryCarPartsDetailsAdapter);
+        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity, mSubmitForSelfBtn, mSubmitForCustomerBtn, mSubmitCarPartsBtn, mAddCarPartsBtn, enquiryCarPartsDetailsAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mAddedPartRv.setLayoutManager(layoutManager);
         mAddedPartRv.setItemAnimator(new DefaultItemAnimator());
@@ -137,7 +140,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
 
 
     private void setSelectedPartRecyclerView() {
-        enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity, mSubmitCarPartsBtn, mAddCarPartsBtn);
+        enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity, mSubmitForSelfBtn, mSubmitForCustomerBtn, mSubmitCarPartsBtn, mAddCarPartsBtn);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mSelectedCarPartsRv.setLayoutManager(layoutManager);
         mSelectedCarPartsRv.setItemAnimator(new DefaultItemAnimator());
@@ -150,6 +153,8 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         mAccountDetailHolder = new AccountDetailHolder(mContext);
         mDatabaseCURDOperations = new DatabaseCURDOperations(mContext);
         mSubmitCarPartsBtn.setVisibility(View.GONE);
+        mSubmitForSelfBtn.setVisibility(View.GONE);
+        mSubmitForCustomerBtn.setVisibility(View.GONE);
         mAddCarPartsBtn.setBackgroundColor(getResources().getColor(R.color.appcolorornage));
         mAddCarPartsBtn.setTextColor(getResources().getColor(R.color.White));
         mCarInfo = (CarInformation) getArguments().getSerializable(IntentKeyConstants.TAG_FORM_DATA);
@@ -161,8 +166,6 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         partsList = new ArrayList<>();
         mAddedPartList = mAccountDetailHolder.getAddPartDetails();
         mSelectedParts = mAccountDetailHolder.getSelectedCarParts();
-
-
     }
 
     @OnClick({R.id.add_car_parts_btn})
@@ -190,6 +193,42 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
         enquiryApi.callEnquiryApi(mCarInfo);
         mAccountDetailHolder.setSelectedCarParts(new ArrayList<CategoryInformation>());
         mAccountDetailHolder.setAddPart(new ArrayList<CategoryInformation>());
+    }
+
+    @OnClick({R.id.for_customer_submit_btn})
+    public void OnSubmitCustomerBtn() {
+        mCarInfo.setmUserId(mAccountDetailHolder.getUserDetailBean().getUserId());
+        fullList = mAccountDetailHolder.getSelectedCarParts();
+        fullList.addAll(mAccountDetailHolder.getAddPartDetails());
+        mCarInfo.setmRequirePartsList(fullList);
+        EnquiryDialogue dialog = new EnquiryDialogue(mContext, mActivity, mCarInfo);
+        dialog.show();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                String customerName = mCarInfo.getmCustomerName();
+                if (customerName.matches("")) {
+                    mSubmitForSelfBtn.setVisibility(View.VISIBLE);
+                    mSubmitForCustomerBtn.setVisibility(View.VISIBLE);
+                    mSubmitCarPartsBtn.setVisibility(View.GONE);
+
+                } else {
+                    mSubmitForSelfBtn.setVisibility(View.GONE);
+                    mSubmitForCustomerBtn.setVisibility(View.GONE);
+                    mSubmitCarPartsBtn.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+    }
+
+    @OnClick({R.id.for_self_submit_btn})
+    public void OnSubmitSelfBtn() {
+        mSubmitCarPartsBtn.setVisibility(View.VISIBLE);
+        mSubmitForCustomerBtn.setVisibility(View.GONE);
+        mSubmitForSelfBtn.setVisibility(View.GONE);
+
     }
 
     public void openCategoryPartFragment() {

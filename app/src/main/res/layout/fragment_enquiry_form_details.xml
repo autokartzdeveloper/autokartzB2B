@@ -248,11 +248,45 @@
                 android:textColor="@color/appcolorornage"
                 android:textSize="@dimen/textSize22sp" />
 
+            <LinearLayout
+                android:id="@+id/linear_chooser_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_car_parts_btn"
+                android:layout_marginTop="@dimen/mar_10"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/for_self_submit_btn"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_5"
+                    android:layout_marginRight="@dimen/mar_5"
+                    android:layout_weight="1"
+                    android:background="@color/appcolorornage"
+                    android:text="for self"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize16sp" />
+
+                <Button
+                    android:id="@+id/for_customer_submit_btn"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar_5"
+                    android:layout_marginRight="@dimen/mar_5"
+                    android:layout_weight="@integer/int_1"
+                    android:background="@color/appcolorornage"
+                    android:text="for customer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize16sp" />
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/submit_enquire_parts_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/add_car_parts_btn"
+                android:layout_below="@+id/linear_chooser_layout"
                 android:layout_marginLeft="@dimen/mar_5"
                 android:layout_marginRight="@dimen/mar_5"
                 android:layout_marginTop="@dimen/mar_15"
@@ -260,6 +294,7 @@
                 android:text="@string/submit"
                 android:textColor="@color/white"
                 android:textSize="@dimen/textSize22sp" />
+
 
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>

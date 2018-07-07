@@ -54,7 +54,6 @@ public class EnquiryApi implements Callback<EnquiryResponseBean> {
 
     @Override
     public void onResponse(Call<EnquiryResponseBean> call, Response<EnquiryResponseBean> response) {
-
         if (response.isSuccessful() && response.body().isSuccess()) {
             DismissDialog.dismissWithCheck(mProgressDialog);
             AppToast.showToast(mContext, response.body().getMessage());
