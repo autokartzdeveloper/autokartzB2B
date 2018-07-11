@@ -1,34 +1,20 @@
 package com.autokartz.autokartz.fragments;
 
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 
 import com.autokartz.autokartz.R;
-import com.autokartz.autokartz.interfaces.BankInfoResponseListener;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
-import com.autokartz.autokartz.services.webServices.apiRequests.GetBankInfoAPI;
-import com.autokartz.autokartz.utils.apiResponses.UserBankInfo;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
-import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
-import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**

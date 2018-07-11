@@ -8,6 +8,6 @@ import com.autokartz.autokartz.utils.apiResponses.EnquirySuggestionResponseBean;
 
 public interface SuggestionResponseListener {
 
-    public void getSuggestionResponse(EnquirySuggestionResponseBean enquirySuggestionResponseBean, boolean isReceived);
+    void getSuggestionResponse(EnquirySuggestionResponseBean enquirySuggestionResponseBean, boolean isReceived);
 
 }

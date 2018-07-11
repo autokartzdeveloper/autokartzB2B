@@ -20,14 +20,10 @@ import java.util.List;
 public class CheckPermission {
 
     private static boolean isDeviceSupportCamera(Context context) {
-        if (context.getApplicationContext().getPackageManager().hasSystemFeature(
-                PackageManager.FEATURE_CAMERA)) {
-            // this device has a camera
-            return true;
-        } else {
-            // no camera on this device
-            return false;
-        }
+        // this device has a camera
+// no camera on this device
+        return context.getApplicationContext().getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_CAMERA);
     }
 
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;

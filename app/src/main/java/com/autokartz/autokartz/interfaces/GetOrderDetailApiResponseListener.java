@@ -8,6 +8,6 @@ import com.autokartz.autokartz.utils.pojoClasses.OrderDetail;
 
 public interface GetOrderDetailApiResponseListener {
 
-    public void getOrderDetailResponse(boolean isReceived, OrderDetail orderDetail);
+    void getOrderDetailResponse(boolean isReceived, OrderDetail orderDetail);
 
 }

@@ -6,6 +6,6 @@ package com.autokartz.autokartz.interfaces;
 
 public interface EnquiryFormsAdapterListener {
 
-    public void getDataOfEnquirySelection(String enquiryId);
+    void getDataOfEnquirySelection(String enquiryId);
 
 }

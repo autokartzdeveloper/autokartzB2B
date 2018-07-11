@@ -52,10 +52,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements ForgotP
     }
 
     private boolean isInputValid() {
-        if (InputValidation.validateEmail(mEmail) && InputValidation.validateMobile(mPhone)) {
-            return true;
-        }
-        return false;
+        return InputValidation.validateEmail(mEmail) && InputValidation.validateMobile(mPhone);
     }
 
     @OnClick({R.id.forgot_password_btn})

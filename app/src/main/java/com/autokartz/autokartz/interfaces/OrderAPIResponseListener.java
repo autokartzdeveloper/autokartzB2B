@@ -6,6 +6,6 @@ package com.autokartz.autokartz.interfaces;
 
 public interface OrderAPIResponseListener {
 
-    public void getOrderResponse(boolean isOrdered,String message);
+    void getOrderResponse(boolean isOrdered, String message);
 
 }

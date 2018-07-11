@@ -4,12 +4,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+
 import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
 import com.autokartz.autokartz.utils.pojoClasses.CatItem;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.pojoClasses.UserDetails;
 import com.autokartz.autokartz.utils.util.Logger;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
+
 import java.util.ArrayList;
 
 /**

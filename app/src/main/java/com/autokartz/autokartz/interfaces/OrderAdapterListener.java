@@ -6,6 +6,6 @@ package com.autokartz.autokartz.interfaces;
 
 public interface OrderAdapterListener {
 
-    public void getOrderIdSelected(String orderId);
+    void getOrderIdSelected(String orderId);
 
 }

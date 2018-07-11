@@ -1,6 +1,7 @@
 package com.autokartz.autokartz.interfaces;
 
 import com.autokartz.autokartz.utils.apiResponses.OrderIdResponse;
+
 import java.util.ArrayList;
 
 /**
@@ -9,6 +10,6 @@ import java.util.ArrayList;
 
 public interface GetOrdersApiResponseListener {
 
-    public void getOrderResponse(boolean isReceived, ArrayList<OrderIdResponse> orderList);
+    void getOrderResponse(boolean isReceived, ArrayList<OrderIdResponse> orderList);
 
 }

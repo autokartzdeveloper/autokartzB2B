@@ -10,14 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.SuggestionOrderListener;
 import com.autokartz.autokartz.utils.apiResponses.SuggestionResponseBean;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -9,38 +9,26 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.BankInfoResponseListener;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.services.webServices.apiRequests.GetBankInfoAPI;
-import com.autokartz.autokartz.services.webServices.apiRequests.GetOrdersAPI;
 import com.autokartz.autokartz.utils.apiResponses.UserBankInfo;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
-import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
-import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
-import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
-import com.facebook.internal.LockOnGetVariable;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by Cortana on 1/3/2018.

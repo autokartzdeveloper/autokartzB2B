@@ -8,6 +8,6 @@ import com.autokartz.autokartz.utils.apiResponses.PayTmResponseBean;
 
 public interface GetPayTMApiResponseListener {
 
-    public void getPayTmApiResponse(boolean isSuccess, PayTmResponseBean responseBean);
+    void getPayTmApiResponse(boolean isSuccess, PayTmResponseBean responseBean);
 
 }

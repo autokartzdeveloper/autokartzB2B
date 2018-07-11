@@ -22,7 +22,6 @@ import com.autokartz.autokartz.interfaces.GetImageListener;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
-import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 
 import java.util.ArrayList;
 

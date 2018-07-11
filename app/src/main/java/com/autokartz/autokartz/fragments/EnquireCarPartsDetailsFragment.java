@@ -212,7 +212,6 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
                     mSubmitForSelfBtn.setVisibility(View.VISIBLE);
                     mSubmitForCustomerBtn.setVisibility(View.VISIBLE);
                     mSubmitCarPartsBtn.setVisibility(View.GONE);
-
                 } else {
                     mSubmitForSelfBtn.setVisibility(View.GONE);
                     mSubmitForCustomerBtn.setVisibility(View.GONE);

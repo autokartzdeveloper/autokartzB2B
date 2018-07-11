@@ -6,6 +6,6 @@ package com.autokartz.autokartz.interfaces;
 
 public interface GetImageEventListener {
 
-    public void isImageSaved(boolean isSaved);
+    void isImageSaved(boolean isSaved);
 
 }

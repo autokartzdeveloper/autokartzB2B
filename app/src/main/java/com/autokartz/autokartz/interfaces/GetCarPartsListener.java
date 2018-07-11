@@ -8,8 +8,8 @@ import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 
 public interface GetCarPartsListener {
 
-    public void getSelectedCarPart(CategoryInformation categoryInformation);
+    void getSelectedCarPart(CategoryInformation categoryInformation);
 
-    public void getUnSelectedCarPart(CategoryInformation categoryInformation);
+    void getUnSelectedCarPart(CategoryInformation categoryInformation);
 
 }

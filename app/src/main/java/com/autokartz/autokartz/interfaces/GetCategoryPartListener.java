@@ -1,6 +1,7 @@
 package com.autokartz.autokartz.interfaces;
 
 import com.autokartz.autokartz.utils.apiResponses.CategoryPartResultBean;
+
 import java.util.ArrayList;
 
 /**

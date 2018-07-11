@@ -9,15 +9,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.dialoges.ProductDetailDialog;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
-
-import org.apache.poi.hssf.record.formula.functions.T;
 
 import java.util.ArrayList;
 

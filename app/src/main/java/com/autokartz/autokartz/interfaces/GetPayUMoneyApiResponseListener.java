@@ -8,6 +8,6 @@ import com.autokartz.autokartz.utils.apiResponses.PayUMoneyResponseBean;
 
 public interface GetPayUMoneyApiResponseListener {
 
-    public void getPayUApiResponse(boolean isSuccess, PayUMoneyResponseBean responseBean);
+    void getPayUApiResponse(boolean isSuccess, PayUMoneyResponseBean responseBean);
 
 }

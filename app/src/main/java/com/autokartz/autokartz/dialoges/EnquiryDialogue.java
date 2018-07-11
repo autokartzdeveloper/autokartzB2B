@@ -86,13 +86,9 @@ public class EnquiryDialogue extends Dialog {
     }
 
     private boolean isInputValid() {
-        if (InputValidation.validateCustomerName(mCustomerName) && InputValidation.validateAddress(mAddress) && InputValidation.validateCity(mCity)
+        return InputValidation.validateCustomerName(mCustomerName) && InputValidation.validateAddress(mAddress) && InputValidation.validateCity(mCity)
                 && InputValidation.validateState(mState) && InputValidation.validateCountry(mCountry) && InputValidation.validatePin(mPinCode)
-                && InputValidation.validateEmail(mEmail) && InputValidation.validateMobile(mPhoneNumber)) {
-
-            return true;
-        }
-        return false;
+                && InputValidation.validateEmail(mEmail) && InputValidation.validateMobile(mPhoneNumber);
     }
 
     @OnClick({R.id.btn_signup})

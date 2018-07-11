@@ -1,7 +1,5 @@
 package com.autokartz.autokartz.interfaces;
 
-import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
-
 /**
  * Created by autokartz on 5/4/18.
  */
@@ -10,6 +8,6 @@ import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 
 public interface DisputeApiListener {
 
-    public void disputeResponse(boolean success);
+    void disputeResponse(boolean success);
 
 }

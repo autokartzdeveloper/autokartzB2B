@@ -15,7 +15,7 @@ public class CatItem {
         this.name = name;
     }
 
-    public CatItem() {};
+    public CatItem() {}
 
     public String getId() {
         return id;

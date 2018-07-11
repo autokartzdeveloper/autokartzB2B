@@ -5,8 +5,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.TextView;
+
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.SignOutResponseListener;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

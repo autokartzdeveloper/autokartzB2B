@@ -8,6 +8,6 @@ import com.autokartz.autokartz.utils.apiResponses.SuggestionResponseBean;
 
 public interface SuggestionOrderListener {
 
-    public void updateOrderList(boolean isAdded, SuggestionResponseBean suggestion);
+    void updateOrderList(boolean isAdded, SuggestionResponseBean suggestion);
 
 }

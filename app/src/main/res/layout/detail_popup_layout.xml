@@ -28,6 +28,7 @@
             android:padding="@dimen/mar_10">
 
             <TextView
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/add_product_detail"
@@ -52,7 +53,8 @@
                 android:textSize="@dimen/textSize16sp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/mar_15"
                 android:text="@string/add_product_images"

@@ -17,9 +17,11 @@ import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

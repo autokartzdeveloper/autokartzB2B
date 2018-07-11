@@ -3,17 +3,14 @@ package com.autokartz.autokartz.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.activities.MainDashboardActivity;
@@ -24,8 +21,6 @@ import com.autokartz.autokartz.utils.pojoClasses.OrderDetail;
 import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

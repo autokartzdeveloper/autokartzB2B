@@ -8,6 +8,6 @@ import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 
 public interface SignUpResponseListsner {
 
-    public void signUpResponse(boolean status, UserDetailBean userDetailBean);
+    void signUpResponse(boolean status, UserDetailBean userDetailBean);
 
 }

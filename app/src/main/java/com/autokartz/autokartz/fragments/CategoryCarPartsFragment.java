@@ -3,11 +3,9 @@ package com.autokartz.autokartz.fragments;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -27,7 +25,6 @@ import com.autokartz.autokartz.services.databases.LocalDatabase.DatabaseCURDOper
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.utils.pojoClasses.CatItem;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
-import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 
 import java.util.ArrayList;
 import java.util.List;

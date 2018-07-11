@@ -131,7 +131,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     }
 
     private void setNavigationBar() {
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
@@ -217,11 +217,11 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     private void initViews() {
 
         //imageSlideTimer();
-        mNavView = (NavigationView) findViewById(R.id.nav_view);
+        mNavView = findViewById(R.id.nav_view);
         View header = mNavView.getHeaderView(0);
-        mEmailNavbar = (TextView) header.findViewById(R.id.nav_email_tv);
-        mLetterNameNavbar = (TextView) header.findViewById(R.id.nav_firstletter_tv);
-        mDisplayNameNavbar = (TextView) header.findViewById(R.id.nav_displayname_tv);
+        mEmailNavbar = header.findViewById(R.id.nav_email_tv);
+        mLetterNameNavbar = header.findViewById(R.id.nav_firstletter_tv);
+        mDisplayNameNavbar = header.findViewById(R.id.nav_displayname_tv);
         notifiaction_count = (TextView) MenuItemCompat.getActionView(mNavView.getMenu().
                 findItem(R.id.nav_enquiry_form));
     }

@@ -7,5 +7,5 @@ package com.autokartz.autokartz.interfaces;
 
 public interface GetImageListener {
 
-    public String getImage(int pos);
+    String getImage(int pos);
 }

@@ -7,7 +7,7 @@ import com.autokartz.autokartz.utils.apiResponses.ForgotPasswordBeanResponse;
  */
 
 public interface ForgotPasswordListsner {
-    public void forgotPasswordListsner(boolean success, ForgotPasswordBeanResponse forgotPasswordBeanResponse);
+    void forgotPasswordListsner(boolean success, ForgotPasswordBeanResponse forgotPasswordBeanResponse);
 
 
 }

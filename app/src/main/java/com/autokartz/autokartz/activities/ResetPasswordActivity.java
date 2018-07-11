@@ -3,19 +3,15 @@ package com.autokartz.autokartz.activities;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
-import com.autokartz.autokartz.interfaces.ForgotPasswordListsner;
 import com.autokartz.autokartz.interfaces.ResetPasswordListsner;
-import com.autokartz.autokartz.services.webServices.apiRequests.ManualSignUpApi;
 import com.autokartz.autokartz.services.webServices.apiRequests.ResetPasswordApi;
-import com.autokartz.autokartz.utils.apiRequestBeans.SignUpBean;
-import com.autokartz.autokartz.utils.apiResponses.ForgotPasswordBeanResponse;
 import com.autokartz.autokartz.utils.util.InputValidation;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 

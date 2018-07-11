@@ -76,7 +76,7 @@ public class UserBankInfo implements Serializable, Parcelable
         this.createdAt = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.createdBy = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.updatedAt = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        this.updatedBy = ((Object) in.readValue((Object.class.getClassLoader())));
+        this.updatedBy = in.readValue((Object.class.getClassLoader()));
     }
 
     public UserBankInfo() {

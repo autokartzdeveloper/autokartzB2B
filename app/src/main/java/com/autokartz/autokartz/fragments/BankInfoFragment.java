@@ -10,21 +10,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.FcmTokenResponseListsner;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
 import com.autokartz.autokartz.services.webServices.apiRequests.BankInfoApi;
-import com.autokartz.autokartz.services.webServices.apiRequests.FcmTokenApi;
-import com.autokartz.autokartz.services.webServices.apiRequests.ManualSignUpApi;
-import com.autokartz.autokartz.utils.apiRequestBeans.SignUpBean;
 import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 import com.autokartz.autokartz.utils.util.InputValidation;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
@@ -106,12 +100,9 @@ public class BankInfoFragment extends Fragment implements FcmTokenResponseListsn
     private void getViews() {
     }
     private boolean isInputValid() {
-        if (InputValidation.validateBankAcName(mbankAccountEt) && InputValidation.validateIfscCode(mbankIfscEt)
+        return InputValidation.validateBankAcName(mbankAccountEt) && InputValidation.validateIfscCode(mbankIfscEt)
                 && InputValidation.validateBranch(mBranchEt) && InputValidation.validatePanNumber(mPanNumEt)
-                && InputValidation.validateGstNumber(mGstEt)) {
-            return true;
-        }
-        return false;
+                && InputValidation.validateGstNumber(mGstEt);
     }
 
     @OnClick({R.id.btn_account_add_submit})

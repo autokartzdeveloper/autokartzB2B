@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.autokartz.autokartz.R;
-import com.autokartz.autokartz.activities.ForgotPasswordActivity;
-import com.autokartz.autokartz.activities.LoginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

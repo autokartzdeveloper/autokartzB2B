@@ -1,21 +1,17 @@
 package com.autokartz.autokartz.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.autokartz.autokartz.R;
-import com.autokartz.autokartz.fragments.OrdersFragment;
 import com.autokartz.autokartz.interfaces.GetPayTMApiResponseListener;
 import com.autokartz.autokartz.interfaces.GetPayUMoneyApiResponseListener;
 import com.autokartz.autokartz.interfaces.OrderAPIResponseListener;
@@ -35,7 +31,6 @@ import com.autokartz.autokartz.utils.apiResponses.UserDetailBean;
 import com.autokartz.autokartz.utils.retrofitAdapter.RetroFitAdapter;
 import com.autokartz.autokartz.utils.util.AppToast;
 import com.autokartz.autokartz.utils.util.HsbcParams;
-import com.autokartz.autokartz.utils.util.Logger;
 import com.autokartz.autokartz.utils.util.PayTMParams;
 import com.autokartz.autokartz.utils.util.PayUMoneyParams;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
@@ -43,17 +38,12 @@ import com.autokartz.autokartz.utils.util.constants.ServerApi;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 import com.paytm.pgsdk.Log;
-import com.paytm.pgsdk.PaytmMerchant;
 import com.paytm.pgsdk.PaytmOrder;
 import com.paytm.pgsdk.PaytmPGService;
 import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
-import com.payu.india.Model.PaymentParams;
 import com.payumoney.core.PayUmoneyConfig;
 import com.payumoney.core.PayUmoneySdkInitializer;
-import com.payumoney.core.entity.TransactionResponse;
 import com.payumoney.sdkui.ui.utils.PayUmoneyFlowManager;
-import com.payumoney.sdkui.ui.utils.ResultModel;
-import com.sendbird.android.User;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -6,6 +6,6 @@ package com.autokartz.autokartz.interfaces;
 
 public interface SignOutResponseListener {
 
-    public void signoutResponse(boolean status);
+    void signoutResponse(boolean status);
 
 }

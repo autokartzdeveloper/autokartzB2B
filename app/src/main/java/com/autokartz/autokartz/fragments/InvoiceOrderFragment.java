@@ -1,10 +1,8 @@
 package com.autokartz.autokartz.fragments;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +28,7 @@ import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolde
 import com.autokartz.autokartz.services.webServices.apiRequests.OrderAPI;
 import com.autokartz.autokartz.utils.apiRequestBeans.OrderDataBean;
 import com.autokartz.autokartz.utils.apiResponses.SuggestionResponseBean;
-import com.autokartz.autokartz.utils.util.AppToast;
 import com.autokartz.autokartz.utils.util.constants.IntentKeyConstants;
-import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

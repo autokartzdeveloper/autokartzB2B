@@ -7,12 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.autokartz.autokartz.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,7 +41,7 @@ public class SliderAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.item_slider, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.slideimage);
+        ImageView imageView = view.findViewById(R.id.slideimage);
         imageView.setImageResource(imageSlider.get(position));
         ViewPager viewPager = (ViewPager) container;
         viewPager.addView(view, 0);

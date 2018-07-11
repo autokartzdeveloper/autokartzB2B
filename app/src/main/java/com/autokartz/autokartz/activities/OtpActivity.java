@@ -3,10 +3,8 @@ package com.autokartz.autokartz.activities;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,7 +12,6 @@ import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.interfaces.ForgotPasswordListsner;
 import com.autokartz.autokartz.services.webServices.apiRequests.ForgotPasswordApi;
 import com.autokartz.autokartz.utils.apiResponses.ForgotPasswordBeanResponse;
-import com.autokartz.autokartz.utils.util.AppToast;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
 
