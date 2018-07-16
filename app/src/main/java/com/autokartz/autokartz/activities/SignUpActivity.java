@@ -54,6 +54,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpResponseL
     EditText mPinCode;
     @BindView(R.id.et_state_name)
     EditText mState;
+    @BindView(R.id.et_referralcode)
+    EditText mReferalCode;
     private static final String LOG_TAG = SignUpActivity.class.getName();
     private FirebaseAuth mAuth;
     private Context mContext;

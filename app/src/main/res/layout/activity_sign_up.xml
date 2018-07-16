@@ -31,7 +31,7 @@
                     android:id="@+id/et_garrage_owner_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Garage Owner Name"
+                    android:hint="Garage Owner Name *"
                     android:inputType="text"
                     android:selectAllOnFocus="true" />
             </android.support.design.widget.TextInputLayout>
@@ -46,7 +46,7 @@
                     android:id="@+id/et_customer_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Name"
+                    android:hint="Customer Name *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -60,7 +60,7 @@
                     android:id="@+id/et_address_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Address"
+                    android:hint="Address *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -74,7 +74,7 @@
                     android:id="@+id/et_city_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="City"
+                    android:hint="City *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -88,7 +88,7 @@
                     android:id="@+id/et_state_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="State"
+                    android:hint="State *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -102,7 +102,7 @@
                     android:id="@+id/et_pin_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Pin Code"
+                    android:hint="Pin Code *"
                     android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +116,7 @@
                     android:id="@+id/et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:hint="Email *"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
@@ -131,7 +131,7 @@
                     android:id="@+id/et_phonenumeber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Phone Number"
+                    android:hint="Phone Number *"
                     android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
 
@@ -145,7 +145,7 @@
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="Password *"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -156,12 +156,25 @@
                 android:layout_marginRight="@dimen/mar_10">
 
                 <EditText
-
                     android:id="@+id/et_repassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Re-Password"
+                    android:hint="Re-Password *"
                     android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mar_10"
+                android:layout_marginRight="@dimen/mar_10">
+
+                <EditText
+                    android:id="@+id/et_referralcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Referral Code"
+                    android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
             <Button

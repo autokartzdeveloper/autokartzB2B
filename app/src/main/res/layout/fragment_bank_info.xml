@@ -29,7 +29,7 @@
                     android:id="@+id/et_bank_account"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="A/C No."
+                    android:hint="A/C No. *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -43,7 +43,7 @@
                     android:id="@+id/et_ifsc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="IFSC Code"
+                    android:hint="IFSC Code *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -57,7 +57,7 @@
                     android:id="@+id/et_branch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Branch "
+                    android:hint="Branch *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -71,7 +71,7 @@
                     android:id="@+id/et_pan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="PAN"
+                    android:hint="PAN *"
 
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
@@ -86,7 +86,7 @@
                     android:id="@+id/et_gst_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="GST Number"
+                    android:hint="GST Number *"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 

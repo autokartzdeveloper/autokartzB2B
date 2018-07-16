@@ -4,8 +4,8 @@
     <string name="google_map_api_key">AIzaSyBrdS159ufdXuVenlql7DZfNmdA2oIJ84w</string>
     <string name="facebook_app_id">813944215460603</string>
     <string name="brand">Brand</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="email">Email *</string>
+    <string name="password">Password *</string>
     <string name="login">Login</string>
     <string name="or">OR</string>
     <string name="not_a_member_yet_create_an_account">New to AutokartzB2B ? </string>
