@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,7 +107,6 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     }
 
     private void init() {
-        Log.v("poiu", String.valueOf(mCarInfo));
         initVariables();
         setViews();
         setSelectedPartRecyclerView();
@@ -116,7 +114,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
     }
 
     private void setAddedPartRecyclerView() {
-        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mActivity, mSubmitForSelfBtn, mSubmitForCustomerBtn, mSubmitCarPartsBtn, mAddCarPartsBtn, enquiryCarPartsDetailsAdapter);
+        mEnquiryFormAddedPartAdapter = new EnquiryFormAddedPartAdapter(mContext, mCarInfo, mActivity, mSubmitForSelfBtn, mSubmitForCustomerBtn, mSubmitCarPartsBtn, mAddCarPartsBtn, enquiryCarPartsDetailsAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mAddedPartRv.setLayoutManager(layoutManager);
         mAddedPartRv.setItemAnimator(new DefaultItemAnimator());
@@ -140,7 +138,7 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
 
 
     private void setSelectedPartRecyclerView() {
-        enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity, mSubmitForSelfBtn, mSubmitForCustomerBtn, mSubmitCarPartsBtn, mAddCarPartsBtn);
+        enquiryCarPartsDetailsAdapter = new EnquiryCarPartsDetailsAdapter(mActivity, mCarInfo, mSubmitForSelfBtn, mSubmitForCustomerBtn, mSubmitCarPartsBtn, mAddCarPartsBtn);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         mSelectedCarPartsRv.setLayoutManager(layoutManager);
         mSelectedCarPartsRv.setItemAnimator(new DefaultItemAnimator());
@@ -163,9 +161,35 @@ public class EnquireCarPartsDetailsFragment extends Fragment implements GetCateg
             //during update parts please check it
             // mAccountDetailHolder.setSelectedCarParts(mCarInfo.getmRequirePartsList());
         }
+
         partsList = new ArrayList<>();
         mAddedPartList = mAccountDetailHolder.getAddPartDetails();
         mSelectedParts = mAccountDetailHolder.getSelectedCarParts();
+
+        if (mSelectedParts.size() == 0) {
+            mCarInfo.setmCustomerName("");
+            mCarInfo.setmCustomerAddress("");
+            mCarInfo.setmCity("");
+            mCarInfo.setmState("");
+            mCarInfo.setmPhone("");
+            mCarInfo.setmCountry("");
+            mCarInfo.setmEmail("");
+            mCarInfo.setmPin("");
+            return;
+        }
+
+        if (mAddedPartList.size() == 0) {
+            mCarInfo.setmCustomerName("");
+            mCarInfo.setmCustomerAddress("");
+            mCarInfo.setmCity("");
+            mCarInfo.setmState("");
+            mCarInfo.setmPhone("");
+            mCarInfo.setmCountry("");
+            mCarInfo.setmEmail("");
+            mCarInfo.setmPin("");
+            return;
+        }
+
     }
 
     @OnClick({R.id.add_car_parts_btn})

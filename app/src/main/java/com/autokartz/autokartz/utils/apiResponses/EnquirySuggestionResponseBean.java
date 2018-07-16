@@ -26,6 +26,10 @@ public class EnquirySuggestionResponseBean {
     @SerializedName("year")
     private String year;
 
+    @SerializedName("type")
+    private int mType;
+
+
     @SerializedName("cod_status")
     private String codStatus;
     @SerializedName("part_details")
@@ -87,6 +91,14 @@ public class EnquirySuggestionResponseBean {
         this.codStatus = codStatus;
     }
 
+    public int getmType() {
+        return mType;
+    }
+
+    public void setmType(String mType) {
+        this.year = mType;
+    }
+
     public String getYear() {
         return year;
     }
@@ -94,7 +106,6 @@ public class EnquirySuggestionResponseBean {
     public void setYear(String year) {
         this.year = year;
     }
-
 
     public ArrayList<EnquiryPartSuggestionResponseBean> getmEnquirySuggestionPartResponseBeanList() {
         return mEnquirySuggestionPartResponseBeanList;

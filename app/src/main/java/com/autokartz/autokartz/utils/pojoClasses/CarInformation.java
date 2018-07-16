@@ -48,6 +48,9 @@ public class CarInformation implements Serializable {
     @SerializedName("ccountry")
     private String mCountry = "";
 
+    @SerializedName("type")
+    private String mType = "";
+
     public CarInformation() {
     }
 
@@ -194,6 +197,14 @@ public class CarInformation implements Serializable {
 
     public void setmCountry(String mCountry) {
         this.mCountry = mCountry;
+    }
+
+    public String getmType() {
+        return mType;
+    }
+
+    public void setmType(String mType) {
+        this.mType = mType;
     }
 
 

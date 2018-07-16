@@ -1,6 +1,5 @@
 package com.autokartz.autokartz.utils.util;
 
-import android.util.Log;
 import android.util.Patterns;
 import android.widget.EditText;
 
@@ -73,15 +72,22 @@ public class InputValidation {
         }
     }
 
-    public static boolean validatePin(EditText nameEt) {
-        String name = nameEt.getText().toString().trim();
-        if (name != null && !name.isEmpty()) {
-            return true;
+
+    public static boolean validatePin(EditText pin) {
+        String pincode = pin.getText().toString().trim();
+        String regex = "[0-9]+";
+        if (pincode == null || pincode.isEmpty()) {
+            pin.setError("Please enter your pincode");
+        } else if (!pincode.matches(regex)) {
+            pin.setError("Please enter valid pincode");
+        } else if (!(pincode.length() == 6)) {
+            pin.setError(" pincode should be 6 digits ");
         } else {
-            nameEt.setError("Please enter your pincode");
-            return false;
+            return true;
         }
+        return false;
     }
+
 
     public static boolean validateEmail(EditText emailEt) {
         String email = emailEt.getText().toString().trim();
@@ -160,6 +166,7 @@ public class InputValidation {
         }
         return false;
     }
+
 
     public static boolean validatePassword(EditText passEt) {
         String pass = passEt.getText().toString().trim();

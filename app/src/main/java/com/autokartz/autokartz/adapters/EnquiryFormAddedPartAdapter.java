@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.dialoges.ProductDetailDialog;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
+import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
 
@@ -36,9 +37,10 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
     private Button mCustomerSubmitBtn;
     private Button mSelfSubmitBtn;
     private Button mCarPartsBtn;
+    CarInformation mCarInfo;
     EnquiryCarPartsDetailsAdapter mEnquiryCarPartsDetailsAdapter;
 
-    public EnquiryFormAddedPartAdapter(Context context, Activity activity, Button mSubmitForSelfBtn, Button mSubmitForCustomerBtn, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn, EnquiryCarPartsDetailsAdapter enquiryCarPartsDetailsAdapter) {
+    public EnquiryFormAddedPartAdapter(Context context, CarInformation carInfo, Activity activity, Button mSubmitForSelfBtn, Button mSubmitForCustomerBtn, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn, EnquiryCarPartsDetailsAdapter enquiryCarPartsDetailsAdapter) {
         mContext = context;
         mActivity = activity;
         mAccountDetailHolder = new AccountDetailHolder(mContext);
@@ -47,6 +49,7 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
         mSelfSubmitBtn = mSubmitForSelfBtn;
         mEnquiryCarPartsDetailsAdapter = enquiryCarPartsDetailsAdapter;
         mCarPartsBtn = mAddCarPartsBtn;
+        mCarInfo = carInfo;
         mAddedPartList = new ArrayList<>();
         mAddedPartList.clear();
         mAddedPartList.addAll(mAccountDetailHolder.getAddPartDetails());
@@ -68,6 +71,20 @@ public class EnquiryFormAddedPartAdapter extends RecyclerView.Adapter<EnquiryFor
         if (mAddedPartList.size() != 0) {
             mSubmitButton.setVisibility(View.GONE);
             mSelfSubmitBtn.setVisibility(View.VISIBLE);
+            mCustomerSubmitBtn.setVisibility(View.VISIBLE);
+            mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
+            mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
+        }
+        if (mAddedPartList.size() != 0 && mCarInfo.getmType().matches("0")) {
+            mSubmitButton.setVisibility(View.GONE);
+            mSelfSubmitBtn.setVisibility(View.VISIBLE);
+            mCustomerSubmitBtn.setVisibility(View.GONE);
+            mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
+            mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
+        }
+        if (mAddedPartList.size() != 0 && mCarInfo.getmType().matches("1")) {
+            mSubmitButton.setVisibility(View.GONE);
+            mSelfSubmitBtn.setVisibility(View.GONE);
             mCustomerSubmitBtn.setVisibility(View.VISIBLE);
             mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
             mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));

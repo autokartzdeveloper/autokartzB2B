@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.autokartz.autokartz.R;
 import com.autokartz.autokartz.dialoges.ProductDetailDialog;
 import com.autokartz.autokartz.services.databases.preferences.AccountDetailHolder;
+import com.autokartz.autokartz.utils.pojoClasses.CarInformation;
 import com.autokartz.autokartz.utils.pojoClasses.CategoryInformation;
 import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
 
@@ -36,13 +37,15 @@ public class EnquiryCarPartsDetailsAdapter extends RecyclerView.Adapter<EnquiryC
     private Button mCustomerSubmitBtn;
     private Button mSelfSubmitBtn;
     private Button mCarPartsBtn;
+    CarInformation mCarInfo;
 
-    public EnquiryCarPartsDetailsAdapter(Activity context, Button mSubmitForSelfBtn, Button mSubmitForCustomerBtn, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn) {
+    public EnquiryCarPartsDetailsAdapter(Activity context, CarInformation carInfo, Button mSubmitForSelfBtn, Button mSubmitForCustomerBtn, Button mSubmitCarPartsBtn, Button mAddCarPartsBtn) {
         mActivity = context;
         mCarPartsBtn = mAddCarPartsBtn;
         mSubmitCarBtn = mSubmitCarPartsBtn;
         mCustomerSubmitBtn = mSubmitForCustomerBtn;
         mSelfSubmitBtn = mSubmitForSelfBtn;
+        mCarInfo = carInfo;
         mAccountDetailHolder = new AccountDetailHolder(mActivity);
         selectedCarPartList = mAccountDetailHolder.getSelectedCarParts();
     }
@@ -70,6 +73,14 @@ public class EnquiryCarPartsDetailsAdapter extends RecyclerView.Adapter<EnquiryC
             mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
             mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
         }
+        if (selectedCarPartList.size() != 0 && mCarInfo.getmType().matches("0") || mCarInfo.getmType().matches("1")) {
+            mSubmitCarBtn.setVisibility(View.VISIBLE);
+            mSelfSubmitBtn.setVisibility(View.GONE);
+            mCustomerSubmitBtn.setVisibility(View.GONE);
+            mCarPartsBtn.setBackgroundColor(mActivity.getResources().getColor(R.color.light_grey));
+            mCarPartsBtn.setTextColor(mActivity.getResources().getColor(R.color.appcolorornage));
+        }
+
         return selectedCarPartList.size();
     }
 

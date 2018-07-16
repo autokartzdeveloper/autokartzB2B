@@ -247,6 +247,7 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
 
     private void getRequirementDataFromResponse(EnquirySuggestionResponseBean enquirySuggestionResponseBean) {
         carChassis = enquirySuggestionResponseBean.getCarChassisNumber();
+        int qwert = enquirySuggestionResponseBean.getmType();
         mCarChassisNumValTv.setText(carChassis);
         mCarBrandValTv.setText(enquirySuggestionResponseBean.getBrand());
         mCarModelValTv.setText(enquirySuggestionResponseBean.getModel());
@@ -259,6 +260,7 @@ public class PartSuggestionFragment extends Fragment implements SuggestionRespon
         carInformation.setmVariant(enquirySuggestionResponseBean.getVariant());
         carInformation.setmYear(enquirySuggestionResponseBean.getYear());
         carInformation.setmEnginne(enquirySuggestionResponseBean.getEngine());
+        carInformation.setmType(String.valueOf(enquirySuggestionResponseBean.getmType()));
         codstatus = enquirySuggestionResponseBean.getCodStatus();
         ArrayList<EnquiryPartSuggestionResponseBean> partSggestionBeanList = enquirySuggestionResponseBean.getmEnquirySuggestionPartResponseBeanList();
         ArrayList<CategoryInformation> requirePartList = new ArrayList<>();
