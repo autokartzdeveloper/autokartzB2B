@@ -27,13 +27,13 @@ public class HsbcParams {
     public static String cu = "cu";
     public static String url = "url";
 
-    public static final String payeeVpa = "";
-    public static String PayeeName = "";
-    public static final String payeeMcc = "";
+    public static final String payeeVpa = "autokartz@hsbc";
+    public static String payeeName = "AUTOKARTZ INTERNET PRIVATE LIMITED";
+    public static final String payeeMcc = "5399";
     public static final String txnId = "";
     public static String txnRef = "";
     public static String txnNote = "";
-    public static final String payeeAmt = "";
+    public static String payeeAmt = "";
     public static final String minAmt = "";
     public static String payeeCur = "";
     public static String Appurl = "";

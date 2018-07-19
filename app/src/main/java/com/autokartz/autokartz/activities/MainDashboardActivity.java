@@ -27,6 +27,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,6 +63,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.ByteArrayOutputStream;
@@ -75,6 +77,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainDashboardActivity extends AppCompatActivity implements GetImageListener, SignOutResponseListener, FcmTokenResponseListsner {
+    private static final int REQUEST_INVITE = 100;
     @BindView(R.id.main_nav_drawer_layout)
     DrawerLayout mNavDrawerLayout;
     @BindView(R.id.nav_toolbar)
@@ -330,6 +333,10 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
                         fragment = new ContactUsFragment();
                         NAV_ITEM_INDEX = 6;
                         break;
+                    case R.id.nav_sharebtn:
+                        //  shareReferral();
+                        share();
+                        return false;
                     case R.id.nav_signout:
                         openSignOutDialog();
                         return false;
@@ -340,6 +347,20 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
             }
         });
     }
+
+    private void share() {
+        String owener_name = mUserDetailBean.getGarageOwnerName();
+        String user_id = mUserDetailBean.getUserId();
+        String[] separated = owener_name.split(" ");
+        String OwnerFirstName = separated[0];
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT,
+                "Hey check out my app at: https://play.google.com/store/apps/details?id=com.autokartz.autokartz and Your Referral code= " + user_id+OwnerFirstName);
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, "Share via"));
+    }
+
 
     private void openSignOutDialog() {
         SignOutDialog signOutDialog = new SignOutDialog(MainDashboardActivity.this, this);
@@ -390,6 +411,7 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == 103) {
+
             if (data != null && data.getData() != null) {
                 Uri uri = data.getData();
                 mCurrentPhotoPath = getRealPathFromURI(uri);
@@ -404,6 +426,16 @@ public class MainDashboardActivity extends AppCompatActivity implements GetImage
             }
             Intent i = new Intent("com.autokartz.custombroadcast");
             sendBroadcast(i);
+        }
+
+        if (requestCode == REQUEST_INVITE) {
+            if (resultCode == RESULT_OK) {
+                String[] ids = AppInviteInvitation.getInvitationIds(resultCode, data);
+                for (String id : ids) {
+                    Log.v("refer", "onActivityResult: sent invitation " + id);
+                }
+            } else {
+            }
         }
     }
 

@@ -37,7 +37,6 @@ import com.autokartz.autokartz.utils.util.constants.AppConstantKeys;
 import com.autokartz.autokartz.utils.util.constants.ServerApi;
 import com.autokartz.autokartz.utils.util.dialogs.DismissDialog;
 import com.autokartz.autokartz.utils.util.dialogs.ShowDialog;
-import com.paytm.pgsdk.Log;
 import com.paytm.pgsdk.PaytmOrder;
 import com.paytm.pgsdk.PaytmPGService;
 import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
@@ -47,6 +46,7 @@ import com.payumoney.sdkui.ui.utils.PayUmoneyFlowManager;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -107,6 +107,7 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
         PayUMoneyParams.PRODUCT_INFO = orderDataBean.getProductInfo();
         PayUMoneyParams.AMOUNT = String.valueOf(payableAmount);
         PayTMParams.TXN_AMOUNT = String.valueOf(payableAmount);
+        HsbcParams.payeeAmt = String.valueOf(payableAmount);
     }
 
     private void initPayUMoneySDK() {
@@ -181,9 +182,9 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
             //String str = data.
 
             String str = data.getStringExtra("response").toString();
-            Log.v("poiuy", str);
             Toast.makeText(mContext, "hsbc integration", Toast.LENGTH_SHORT).show();
             Toast.makeText(mContext, str, Toast.LENGTH_SHORT).show();
+         //  str.concat(txnId);
             //txnId=(tid)&responseCode=(responsecode)&ApprovalRefNo=( ApprovalRefNo )&Status=(status)&txnRef=(tr)
             //  processResponseIntent(responseIntent);
         } else {
@@ -215,15 +216,18 @@ public class PaymentPayUActivity extends AppCompatActivity implements GetPayUMon
     }
 
     private void startHsbcPayment() {
+        Random rand = new Random();
+        String num = String.valueOf(rand.nextInt(9000000) + 1000000);
+        HsbcParams.txnRef = "AUTO" + num;
         StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(DEEPLINKING_URL_BASE).append("?")
-                .append(HsbcParams.pa).append("=").append("autokartz@hsbc").append("&")
-                .append(HsbcParams.pn).append("=").append("AUTOKARTZ INTERNET PRIVATE LIMITED").append("&")
-                .append(HsbcParams.mc).append("=").append("5399").append("&")
+                .append(HsbcParams.pa).append("=").append(HsbcParams.payeeVpa).append("&")
+                .append(HsbcParams.pn).append("=").append(HsbcParams.payeeName).append("&")
+                .append(HsbcParams.mc).append("=").append(HsbcParams.payeeMcc).append("&")
                 .append(HsbcParams.tid).append("=").append("").append("&")//blank
-                .append(HsbcParams.tr).append("=").append("AUTO001234").append("&")
+                .append(HsbcParams.tr).append("=").append(HsbcParams.txnRef).append("&")
                 .append(HsbcParams.tn).append("=").append("").append("&")//blank
-                .append(HsbcParams.am).append("=").append("0.1").append("&")
+                .append(HsbcParams.am).append("=").append(HsbcParams.payeeAmt).append("&")
                 .append(HsbcParams.mam).append("=").append("").append("&")//blank
                 .append(HsbcParams.cu).append("=").append("").append("&")//blank
                 .append(HsbcParams.url).append("=").append("");//blank

@@ -65,6 +65,7 @@
     <string name="orders">Orders</string>
     <string name="my_account">My Account</string>
     <string name="company_url">Shop Online</string>
+    <string name="share">Share</string>
     <string name="signout">Signout</string>
     <string name="openDrawer">Open Drawer</string>
     <string name="closeDrawer">CloseDrawer</string>
@@ -77,5 +78,8 @@
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
     <string name="admob_app_id">ca-app-pub-1805780237947508~2259395395</string>
     <string name="interstitial_full_screen">ca-app-pub-1805780237947508/1819168425</string>
+
+    <string name="invitation_title">Firebase Invite</string>
+    <string name="invitation_message">Hey there, I found a app....</string>
 
 </resources>
